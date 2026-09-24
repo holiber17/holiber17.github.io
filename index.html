@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Desarrollador full stack, 7+ años. Casos de estudio de GuestHub — plataforma de gestión hotelera en producción desde 2017 — con Angular, React, Svelte y Node.js.">
+<meta name="author" content="Oliver Dos Anjos">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oliver Dos Anjos">
+<meta property="og:title" content="Oliver Dos Anjos — Desarrollador full stack">
+<meta property="og:description" content="Desarrollador full stack, 7+ años. Casos de estudio de GuestHub — plataforma de gestión hotelera en producción desde 2017 — con Angular, React, Svelte y Node.js.">
+<meta property="og:image" content="https://holiber17.github.io/og.png">
+<meta property="og:url" content="https://holiber17.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oliver Dos Anjos — Desarrollador full stack">
+<meta name="twitter:description" content="Desarrollador full stack, 7+ años. Casos de estudio de GuestHub — plataforma de gestión hotelera en producción desde 2017 — con Angular, React, Svelte y Node.js.">
+<meta name="twitter:image" content="https://holiber17.github.io/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317212A'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='15' font-weight='700' fill='%23DCA757' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Oliver Dos Anjos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+  :root {
+    --paper:   #EDF0F1;
+    --surface: #FBFCFC;
+    --ink:     #17212A;
+    --muted:   #5B6B78;
+    --rule:    #D2DADE;
+    --brass:   #9C6B22;
+    --brass-soft: rgba(156,107,34,.10);
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --serif:   "Source Serif 4", Georgia, "Times New Roman", serif;
+    --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper:   #121A20;
+      --surface: #1A242B;
+      --ink:     #E2E9ED;
+      --muted:   #94A4B0;
+      --rule:    #29343C;
+      --brass:   #DCA757;
+      --brass-soft: rgba(220,167,87,.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:   #121A20;
+    --surface: #1A242B;
+    --ink:     #E2E9ED;
+    --muted:   #94A4B0;
+    --rule:    #29343C;
+    --brass:   #DCA757;
+    --brass-soft: rgba(220,167,87,.12);
+  }
+
+  :root[data-lang="es"] [data-l="en"],
+  :root[data-lang="en"] [data-l="es"] { display: none !important; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---- top bar ---- */
+  .bar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar-in {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .bar-name {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .lang { display: flex; gap: 2px; }
+  .lang button {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    padding: 5px 10px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .lang button:first-child { border-radius: 3px 0 0 3px; }
+  .lang button:last-child  { border-radius: 0 3px 3px 0; border-left: 0; }
+  .lang button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .lang button:focus-visible, a:focus-visible, .copy:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+
+  /* ---- hero ---- */
+  header.hero { padding-block: 56px 40px; }
+  .status {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--brass);
+    background: var(--brass-soft);
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(38px, 9vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -.025em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .role {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin: 0 0 26px;
+  }
+  .thesis {
+    font-size: 19px;
+    line-height: 1.55;
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  /* ---- facts ---- */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .fact { background: var(--surface); padding: 16px 14px; }
+  .fact b {
+    display: block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact span {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .05em;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+
+  /* ---- sections ---- */
+  h2 {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 64px 0 0;
+  }
+  .case { padding-block: 30px 6px; border-top: 1px solid var(--rule); }
+  .case:first-of-type { border-top: 0; padding-top: 22px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .06em;
+    color: var(--brass);
+    margin: 0 0 6px;
+  }
+  .eyebrow .when { color: var(--muted); }
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(21px, 4.2vw, 27px);
+    line-height: 1.2;
+    letter-spacing: -.015em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  dl { margin: 0; display: grid; gap: 14px; }
+  .row { display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: baseline; }
+  dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  dd { margin: 0; }
+  dd p { margin: 0; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+  .chip {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .btn {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .03em;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    padding: 7px 13px;
+    transition: background .15s, color .15s;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+
+  a { color: var(--brass); text-underline-offset: 3px; }
+
+  /* ---- stack ---- */
+  .stack { display: grid; gap: 14px; margin-top: 22px; }
+  .stack .row dt { padding-top: 5px; }
+
+  /* ---- note + contact ---- */
+  .note {
+    margin-top: 56px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .note p { margin: 0; }
+  .contact { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .mail {
+    font-family: var(--mono);
+    font-size: 15px;
+    user-select: all;
+    color: var(--ink);
+  }
+  .copy {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--muted);
+    padding: 5px 9px;
+    cursor: pointer;
+  }
+  .copy:hover { border-color: var(--ink); color: var(--ink); }
+
+  @media (max-width: 640px) {
+    .facts { grid-template-columns: repeat(2, 1fr); }
+    .row { grid-template-columns: 1fr; gap: 4px; }
+    dt { padding-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem('ph-lang'); } catch (e) {}
+    if (l !== 'en' && l !== 'es') {
+      l = (navigator.language || 'es').toLowerCase().indexOf('en') === 0 ? 'en' : 'es';
+    }
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l);
+  })();
+</script>
+
+<div class="bar">
+  <div class="bar-in">
+    <span class="bar-name">Oliver Dos Anjos</span>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button id="btn-es" type="button" aria-pressed="true">ES</button>
+      <button id="btn-en" type="button" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="status">
+      <span data-l="es">Abierto a nuevas oportunidades</span>
+      <span data-l="en">Open to new opportunities</span>
+    </span>
+    <h1>Oliver Dos Anjos</h1>
+    <p class="role">
+      <span data-l="es">Desarrollador full stack · Caracas, Venezuela</span>
+      <span data-l="en">Full stack developer · Caracas, Venezuela</span>
+    </p>
+    <p class="thesis">
+      <span data-l="es">Siete años construyendo software que usa gente que está trabajando. Desde 2022 sostengo GuestHub, una plataforma de gestión hotelera en producción desde 2017: un monorepo de más de 24 módulos, tres frameworks de frontend y las APIs que los alimentan.</span>
+      <span data-l="en">Seven years building software used by people who are on shift. Since 2022 I've been working on GuestHub, a hotel management platform live since 2017: a monorepo of 24+ modules, three frontend frameworks, and the APIs behind them.</span>
+    </p>
+  </header>
+
+  <div class="facts">
+    <div class="fact">
+      <b>7+</b>
+      <span data-l="es">años<br>desarrollando</span>
+      <span data-l="en">years<br>developing</span>
+    </div>
+    <div class="fact">
+      <b>24+</b>
+      <span data-l="es">módulos en<br>un monorepo</span>
+      <span data-l="en">modules in<br>one monorepo</span>
+    </div>
+    <div class="fact">
+      <b>2017</b>
+      <span data-l="es">la plataforma,<br>en producción</span>
+      <span data-l="en">platform live<br>since</span>
+    </div>
+    <div class="fact">
+      <b>12&nbsp;→&nbsp;21</b>
+      <span data-l="es">migración de<br>Angular</span>
+      <span data-l="en">Angular<br>migration</span>
+    </div>
+  </div>
+
+  <h2>
+    <span data-l="es">Trabajo</span>
+    <span data-l="en">Work</span>
+  </h2>
+
+  <section class="case">
+    <p class="eyebrow">GuestHub · Angular <span class="when">· Norelian, 2022 —</span></p>
+    <h3>
+      <span data-l="es">La aplicación con la que opera el hotel</span>
+      <span data-l="en">The application the hotel runs on</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
+        <dd>
+          <p data-l="es">Una plataforma de gestión hotelera en producción desde 2017, repartida en un monorepo de más de 24 módulos. La aplicación web en Angular es la que tiene abierta el personal durante el turno: recepción, ama de llaves, mantenimiento.</p>
+          <p data-l="en">A hotel management platform live since 2017, spread across a monorepo of more than 24 modules. The Angular web app is what staff keep open during their shift: front desk, housekeeping, maintenance.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
+        <dd>
+          <p data-l="es">Construyo y mantengo los módulos de gestión de usuarios, tareas, objetos perdidos, dashboards y comunicaciones internas.</p>
+          <p data-l="en">I build and maintain the user management, tasks, lost &amp; found, dashboards and internal communications modules.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Decisión</dt><dt data-l="en">Decision</dt>
+        <dd>
+          <p data-l="es">Formé parte del equipo que migró la aplicación de Angular 12 a Angular 21 con el producto en producción. Se hizo por partes y no de una vez, apoyados en pruebas unitarias, para no detener las entregas durante la migración.</p>
+          <p data-l="en">I was part of the team that migrated the app from Angular 12 to Angular 21 while it stayed in production. We moved it in stages rather than all at once, leaning on unit tests, so releases never had to stop.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Resultado</dt><dt data-l="en">Result</dt>
+        <dd>
+          <p data-l="es">La plataforma sigue en uso diario en hoteles, sobre una base actualizada y con las entregas al día.</p>
+          <p data-l="en">The platform is still in daily use in hotels, on an up-to-date codebase, with releases on schedule.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="chips">
+      <span class="chip">Angular 21</span><span class="chip">TypeScript</span><span class="chip">SASS</span><span class="chip">Bootstrap</span><span class="chip">RxJS</span><span class="chip">i18n</span>
+    </div>
+  </section>
+
+  <section class="case">
+    <p class="eyebrow">GuestHub Staff · React <span class="when">· Norelian</span></p>
+    <h3>
+      <span data-l="es">La misma operación, desde el bolsillo</span>
+      <span data-l="en">The same operation, from a pocket</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
+        <dd>
+          <p data-l="es">La aplicación móvil del personal del hotel, publicada en Google Play y App Store. El camarero de piso o el técnico de mantenimiento recibe y cierra sus tareas ahí, sin volver a un escritorio.</p>
+          <p data-l="en">The mobile app for hotel staff, published on Google Play and the App Store. Housekeepers and maintenance techs receive and close their tasks there, without walking back to a desk.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
+        <dd>
+          <p data-l="es">Desarrollo en React, sobre las mismas APIs que la aplicación web.</p>
+          <p data-l="en">React development, on the same APIs as the web application.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="links">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=io.guesthub.staff" target="_blank" rel="noopener">Google Play ↗</a>
+      <a class="btn" href="https://apps.apple.com/es/app/guesthub-staff-app/id1592553817" target="_blank" rel="noopener">App Store ↗</a>
+    </div>
+    <div class="chips">
+      <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">REST</span>
+    </div>
+  </section>
+
+  <section class="case">
+    <p class="eyebrow">guesthub.io · Svelte <span class="when">· Norelian</span></p>
+    <h3>
+      <span data-l="es">El sitio público del producto</span>
+      <span data-l="en">The product's public site</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
+        <dd>
+          <p data-l="es">El sitio web de la empresa: páginas de producto para cada módulo, planes y precios, landings de campaña, formulario de contacto con reCAPTCHA y encuestas. En español e inglés.</p>
+          <p data-l="en">The company website: a product page per module, plans and pricing, campaign landings, a contact form with reCAPTCHA, and surveys. In Spanish and English.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
+        <dd>
+          <p data-l="es">Lo construyo y lo mantengo en Svelte, incluida la capa de traducciones.</p>
+          <p data-l="en">I build and maintain it in Svelte, including the translation layer.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="links">
+      <a class="btn" href="https://www.guesthub.io/" target="_blank" rel="noopener">guesthub.io ↗</a>
+    </div>
+    <div class="chips">
+      <span class="chip">Svelte</span><span class="chip">Rollup</span><span class="chip">svelte-i18n</span><span class="chip">SASS</span>
+    </div>
+  </section>
+
+  <section class="case">
+    <p class="eyebrow">
+      <span data-l="es">Estilos y componentes</span><span data-l="en">Styling &amp; components</span>
+      <span class="when">· Norelian</span>
+    </p>
+    <h3>
+      <span data-l="es">Que 24 módulos se vean como un solo producto</span>
+      <span data-l="en">Making 24 modules look like one product</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">El problema</dt><dt data-l="en">The problem</dt>
+        <dd>
+          <p data-l="es">En un monorepo de este tamaño, con varios equipos entregando a la vez, el riesgo real no es que algo falle: es que cada módulo termine viéndose distinto y la plataforma deje de sentirse como un producto.</p>
+          <p data-l="en">In a monorepo this size, with several teams shipping at once, the real risk isn't that something breaks — it's that each module ends up looking different and the platform stops feeling like one product.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
+        <dd>
+          <p data-l="es">Es mi especialidad dentro del equipo. Trabajo con SASS y Bootstrap, y construyo componentes de interfaz personalizados — inputs, selectores, tablas y diálogos — que se reutilizan en toda la plataforma, cuidando el diseño adaptable: buena parte del personal opera desde el móvil, de pie.</p>
+          <p data-l="en">This is my specialty on the team. I work with SASS and Bootstrap, and build custom UI components — inputs, selectors, tables and dialogs — reused across the whole platform, with responsive design in mind: much of the staff works from a phone, on their feet.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="chips">
+      <span class="chip">SASS</span><span class="chip">Bootstrap</span><span class="chip">CSS3</span><span class="chip">HTML5</span><span class="chip" data-l="es">diseño adaptable</span><span class="chip" data-l="en">responsive design</span>
+    </div>
+  </section>
+
+  <section class="case">
+    <p class="eyebrow">
+      <span data-l="es">Backend y despliegues</span><span data-l="en">Backend &amp; deployments</span>
+      <span class="when">· Norelian</span>
+    </p>
+    <h3>
+      <span data-l="es">Lo que sostiene un producto con usuarios reales</span>
+      <span data-l="en">What holds up a product with real users</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
+        <dd>
+          <p data-l="es">APIs REST de varios módulos en Node.js con Hapi y TypeScript, y en .NET (C#), sobre MongoDB y Firebase. Gestión de usuarios y autenticación con Auth0, arquitectura por casos de uso y pruebas unitarias.</p>
+          <p data-l="en">REST APIs for several modules in Node.js with Hapi and TypeScript, and in .NET (C#), over MongoDB and Firebase. User management and authentication with Auth0, use-case architecture and unit tests.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">También</dt><dt data-l="en">Also</dt>
+        <dd>
+          <p data-l="es">Mantengo las traducciones de la plataforma en español e inglés, y ejecuto los despliegues con los pipelines de Azure DevOps, trabajando con Docker y PM2 cuando hace falta.</p>
+          <p data-l="en">I maintain the platform's Spanish and English translations, and run the deployments through Azure DevOps pipelines, working with Docker and PM2 when needed.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="chips">
+      <span class="chip">Node.js</span><span class="chip">Hapi</span><span class="chip">TypeScript</span><span class="chip">.NET (C#)</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">Auth0</span><span class="chip">Azure DevOps</span><span class="chip">Docker</span>
+    </div>
+  </section>
+
+  <section class="case">
+    <p class="eyebrow">Vibia · React</p>
+    <h3>
+      <span data-l="es">Una herramienta para diseñar con luz</span>
+      <span data-l="en">A tool for designing with light</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Qué hice</dt><dt data-l="en">What I did</dt>
+        <dd>
+          <p data-l="es">Desarrollo en React de una herramienta de diseño de interiores para Vibia, fabricante español de iluminación de autor. Es de acceso restringido, así que no hay un enlace público que mostrar; sí lo está la marca para la que se construyó: <a href="https://vibia.com/es/int" target="_blank" rel="noopener">vibia.com</a>.</p>
+          <p data-l="en">React development on an interior design tool for Vibia, a Spanish designer lighting manufacturer. Access is restricted, so there's no public link to show; the brand it was built for is public: <a href="https://vibia.com/es/int" target="_blank" rel="noopener">vibia.com</a>.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="chips">
+      <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">CSS3</span>
+    </div>
+  </section>
+
+  <section class="case">
+    <p class="eyebrow">World Cloud <span class="when">· 2019 — 2022</span></p>
+    <h3>
+      <span data-l="es">Frontend para clientes corporativos</span>
+      <span data-l="en">Frontend for corporate clients</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Qué hice</dt><dt data-l="en">What I did</dt>
+        <dd>
+          <p data-l="es">Desarrollo frontend en Angular y JavaScript para clientes en Colombia — Sistemas Mission y Escala Capital — diseñando e implementando las interfaces de sistemas de negocio ya en operación, y entregando dentro de los plazos comprometidos con el cliente.</p>
+          <p data-l="en">Frontend development in Angular and JavaScript for clients in Colombia — Sistemas Mission and Escala Capital — designing and implementing the interfaces of business systems already in operation, and delivering within the deadlines committed to the client.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="chips">
+      <span class="chip">Angular</span><span class="chip">JavaScript</span><span class="chip">CSS3</span>
+    </div>
+  </section>
+
+  <h2>
+    <span data-l="es">Herramientas</span>
+    <span data-l="en">Toolkit</span>
+  </h2>
+  <dl class="stack">
+    <div class="row">
+      <dt>Frontend</dt>
+      <dd><p>Angular · React · Svelte · TypeScript · JavaScript · HTML5</p></dd>
+    </div>
+    <div class="row">
+      <dt data-l="es">Estilos</dt><dt data-l="en">Styling</dt>
+      <dd>
+        <p data-l="es">SASS · Bootstrap · CSS3 · diseño web adaptable · componentes personalizados</p>
+        <p data-l="en">SASS · Bootstrap · CSS3 · responsive design · custom components</p>
+      </dd>
+    </div>
+    <div class="row">
+      <dt>Backend</dt>
+      <dd>
+        <p data-l="es">Node.js (Hapi) · .NET (C#) · APIs REST · Auth0 · pruebas unitarias</p>
+        <p data-l="en">Node.js (Hapi) · .NET (C#) · REST APIs · Auth0 · unit testing</p>
+      </dd>
+    </div>
+    <div class="row">
+      <dt data-l="es">Datos</dt><dt data-l="en">Data</dt>
+      <dd><p>MongoDB · Firebase</p></dd>
+    </div>
+    <div class="row">
+      <dt>DevOps</dt>
+      <dd>
+        <p data-l="es">Azure DevOps (pipelines y despliegues) · Docker · PM2 · Git</p>
+        <p data-l="en">Azure DevOps (pipelines and deployments) · Docker · PM2 · Git</p>
+      </dd>
+    </div>
+    <div class="row">
+      <dt data-l="es">Idiomas</dt><dt data-l="en">Languages</dt>
+      <dd>
+        <p data-l="es">Español (nativo) · Inglés (lectura técnica de documentación)</p>
+        <p data-l="en">Spanish (native) · English (technical reading)</p>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="note">
+    <p data-l="es">El código de estos productos pertenece a las empresas para las que trabajo, así que no se publica aquí. Lo que enlazo arriba es lo que ya es público: las aplicaciones en las tiendas y el sitio del producto.</p>
+    <p data-l="en">The source code of these products belongs to the companies I work for, so it isn't published here. What I link above is what's already public: the apps in the stores and the product website.</p>
+  </div>
+
+  <h2>
+    <span data-l="es">Contacto</span>
+    <span data-l="en">Contact</span>
+  </h2>
+  <div class="contact">
+    <span class="mail" id="mail">holiber17@gmail.com</span>
+    <button class="copy" id="copy" type="button">
+      <span data-l="es">Copiar</span>
+      <span data-l="en">Copy</span>
+    </button>
+    <a class="btn" href="https://www.linkedin.com/in/oliverdosanjos-dev/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btnEs = document.getElementById('btn-es');
+    var btnEn = document.getElementById('btn-en');
+
+    function setLang(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      btnEs.setAttribute('aria-pressed', String(lang === 'es'));
+      btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+      try { localStorage.setItem('ph-lang', lang); } catch (e) {}
+    }
+
+    setLang(root.getAttribute('data-lang') === 'en' ? 'en' : 'es');
+
+    btnEs.addEventListener('click', function () { setLang('es'); });
+    btnEn.addEventListener('click', function () { setLang('en'); });
+
+    var copy = document.getElementById('copy');
+    var mail = document.getElementById('mail');
+    copy.addEventListener('click', function () {
+      var done = function () {
+        var es = copy.querySelector('[data-l="es"]');
+        var en = copy.querySelector('[data-l="en"]');
+        es.textContent = 'Copiado';
+        en.textContent = 'Copied';
+        setTimeout(function () { es.textContent = 'Copiar'; en.textContent = 'Copy'; }, 1800);
+      };
+      var fallback = function () {
+        var r = document.createRange();
+        r.selectNodeContents(mail);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+      };
+      try {
+        navigator.clipboard.writeText(mail.textContent.trim()).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  })();
+</script>
+
+</body>
+</html>
