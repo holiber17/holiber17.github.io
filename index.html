@@ -586,6 +586,55 @@
   </section>
 
   <h2>
+    <span data-l="es">Proyecto propio</span>
+    <span data-l="en">Own project</span>
+  </h2>
+
+  <section class="case">
+    <p class="eyebrow">LicorApp · PWA</p>
+    <h3>
+      <span data-l="es">Un punto de venta para licorerías, hecho de cero</span>
+      <span data-l="en">A point of sale for liquor stores, built from scratch</span>
+    </h3>
+    <dl>
+      <div class="row">
+        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
+        <dd>
+          <p data-l="es">Un sistema de gestión y punto de venta para licorerías y bares: pedidos por mesa o por cliente, inventario con escaneo de códigos de barras y alertas de stock mínimo, catálogo con imágenes, base de clientes, cierre de caja diario y reportes de ventas. Multi-sucursal, con roles por empleado.</p>
+          <p data-l="en">A management and point-of-sale system for liquor stores and bars: orders by table or by customer, inventory with barcode scanning and low-stock alerts, a product catalog with images, a customer database, daily cash reconciliation and sales reports. Multi-branch, with per-employee roles.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">El detalle</dt><dt data-l="en">The detail</dt>
+        <dd>
+          <p data-l="es">Está pensado para Venezuela. Cobra en efectivo, Zelle, pago móvil y transferencia, y convierte los precios consultando la tasa del día desde una API pública, con histórico. Sin eso, un punto de venta aquí no sirve para nada.</p>
+          <p data-l="en">It's built for Venezuela. It takes cash, Zelle, mobile payment and bank transfer, and converts prices against the day's official exchange rate pulled from a public API, with history. Without that, a point of sale is useless here.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Cómo está hecho</dt><dt data-l="en">How it's built</dt>
+        <dd>
+          <p data-l="es">JavaScript sin framework, sobre Supabase para datos y autenticación. Funciona como PWA: se instala en el teléfono y aguanta una conexión intermitente, que es la norma en un local. Cada pedido genera un código QR para que el cliente consulte su consumo.</p>
+          <p data-l="en">Vanilla JavaScript on top of Supabase for data and auth. It runs as a PWA: installable on a phone and resilient to the patchy connections you get in a shop. Each order generates a QR code so the customer can check their own tab.</p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
+        <dd>
+          <p data-l="es">Todo: producto, diseño, código y despliegue.</p>
+          <p data-l="en">All of it: product, design, code and deployment.</p>
+        </dd>
+      </div>
+    </dl>
+    <div class="links">
+      <a class="btn" href="https://licorapp.netlify.app/" target="_blank" rel="noopener">licorapp.netlify.app ↗</a>
+    </div>
+    <div class="chips">
+      <span class="chip">JavaScript</span><span class="chip">PWA</span><span class="chip">Service Worker</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">CSS3</span>
+    </div>
+  </section>
+
+  <h2>
     <span data-l="es">Herramientas</span>
     <span data-l="en">Toolkit</span>
   </h2>
@@ -610,7 +659,7 @@
     </div>
     <div class="row">
       <dt data-l="es">Datos</dt><dt data-l="en">Data</dt>
-      <dd><p>MongoDB · Firebase</p></dd>
+      <dd><p>MongoDB · Firebase · Supabase (PostgreSQL)</p></dd>
     </div>
     <div class="row">
       <dt>DevOps</dt>
