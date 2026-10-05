@@ -1,744 +1,544 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Desarrollador full stack, 7+ años. Casos de estudio de GuestHub — plataforma de gestión hotelera en producción desde 2017 — con Angular, React, Svelte y Node.js.">
-<meta name="author" content="Oliver Dos Anjos">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Oliver Dos Anjos">
-<meta property="og:title" content="Oliver Dos Anjos — Desarrollador full stack">
-<meta property="og:description" content="Desarrollador full stack, 7+ años. Casos de estudio de GuestHub — plataforma de gestión hotelera en producción desde 2017 — con Angular, React, Svelte y Node.js.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oliver Dos Anjos — Desarrollador web full-stack</title>
+<meta name="description" content="Portafolio de Oliver Dos Anjos, desarrollador full-stack en Caracas, Venezuela. Tiendas online, sistemas para negocios, landing pages y APIs con Angular, .NET, Node y SQL.">
+<meta property="og:title" content="Oliver Dos Anjos — Desarrollador web full-stack">
 <meta property="og:image" content="https://holiber17.github.io/og.png">
-<meta property="og:url" content="https://holiber17.github.io/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Oliver Dos Anjos — Desarrollador full stack">
-<meta name="twitter:description" content="Desarrollador full stack, 7+ años. Casos de estudio de GuestHub — plataforma de gestión hotelera en producción desde 2017 — con Angular, React, Svelte y Node.js.">
-<meta name="twitter:image" content="https://holiber17.github.io/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317212A'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='15' font-weight='700' fill='%23DCA757' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+<meta property="og:description" content="Tiendas, sistemas y páginas web que tu negocio puede usar desde el primer día.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#16202E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    color-scheme: light;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  body { margin: 0; }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
-</style>
-<title>Oliver Dos Anjos</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-<style>
-  :root {
-    --paper:   #EDF0F1;
-    --surface: #FBFCFC;
-    --ink:     #17212A;
-    --muted:   #5B6B78;
-    --rule:    #D2DADE;
-    --brass:   #9C6B22;
-    --brass-soft: rgba(156,107,34,.10);
-    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-    --serif:   "Source Serif 4", Georgia, "Times New Roman", serif;
-    --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      color-scheme: dark;
-      --paper:   #121A20;
-      --surface: #1A242B;
-      --ink:     #E2E9ED;
-      --muted:   #94A4B0;
-      --rule:    #29343C;
-      --brass:   #DCA757;
-      --brass-soft: rgba(220,167,87,.12);
-    }
-  }
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --paper:   #121A20;
-    --surface: #1A242B;
-    --ink:     #E2E9ED;
-    --muted:   #94A4B0;
-    --rule:    #29343C;
-    --brass:   #DCA757;
-    --brass-soft: rgba(220,167,87,.12);
-  }
+:root{
+  --paper:#F2F4F7;
+  --ink:#16202E;
+  --ink-soft:#4A5668;
+  --line:#D5DBE3;
+  --teal:#0E7C66;
+  --teal-deep:#0A5C4C;
+  --marker:#F2B134;
+  --white:#FFFFFF;
+  --code-bg:#16202E;
+  --code-ink:#E4E9F0;
+  --code-dim:#8C99AD;
+  --sans:"Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", Consolas, "Courier New", monospace;
+  --wrap:min(1120px, 100% - 2.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--marker);outline-offset:3px;border-radius:4px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--white);padding:.5rem 1rem;z-index:10}
 
-  :root[data-lang="es"] [data-l="en"],
-  :root[data-lang="en"] [data-l="es"] { display: none !important; }
+/* Header */
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em}
+.brand small{font-weight:400;color:var(--ink-soft);font-size:.9rem;margin-left:.4rem}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--ink-soft);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+@media (max-width:720px){nav ul{gap:.9rem} nav li.hide-sm{display:none} .brand small{display:none}}
 
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--serif);
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap {
-    max-width: 780px;
-    margin: 0 auto;
-    padding-inline: 20px;
-    padding-block: 0 72px;
-  }
+.lang{display:flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;flex-shrink:0}
+.lang button{font:600 .85rem var(--sans);background:transparent;color:var(--ink-soft);border:0;padding:.35rem .65rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.top nav{margin-left:auto}
+/* Hero */
+.hero{padding-block:clamp(3rem,8vw,6rem) clamp(3rem,7vw,5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr}}
+.status{display:inline-flex;align-items:center;gap:.55rem;font-size:.95rem;color:var(--teal-deep);background:#DDEFEA;padding:.3rem .8rem;border-radius:999px;margin-bottom:1.5rem}
+.status::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--teal)}
+h1{font-size:clamp(2.3rem,5.2vw,4rem);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:0 0 1.4rem;max-width:16ch}
+.lead{font-size:1.2rem;color:var(--ink-soft);max-width:34rem;margin:0 0 2rem}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:.85rem 1.4rem;border-radius:10px;border:2px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--white)}
+.btn.solid:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+.btn.ghost:hover{background:var(--white)}
 
-  /* ---- top bar ---- */
-  .bar {
-    position: sticky;
-    top: env(safe-area-inset-top, 0px);
-    z-index: 5;
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--rule);
-  }
-  .bar-in {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .bar-name {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .lang { display: flex; gap: 2px; }
-  .lang button {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: .08em;
-    padding: 5px 10px;
-    border: 1px solid var(--rule);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-  }
-  .lang button:first-child { border-radius: 3px 0 0 3px; }
-  .lang button:last-child  { border-radius: 0 3px 3px 0; border-left: 0; }
-  .lang button[aria-pressed="true"] {
-    background: var(--ink);
-    color: var(--paper);
-    border-color: var(--ink);
-  }
-  .lang button:focus-visible, a:focus-visible, .copy:focus-visible {
-    outline: 2px solid var(--brass);
-    outline-offset: 2px;
-  }
+/* Receipt (the one memorable element) */
+.receipt-holder{position:relative;justify-self:center;width:min(100%,360px)}
+.receipt-slot{height:14px;background:var(--ink);border-radius:8px;position:relative;z-index:2}
+.receipt{
+  font-family:var(--mono);font-size:.86rem;line-height:1.55;background:var(--white);
+  margin:-6px 14px 0;padding:1.6rem 1.3rem 2.2rem;box-shadow:0 18px 40px -18px rgba(22,32,46,.35);
+  --tooth:10px;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - var(--tooth)) no-repeat,
+    conic-gradient(from 135deg at 50% 0, #000 90deg, #0000 0) bottom/calc(var(--tooth)*2) var(--tooth) repeat-x;
+          mask:linear-gradient(#000 0 0) top/100% calc(100% - var(--tooth)) no-repeat,
+    conic-gradient(from 135deg at 50% 0, #000 90deg, #0000 0) bottom/calc(var(--tooth)*2) var(--tooth) repeat-x;
+  animation:print 1.8s cubic-bezier(.3,.7,.3,1) .3s both;
+  transform-origin:top;
+}
+@keyframes print{from{clip-path:inset(0 0 100% 0);transform:translateY(-18px)}to{clip-path:inset(0 0 0 0);transform:none}}
+.receipt h2{font-family:var(--mono);font-size:1rem;text-align:center;margin:0;font-weight:500}
+.receipt .sub{text-align:center;color:var(--ink-soft);margin:0 0 .9rem}
+.receipt hr{border:0;border-top:1.5px dashed var(--line);margin:.8rem 0}
+.receipt ul{list-style:none;margin:0;padding:0}
+.receipt li{display:flex;gap:.4rem}
+.receipt li span:first-child{white-space:nowrap}
+.receipt li .dots{flex:1;border-bottom:1.5px dotted #B6C0CD;transform:translateY(-.35em)}
+.receipt .total{display:flex;justify-content:space-between;gap:1rem;font-weight:500}
+.receipt .total b{background:var(--marker);padding:0 .3rem;font-weight:500;text-align:right}
+.receipt .thanks{text-align:center;margin:1rem 0 0;color:var(--ink-soft)}
+.barcode{height:34px;margin-top:.9rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
 
-  /* ---- hero ---- */
-  header.hero { padding-block: 56px 40px; }
-  .status {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    color: var(--brass);
-    background: var(--brass-soft);
-    padding: 5px 10px;
-    border-radius: 2px;
-    margin-bottom: 22px;
-  }
-  h1 {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(38px, 9vw, 62px);
-    line-height: 1.02;
-    letter-spacing: -.025em;
-    margin: 0 0 14px;
-    text-wrap: balance;
-  }
-  .role {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: .04em;
-    color: var(--muted);
-    margin: 0 0 26px;
-  }
-  .thesis {
-    font-size: 19px;
-    line-height: 1.55;
-    max-width: 58ch;
-    margin: 0;
-  }
+/* Sections */
+section.block{padding-block:clamp(3.5rem,8vw,6rem);border-top:1px solid var(--line)}
+.head{max-width:44rem;margin-bottom:2.8rem}
+h2.title{font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 .8rem;font-weight:800}
+.head p{color:var(--ink-soft);margin:0}
 
-  /* ---- facts ---- */
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 8px;
-  }
-  .fact { background: var(--surface); padding: 16px 14px; }
-  .fact b {
-    display: block;
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 24px;
-    letter-spacing: -.01em;
-    font-variant-numeric: tabular-nums;
-  }
-  .fact span {
-    display: block;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .05em;
-    color: var(--muted);
-    margin-top: 4px;
-    line-height: 1.35;
-  }
+/* Projects */
+.project{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr);gap:clamp(1.5rem,4vw,3rem);align-items:start;padding-block:2.4rem;border-bottom:1px solid var(--line)}
+.project:last-of-type{border-bottom:0}
+@media (max-width:880px){.project{grid-template-columns:1fr}}
+.project h3{font-size:1.65rem;letter-spacing:-.015em;margin:0 0 .3rem;line-height:1.2}
+.client{color:var(--teal-deep);font-weight:600;margin:0 0 1rem}
+.project p.desc{margin:0 0 1.1rem;max-width:60ch}
+.features{margin:0 0 1.2rem;padding-left:1.1rem}
+.features li{margin-bottom:.3rem}
+.stack{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.2rem;padding:0;list-style:none}
+.stack li{font-size:.85rem;border:1.5px solid var(--line);background:var(--white);padding:.15rem .6rem;border-radius:6px}
+.link{font-weight:600;color:var(--teal-deep);text-underline-offset:4px}
+.wip{display:inline-block;font-size:.85rem;font-weight:600;background:#FCEBC7;color:#7A5300;padding:.15rem .6rem;border-radius:6px;margin-bottom:.8rem}
 
-  /* ---- sections ---- */
-  h2 {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 64px 0 0;
-  }
-  .case { padding-block: 30px 6px; border-top: 1px solid var(--rule); }
-  .case:first-of-type { border-top: 0; padding-top: 22px; }
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: .06em;
-    color: var(--brass);
-    margin: 0 0 6px;
-  }
-  .eyebrow .when { color: var(--muted); }
-  h3 {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: clamp(21px, 4.2vw, 27px);
-    line-height: 1.2;
-    letter-spacing: -.015em;
-    margin: 0 0 18px;
-    text-wrap: balance;
-  }
-  dl { margin: 0; display: grid; gap: 14px; }
-  .row { display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: baseline; }
-  dt {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 4px;
-  }
-  dd { margin: 0; }
-  dd p { margin: 0; }
+.code{background:var(--code-bg);color:var(--code-ink);border-radius:14px;overflow:hidden}
+.code figcaption{display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.8rem;color:var(--code-dim);padding:.75rem 1.1rem;border-bottom:1px solid #26334A}
+.code pre{margin:0;padding:1.1rem 1.2rem 1.3rem;overflow-x:auto;font-family:var(--mono);font-size:.84rem;line-height:1.65;tab-size:2}
+.code .c{color:var(--code-dim);font-style:italic}
+.code .k{color:#7FD3C0}
+.code .s{color:#F5C977}
 
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
-  .chip {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    color: var(--muted);
-    border: 1px solid var(--rule);
-    border-radius: 2px;
-    padding: 3px 8px;
-    white-space: nowrap;
-  }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-  .btn {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: .03em;
-    text-decoration: none;
-    color: var(--ink);
-    border: 1px solid var(--ink);
-    border-radius: 2px;
-    padding: 7px 13px;
-    transition: background .15s, color .15s;
-  }
-  .btn:hover { background: var(--ink); color: var(--paper); }
+/* Experience */
+.job{display:grid;grid-template-columns:12rem 1fr;gap:1.5rem 3rem;padding-block:1.6rem;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+@media (max-width:720px){.job{grid-template-columns:1fr;gap:.4rem}}
+.job .when{color:var(--ink-soft);font-size:.95rem}
+.job h3{margin:0 0 .25rem;font-size:1.35rem}
+.job .where{margin:0 0 .8rem;color:var(--teal-deep);font-weight:600}
+.job ul{margin:0;padding-left:1.1rem}
+.job li{margin-bottom:.35rem;max-width:68ch}
 
-  a { color: var(--brass); text-underline-offset: 3px; }
+/* Stack grid */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:2rem 2.5rem}
+.tools h3{font-size:1.1rem;margin:0 0 .5rem}
+.tools p{margin:0;color:var(--ink-soft)}
 
-  /* ---- stack ---- */
-  .stack { display: grid; gap: 14px; margin-top: 22px; }
-  .stack .row dt { padding-top: 5px; }
+/* Services: process is a real sequence, so it gets numbers */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+@media (max-width:880px){.services{grid-template-columns:1fr}}
+.offer{list-style:none;margin:0;padding:0}
+.offer li{padding:1rem 0;border-bottom:1px solid var(--line)}
+.offer li:first-child{padding-top:0}
+.offer b{display:block;font-size:1.1rem}
+.offer span{color:var(--ink-soft)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.6rem 1fr;gap:.8rem;margin-bottom:1.3rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--ink);color:var(--white);font-weight:600}
+.steps b{display:block}
+.steps span{color:var(--ink-soft)}
 
-  /* ---- note + contact ---- */
-  .note {
-    margin-top: 56px;
-    padding: 16px 18px;
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    font-size: 14.5px;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-  .note p { margin: 0; }
-  .contact { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-  .mail {
-    font-family: var(--mono);
-    font-size: 15px;
-    user-select: all;
-    color: var(--ink);
-  }
-  .copy {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    background: transparent;
-    border: 1px solid var(--rule);
-    border-radius: 2px;
-    color: var(--muted);
-    padding: 5px 9px;
-    cursor: pointer;
-  }
-  .copy:hover { border-color: var(--ink); color: var(--ink); }
+/* Contact */
+.contact{background:var(--ink);color:var(--white);border-top:0}
+.contact .head p{color:#B9C3D1}
+.contact-links{display:flex;flex-wrap:wrap;gap:.8rem}
+.contact-links a{text-decoration:none;font-weight:600;padding:.85rem 1.3rem;border-radius:10px;border:2px solid #3A4A63}
+.contact-links a:hover{border-color:var(--marker)}
+.contact-links a.main{background:var(--marker);color:var(--ink);border-color:var(--marker)}
+footer{background:var(--ink);color:#8C99AD;font-size:.9rem;padding-block:1.5rem 2.5rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid #2A3850;padding-top:1.5rem}
+footer a{color:#B9C3D1}
 
-  @media (max-width: 640px) {
-    .facts { grid-template-columns: repeat(2, 1fr); }
-    .row { grid-template-columns: 1fr; gap: 4px; }
-    dt { padding-top: 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
-  }
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .receipt{animation:none}
+}
 </style>
 </head>
 <body>
+<a data-i18n="skip" class="skip" href="#main">Saltar al contenido</a>
 
-<script>
-  (function () {
-    var l = null;
-    try { l = localStorage.getItem('ph-lang'); } catch (e) {}
-    if (l !== 'en' && l !== 'es') {
-      l = (navigator.language || 'es').toLowerCase().indexOf('en') === 0 ? 'en' : 'es';
-    }
-    document.documentElement.setAttribute('data-lang', l);
-    document.documentElement.setAttribute('lang', l);
-  })();
-</script>
-
-<div class="bar">
-  <div class="bar-in">
-    <span class="bar-name">Oliver Dos Anjos</span>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Oliver Dos Anjos<small data-i18n="brandSub">desarrollador full-stack</small></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a data-i18n="navProjects" href="#proyectos">Proyectos</a></li>
+        <li class="hide-sm"><a data-i18n="navExp" href="#experiencia">Experiencia</a></li>
+        <li class="hide-sm"><a data-i18n="navServices" href="#servicios">Servicios</a></li>
+        <li><a data-i18n="navContact" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
     <div class="lang" role="group" aria-label="Idioma / Language">
-      <button id="btn-es" type="button" aria-pressed="true">ES</button>
-      <button id="btn-en" type="button" aria-pressed="false">EN</button>
+      <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
     </div>
   </div>
-</div>
+</header>
 
-<div class="wrap">
-
-  <header class="hero">
-    <span class="status">
-      <span data-l="es">Abierto a nuevas oportunidades</span>
-      <span data-l="en">Open to new opportunities</span>
-    </span>
-    <h1>Oliver Dos Anjos</h1>
-    <p class="role">
-      <span data-l="es">Desarrollador full stack · Caracas, Venezuela</span>
-      <span data-l="en">Full stack developer · Caracas, Venezuela</span>
-    </p>
-    <p class="thesis">
-      <span data-l="es">Siete años construyendo software que usa gente que está trabajando. Desde 2022 sostengo GuestHub, una plataforma de gestión hotelera en producción desde 2017: un monorepo de más de 24 módulos, tres frameworks de frontend y las APIs que los alimentan.</span>
-      <span data-l="en">Seven years building software used by people who are on shift. Since 2022 I've been working on GuestHub, a hotel management platform live since 2017: a monorepo of 24+ modules, three frontend frameworks, and the APIs behind them.</span>
-    </p>
-  </header>
-
-  <div class="facts">
-    <div class="fact">
-      <b>7+</b>
-      <span data-l="es">años<br>desarrollando</span>
-      <span data-l="en">years<br>developing</span>
-    </div>
-    <div class="fact">
-      <b>24+</b>
-      <span data-l="es">módulos en<br>un monorepo</span>
-      <span data-l="en">modules in<br>one monorepo</span>
-    </div>
-    <div class="fact">
-      <b>2017</b>
-      <span data-l="es">la plataforma,<br>en producción</span>
-      <span data-l="en">platform live<br>since</span>
-    </div>
-    <div class="fact">
-      <b>12&nbsp;→&nbsp;21</b>
-      <span data-l="es">migración de<br>Angular</span>
-      <span data-l="en">Angular<br>migration</span>
-    </div>
-  </div>
-
-  <h2>
-    <span data-l="es">Trabajo</span>
-    <span data-l="en">Work</span>
-  </h2>
-
-  <section class="case">
-    <p class="eyebrow">GuestHub · Angular <span class="when">· Norelian, 2022 —</span></p>
-    <h3>
-      <span data-l="es">La aplicación con la que opera el hotel</span>
-      <span data-l="en">The application the hotel runs on</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
-        <dd>
-          <p data-l="es">Una plataforma de gestión hotelera en producción desde 2017, repartida en un monorepo de más de 24 módulos. La aplicación web en Angular es la que tiene abierta el personal durante el turno: recepción, ama de llaves, mantenimiento.</p>
-          <p data-l="en">A hotel management platform live since 2017, spread across a monorepo of more than 24 modules. The Angular web app is what staff keep open during their shift: front desk, housekeeping, maintenance.</p>
-        </dd>
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <span data-i18n="status" class="status">Disponible para proyectos freelance</span>
+        <h1 data-i18n="h1">Hago tiendas, sistemas y páginas web que tu negocio usa desde el primer día.</h1>
+        <p data-i18n="lead" class="lead">Soy desarrollador full-stack en Caracas, con siete años de experiencia. Trabajo en una plataforma SaaS hotelera y, por mi cuenta, construyo software para comercios: catálogos, pedidos, inventario y precios en dólares y bolívares.</p>
+        <div class="actions">
+          <a data-i18n="btnProjects" class="btn solid" href="#proyectos">Ver proyectos</a>
+          <a data-i18n="btnContact" class="btn ghost" href="#contacto">Escríbeme</a>
+        </div>
       </div>
-      <div class="row">
-        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
-        <dd>
-          <p data-l="es">Construyo y mantengo los módulos de gestión de usuarios, tareas, objetos perdidos, dashboards y comunicaciones internas.</p>
-          <p data-l="en">I build and maintain the user management, tasks, lost &amp; found, dashboards and internal communications modules.</p>
-        </dd>
+
+      <div class="receipt-holder" aria-label="Resumen de lo que hago, en forma de ticket">
+        <div class="receipt-slot" aria-hidden="true"></div>
+        <div class="receipt">
+          <h2>OLIVER DOS ANJOS</h2>
+          <p data-i18n="rSub" class="sub">Caracas, trabajo remoto</p>
+          <hr>
+          <ul>
+            <li><span data-i18n="r1">Tienda online + panel</span><span class="dots"></span><span>✓</span></li>
+            <li><span data-i18n="r2">Precios USD y Bs (BCV)</span><span class="dots"></span><span>✓</span></li>
+            <li><span data-i18n="r3">Pedidos por WhatsApp</span><span class="dots"></span><span>✓</span></li>
+            <li><span data-i18n="r4">Inventario y caja</span><span class="dots"></span><span>✓</span></li>
+            <li><span data-i18n="r5">Landing responsive</span><span class="dots"></span><span>✓</span></li>
+            <li><span data-i18n="r6">APIs y bases de datos</span><span class="dots"></span><span>✓</span></li>
+          </ul>
+          <hr>
+          <div class="total"><span>TOTAL</span><b data-i18n="rTotal">Tu negocio vendiendo en línea</b></div>
+          <p data-i18n="rThanks" class="thanks">Gracias por su visita</p>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
       </div>
-      <div class="row">
-        <dt data-l="es">Decisión</dt><dt data-l="en">Decision</dt>
-        <dd>
-          <p data-l="es">Formé parte del equipo que migró la aplicación de Angular 12 a Angular 21 con el producto en producción. Se hizo por partes y no de una vez, apoyados en pruebas unitarias, para no detener las entregas durante la migración.</p>
-          <p data-l="en">I was part of the team that migrated the app from Angular 12 to Angular 21 while it stayed in production. We moved it in stages rather than all at once, leaning on unit tests, so releases never had to stop.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">Resultado</dt><dt data-l="en">Result</dt>
-        <dd>
-          <p data-l="es">La plataforma sigue en uso diario en hoteles, sobre una base actualizada y con las entregas al día.</p>
-          <p data-l="en">The platform is still in daily use in hotels, on an up-to-date codebase, with releases on schedule.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="chips">
-      <span class="chip">Angular 21</span><span class="chip">TypeScript</span><span class="chip">SASS</span><span class="chip">Bootstrap</span><span class="chip">RxJS</span><span class="chip">i18n</span>
     </div>
   </section>
 
-  <section class="case">
-    <p class="eyebrow">GuestHub Staff · React <span class="when">· Norelian</span></p>
-    <h3>
-      <span data-l="es">La misma operación, desde el bolsillo</span>
-      <span data-l="en">The same operation, from a pocket</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
-        <dd>
-          <p data-l="es">La aplicación móvil del personal del hotel, publicada en Google Play y App Store. El camarero de piso o el técnico de mantenimiento recibe y cierra sus tareas ahí, sin volver a un escritorio.</p>
-          <p data-l="en">The mobile app for hotel staff, published on Google Play and the App Store. Housekeepers and maintenance techs receive and close their tasks there, without walking back to a desk.</p>
-        </dd>
+  <!-- PROYECTOS -->
+  <section class="block" id="proyectos">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="projTitle" class="title">Proyectos para clientes reales</h2>
+        <p data-i18n="projIntro">Cada proyecto incluye un fragmento del código para que veas cómo trabajo. Las claves y datos privados de los clientes nunca salen en el repositorio.</p>
       </div>
-      <div class="row">
-        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
-        <dd>
-          <p data-l="es">Desarrollo en React, sobre las mismas APIs que la aplicación web.</p>
-          <p data-l="en">React development, on the same APIs as the web application.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="links">
-      <a class="btn" href="https://play.google.com/store/apps/details?id=io.guesthub.staff" target="_blank" rel="noopener">Google Play ↗</a>
-      <a class="btn" href="https://apps.apple.com/es/app/guesthub-staff-app/id1592553817" target="_blank" rel="noopener">App Store ↗</a>
-    </div>
-    <div class="chips">
-      <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">REST</span>
-    </div>
-  </section>
 
-  <section class="case">
-    <p class="eyebrow">guesthub.io · Svelte <span class="when">· Norelian</span></p>
-    <h3>
-      <span data-l="es">El sitio público del producto</span>
-      <span data-l="en">The product's public site</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
-        <dd>
-          <p data-l="es">El sitio web de la empresa: páginas de producto para cada módulo, planes y precios, landings de campaña, formulario de contacto con reCAPTCHA y encuestas. En español e inglés.</p>
-          <p data-l="en">The company website: a product page per module, plans and pricing, campaign landings, a contact form with reCAPTCHA, and surveys. In Spanish and English.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
-        <dd>
-          <p data-l="es">Lo construyo y lo mantengo en Svelte, incluida la capa de traducciones.</p>
-          <p data-l="en">I build and maintain it in Svelte, including the translation layer.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="links">
-      <a class="btn" href="https://www.guesthub.io/" target="_blank" rel="noopener">guesthub.io ↗</a>
-    </div>
-    <div class="chips">
-      <span class="chip">Svelte</span><span class="chip">Rollup</span><span class="chip">svelte-i18n</span><span class="chip">SASS</span>
-    </div>
-  </section>
-
-  <section class="case">
-    <p class="eyebrow">
-      <span data-l="es">Estilos y componentes</span><span data-l="en">Styling &amp; components</span>
-      <span class="when">· Norelian</span>
-    </p>
-    <h3>
-      <span data-l="es">Que 24 módulos se vean como un solo producto</span>
-      <span data-l="en">Making 24 modules look like one product</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">El problema</dt><dt data-l="en">The problem</dt>
-        <dd>
-          <p data-l="es">En un monorepo de este tamaño, con varios equipos entregando a la vez, el riesgo real no es que algo falle: es que cada módulo termine viéndose distinto y la plataforma deje de sentirse como un producto.</p>
-          <p data-l="en">In a monorepo this size, with several teams shipping at once, the real risk isn't that something breaks — it's that each module ends up looking different and the platform stops feeling like one product.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
-        <dd>
-          <p data-l="es">Es mi especialidad dentro del equipo. Trabajo con SASS y Bootstrap, y construyo componentes de interfaz personalizados — inputs, selectores, tablas y diálogos — que se reutilizan en toda la plataforma, cuidando el diseño adaptable: buena parte del personal opera desde el móvil, de pie.</p>
-          <p data-l="en">This is my specialty on the team. I work with SASS and Bootstrap, and build custom UI components — inputs, selectors, tables and dialogs — reused across the whole platform, with responsive design in mind: much of the staff works from a phone, on their feet.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="chips">
-      <span class="chip">SASS</span><span class="chip">Bootstrap</span><span class="chip">CSS3</span><span class="chip">HTML5</span><span class="chip" data-l="es">diseño adaptable</span><span class="chip" data-l="en">responsive design</span>
-    </div>
-  </section>
-
-  <section class="case">
-    <p class="eyebrow">
-      <span data-l="es">Backend y despliegues</span><span data-l="en">Backend &amp; deployments</span>
-      <span class="when">· Norelian</span>
-    </p>
-    <h3>
-      <span data-l="es">Lo que sostiene un producto con usuarios reales</span>
-      <span data-l="en">What holds up a product with real users</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
-        <dd>
-          <p data-l="es">APIs REST de varios módulos en Node.js con Hapi y TypeScript, y en .NET (C#), sobre MongoDB y Firebase. Gestión de usuarios y autenticación con Auth0, arquitectura por casos de uso y pruebas unitarias.</p>
-          <p data-l="en">REST APIs for several modules in Node.js with Hapi and TypeScript, and in .NET (C#), over MongoDB and Firebase. User management and authentication with Auth0, use-case architecture and unit tests.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">También</dt><dt data-l="en">Also</dt>
-        <dd>
-          <p data-l="es">Mantengo las traducciones de la plataforma en español e inglés, y ejecuto los despliegues con los pipelines de Azure DevOps, trabajando con Docker y PM2 cuando hace falta.</p>
-          <p data-l="en">I maintain the platform's Spanish and English translations, and run the deployments through Azure DevOps pipelines, working with Docker and PM2 when needed.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="chips">
-      <span class="chip">Node.js</span><span class="chip">Hapi</span><span class="chip">TypeScript</span><span class="chip">.NET (C#)</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">Auth0</span><span class="chip">Azure DevOps</span><span class="chip">Docker</span>
-    </div>
-  </section>
-
-  <section class="case">
-    <p class="eyebrow">Vibia · React</p>
-    <h3>
-      <span data-l="es">Una herramienta para diseñar con luz</span>
-      <span data-l="en">A tool for designing with light</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Qué hice</dt><dt data-l="en">What I did</dt>
-        <dd>
-          <p data-l="es">Desarrollo en React de una herramienta de diseño de interiores para Vibia, fabricante español de iluminación de autor. Es de acceso restringido, así que no hay un enlace público que mostrar; sí lo está la marca para la que se construyó: <a href="https://vibia.com/es/int" target="_blank" rel="noopener">vibia.com</a>.</p>
-          <p data-l="en">React development on an interior design tool for Vibia, a Spanish designer lighting manufacturer. Access is restricted, so there's no public link to show; the brand it was built for is public: <a href="https://vibia.com/es/int" target="_blank" rel="noopener">vibia.com</a>.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="chips">
-      <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">CSS3</span>
-    </div>
-  </section>
-
-  <section class="case">
-    <p class="eyebrow">World Cloud <span class="when">· 2019 — 2022</span></p>
-    <h3>
-      <span data-l="es">Frontend para clientes corporativos</span>
-      <span data-l="en">Frontend for corporate clients</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Qué hice</dt><dt data-l="en">What I did</dt>
-        <dd>
-          <p data-l="es">Desarrollo frontend en Angular y JavaScript para clientes en Colombia — Sistemas Mission y Escala Capital — diseñando e implementando las interfaces de sistemas de negocio ya en operación, y entregando dentro de los plazos comprometidos con el cliente.</p>
-          <p data-l="en">Frontend development in Angular and JavaScript for clients in Colombia — Sistemas Mission and Escala Capital — designing and implementing the interfaces of business systems already in operation, and delivering within the deadlines committed to the client.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="chips">
-      <span class="chip">Angular</span><span class="chip">JavaScript</span><span class="chip">CSS3</span>
-    </div>
-  </section>
-
-  <h2>
-    <span data-l="es">Proyecto propio</span>
-    <span data-l="en">Own project</span>
-  </h2>
-
-  <section class="case">
-    <p class="eyebrow">LicorApp · PWA</p>
-    <h3>
-      <span data-l="es">Un punto de venta para licorerías, hecho de cero</span>
-      <span data-l="en">A point of sale for liquor stores, built from scratch</span>
-    </h3>
-    <dl>
-      <div class="row">
-        <dt data-l="es">Qué es</dt><dt data-l="en">What it is</dt>
-        <dd>
-          <p data-l="es">Un sistema de gestión y punto de venta para licorerías y bares: pedidos por mesa o por cliente, inventario con escaneo de códigos de barras y alertas de stock mínimo, catálogo con imágenes, base de clientes, cierre de caja diario y reportes de ventas. Multi-sucursal, con roles por empleado.</p>
-          <p data-l="en">A management and point-of-sale system for liquor stores and bars: orders by table or by customer, inventory with barcode scanning and low-stock alerts, a product catalog with images, a customer database, daily cash reconciliation and sales reports. Multi-branch, with per-employee roles.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">El detalle</dt><dt data-l="en">The detail</dt>
-        <dd>
-          <p data-l="es">Está pensado para Venezuela. Cobra en efectivo, Zelle, pago móvil y transferencia, y convierte los precios consultando la tasa del día desde una API pública, con histórico. Sin eso, un punto de venta aquí no sirve para nada.</p>
-          <p data-l="en">It's built for Venezuela. It takes cash, Zelle, mobile payment and bank transfer, and converts prices against the day's official exchange rate pulled from a public API, with history. Without that, a point of sale is useless here.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">Cómo está hecho</dt><dt data-l="en">How it's built</dt>
-        <dd>
-          <p data-l="es">JavaScript sin framework, sobre Supabase para datos y autenticación. Funciona como PWA: se instala en el teléfono y aguanta una conexión intermitente, que es la norma en un local. Cada pedido genera un código QR para que el cliente consulte su consumo.</p>
-          <p data-l="en">Vanilla JavaScript on top of Supabase for data and auth. It runs as a PWA: installable on a phone and resilient to the patchy connections you get in a shop. Each order generates a QR code so the customer can check their own tab.</p>
-        </dd>
-      </div>
-      <div class="row">
-        <dt data-l="es">Mi rol</dt><dt data-l="en">My role</dt>
-        <dd>
-          <p data-l="es">Todo: producto, diseño, código y despliegue.</p>
-          <p data-l="en">All of it: product, design, code and deployment.</p>
-        </dd>
-      </div>
-    </dl>
-    <div class="links">
-      <a class="btn" href="https://licorapp.netlify.app/" target="_blank" rel="noopener">licorapp.netlify.app ↗</a>
-    </div>
-    <div class="chips">
-      <span class="chip">JavaScript</span><span class="chip">PWA</span><span class="chip">Service Worker</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">CSS3</span>
-    </div>
-  </section>
-
-  <h2>
-    <span data-l="es">Herramientas</span>
-    <span data-l="en">Toolkit</span>
-  </h2>
-  <dl class="stack">
-    <div class="row">
-      <dt>Frontend</dt>
-      <dd><p>Angular · React · Svelte · TypeScript · JavaScript · HTML5</p></dd>
-    </div>
-    <div class="row">
-      <dt data-l="es">Estilos</dt><dt data-l="en">Styling</dt>
-      <dd>
-        <p data-l="es">SASS · Bootstrap · CSS3 · diseño web adaptable · componentes personalizados</p>
-        <p data-l="en">SASS · Bootstrap · CSS3 · responsive design · custom components</p>
-      </dd>
-    </div>
-    <div class="row">
-      <dt>Backend</dt>
-      <dd>
-        <p data-l="es">Node.js (Hapi) · .NET (C#) · APIs REST · Auth0 · pruebas unitarias</p>
-        <p data-l="en">Node.js (Hapi) · .NET (C#) · REST APIs · Auth0 · unit testing</p>
-      </dd>
-    </div>
-    <div class="row">
-      <dt data-l="es">Datos</dt><dt data-l="en">Data</dt>
-      <dd><p>MongoDB · Firebase · Supabase (PostgreSQL)</p></dd>
-    </div>
-    <div class="row">
-      <dt>DevOps</dt>
-      <dd>
-        <p data-l="es">Azure DevOps (pipelines y despliegues) · Docker · PM2 · Git</p>
-        <p data-l="en">Azure DevOps (pipelines and deployments) · Docker · PM2 · Git</p>
-      </dd>
-    </div>
-    <div class="row">
-      <dt data-l="es">Idiomas</dt><dt data-l="en">Languages</dt>
-      <dd>
-        <p data-l="es">Español (nativo) · Inglés (lectura técnica de documentación)</p>
-        <p data-l="en">Spanish (native) · English (technical reading)</p>
-      </dd>
-    </div>
-  </dl>
-
-  <div class="note">
-    <p data-l="es">El código de estos productos pertenece a las empresas para las que trabajo, así que no se publica aquí. Lo que enlazo arriba es lo que ya es público: las aplicaciones en las tiendas y el sitio del producto.</p>
-    <p data-l="en">The source code of these products belongs to the companies I work for, so it isn't published here. What I link above is what's already public: the apps in the stores and the product website.</p>
-  </div>
-
-  <h2>
-    <span data-l="es">Contacto</span>
-    <span data-l="en">Contact</span>
-  </h2>
-  <div class="contact">
-    <span class="mail" id="mail">holiber17@gmail.com</span>
-    <button class="copy" id="copy" type="button">
-      <span data-l="es">Copiar</span>
-      <span data-l="en">Copy</span>
-    </button>
-    <a class="btn" href="https://www.linkedin.com/in/oliverdosanjos-dev/" target="_blank" rel="noopener">LinkedIn ↗</a>
-  </div>
-
-</div>
-
-<script>
-  (function () {
-    var root = document.documentElement;
-    var btnEs = document.getElementById('btn-es');
-    var btnEn = document.getElementById('btn-en');
-
-    function setLang(lang) {
-      root.setAttribute('data-lang', lang);
-      root.setAttribute('lang', lang);
-      btnEs.setAttribute('aria-pressed', String(lang === 'es'));
-      btnEn.setAttribute('aria-pressed', String(lang === 'en'));
-      try { localStorage.setItem('ph-lang', lang); } catch (e) {}
+      <article class="project">
+        <div>
+          <h3 data-i18n="p1Title">Tienda virtual de maquillaje</h3>
+          <p data-i18n="p1Client" class="client">Paula's Store, Caracas</p>
+          <p data-i18n="p1Desc" class="desc">Tienda online para un negocio que vendía solo por Instagram y WhatsApp. El cliente arma su carrito, paga con el método que prefiera y el pedido llega a WhatsApp con el código y el total en dólares y bolívares.</p>
+          <ul class="features">
+            <li data-i18n="p1f1">Tasa del BCV automática con fuente de respaldo</li>
+            <li data-i18n="p1f2">Panel de administración protegido con Auth0 y rol de administrador</li>
+            <li data-i18n="p1f3">Métodos de pago editables: Pago Móvil, Zelle, Binance Pay, transferencia y efectivo</li>
+            <li data-i18n="p1f4">Carga de comprobantes y fotos de productos en Supabase Storage</li>
+          </ul>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>C# / .NET</li><li>Entity Framework</li><li>PostgreSQL (Supabase)</li><li>Auth0</li><li>Render</li><li>Brevo</li>
+          </ul>
+        </div>
+        <figure class="code">
+          <figcaption><span>TasaCambioService.cs</span><span>C#</span></figcaption>
+<pre><code><span class="c">// Si la fuente principal falla, prueba la siguiente;
+// si todas fallan, usa la última tasa guardada.</span>
+<span class="k">public async</span> Task&lt;<span class="k">decimal</span>&gt; ObtenerTasaUsdAsync(CancellationToken ct)
+{
+    <span class="k">foreach</span> (<span class="k">var</span> fuente <span class="k">in</span> _fuentes)
+    {
+        <span class="k">try</span>
+        {
+            <span class="k">var</span> tasa = <span class="k">await</span> fuente.LeerTasaAsync(ct);
+            <span class="k">if</span> (tasa &gt; 0) <span class="k">return</span> tasa;
+        }
+        <span class="k">catch</span> (HttpRequestException ex)
+        {
+            _log.LogWarning(ex, <span class="s">"Sin respuesta de {Fuente}"</span>, fuente.Nombre);
+        }
     }
+    <span class="k">return await</span> _repo.UltimaTasaGuardadaAsync(ct);
+}</code></pre>
+        </figure>
+      </article>
 
-    setLang(root.getAttribute('data-lang') === 'en' ? 'en' : 'es');
+      <article class="project">
+        <div>
+          <h3 data-i18n="p2Title">Sistema de caja e inventario</h3>
+          <p data-i18n="p2Client" class="client">Licorería</p>
+          <p data-i18n="p2Desc" class="desc">App para tablet que funciona como caja registradora: toma pedidos, cobra en tres monedas y descuenta el stock al vender. Avisa antes de que se acabe un producto.</p>
+          <ul class="features">
+            <li data-i18n="p2f1">Stock por botella y por caja</li>
+            <li data-i18n="p2f2">Alta de productos escaneando el código de barras con la cámara</li>
+            <li data-i18n="p2f3">Alertas de stock bajo y agotado</li>
+            <li data-i18n="p2f4">Historial de movimientos y reportes de ventas</li>
+          </ul>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>JavaScript</li><li>HTML / CSS</li><li>Supabase</li>
+          </ul>
+        </div>
+        <figure class="code">
+          <figcaption><span>inventario.js</span><span>JavaScript</span></figcaption>
+<pre><code><span class="c">// Estado de un producto según las reglas del dueño:
+// agotado, queda 1 unidad o menos del 20 %.</span>
+<span class="k">export function</span> nivelDeStock({ unidades, capacidad }) {
+  <span class="k">if</span> (unidades === 0) <span class="k">return</span> <span class="s">'agotado'</span>;
+  <span class="k">if</span> (unidades &lt;= 1 || unidades &lt; capacidad * 0.2) <span class="k">return</span> <span class="s">'bajo'</span>;
+  <span class="k">return</span> <span class="s">'ok'</span>;
+}
 
-    btnEs.addEventListener('click', function () { setLang('es'); });
-    btnEn.addEventListener('click', function () { setLang('en'); });
+<span class="c">// Una caja de 12 descuenta 12 unidades del inventario.</span>
+<span class="k">export function</span> unidadesVendidas(item) {
+  <span class="k">return</span> item.tipo === <span class="s">'caja'</span>
+    ? item.cantidad * item.producto.unidadesPorCaja
+    : item.cantidad;
+}</code></pre>
+        </figure>
+      </article>
 
-    var copy = document.getElementById('copy');
-    var mail = document.getElementById('mail');
-    copy.addEventListener('click', function () {
-      var done = function () {
-        var es = copy.querySelector('[data-l="es"]');
-        var en = copy.querySelector('[data-l="en"]');
-        es.textContent = 'Copiado';
-        en.textContent = 'Copied';
-        setTimeout(function () { es.textContent = 'Copiar'; en.textContent = 'Copy'; }, 1800);
-      };
-      var fallback = function () {
-        var r = document.createRange();
-        r.selectNodeContents(mail);
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(r);
-      };
-      try {
-        navigator.clipboard.writeText(mail.textContent.trim()).then(done, fallback);
-      } catch (e) { fallback(); }
-    });
-  })();
+      <article class="project">
+        <div>
+          <h3 data-i18n="p3Title">Landing page de servicios tecnológicos</h3>
+          <p class="client">ACSECURECCS</p>
+          <p data-i18n="p3Desc" class="desc">Página para una empresa que solo tenía flyers en Instagram. Pasé sus servicios a una web rápida, que se ve bien en el teléfono y está publicada en Netlify desde GitHub.</p>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>HTML</li><li>CSS</li><li>Netlify</li><li>GitHub</li>
+          </ul>
+          <a data-i18n="p3Link" class="link" href="https://acsecureccs.netlify.app" target="_blank" rel="noopener">Ver la página</a>
+        </div>
+        <figure class="code">
+          <figcaption><span>styles.css</span><span>CSS</span></figcaption>
+<pre><code><span class="c">/* Las tarjetas de servicios se acomodan solas:
+   una columna en el teléfono, hasta cuatro en escritorio. */</span>
+.servicios {
+  <span class="k">display</span>: grid;
+  <span class="k">grid-template-columns</span>:
+    repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  <span class="k">gap</span>: clamp(1rem, 3vw, 2rem);
+}
+
+.titulo-hero {
+  <span class="k">font-size</span>: clamp(2rem, 6vw, 3.5rem);
+  <span class="k">text-wrap</span>: balance;
+}</code></pre>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div>
+          <span data-i18n="wip" class="wip">En desarrollo</span>
+          <h3 data-i18n="p4Title">Bot de WhatsApp con IA</h3>
+          <p data-i18n="p4Client" class="client">Proyecto propio</p>
+          <p data-i18n="p4Desc" class="desc">Asistente que responde preguntas frecuentes, muestra el catálogo y toma pedidos por WhatsApp, para que el negocio atienda a sus clientes a cualquier hora.</p>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>Node.js</li><li>WhatsApp Cloud API</li><li>IA</li>
+          </ul>
+        </div>
+        <figure class="code">
+          <figcaption><span>pedido.js</span><span>JavaScript</span></figcaption>
+<pre><code><span class="c">// Mensaje de pedido que el cliente envía por WhatsApp.</span>
+<span class="k">export function</span> mensajePedido(pedido, tasa) {
+  <span class="k">const</span> lineas = pedido.items.map(
+    i =&gt; <span class="s">`• ${i.cantidad} x ${i.nombre}`</span>
+  );
+  <span class="k">const</span> totalBs = (pedido.totalUsd * tasa).toFixed(2);
+  <span class="k">return</span> [
+    <span class="s">`Pedido ${pedido.codigo}`</span>,
+    ...lineas,
+    <span class="s">`Total: $${pedido.totalUsd} (Bs ${totalBs})`</span>,
+  ].join(<span class="s">'\n'</span>);
+}</code></pre>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="block" id="experiencia">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="expTitle" class="title">Experiencia</h2>
+        <p data-i18n="expIntro">Trabajo dentro de un producto grande con equipo, pull requests y pruebas, y eso mismo lo llevo a los proyectos de mis clientes.</p>
+      </div>
+
+      <div class="job">
+        <div class="when" data-i18n="job1When">2022 hasta hoy</div>
+        <div>
+          <h3 data-i18n="job1Title">Desarrollador full-stack</h3>
+          <p class="where">Norelian</p>
+          <ul>
+            <li data-i18n="j1">Desarrollo en GuestHub, una plataforma SaaS para hoteles: tareas, huéspedes, reservaciones, configuración y traducciones.</li>
+            <li data-i18n="j2">Parte del equipo que migró la aplicación web de Angular 12 a Angular 21.</li>
+            <li data-i18n="j3">Módulo de reservaciones en Svelte y app móvil para el personal del hotel en React.</li>
+            <li data-i18n="j4">APIs de módulos, gestión de usuarios y autenticación con Auth0, con pruebas unitarias que escribo yo.</li>
+            <li data-i18n="j5">Herramienta de diseño de interiores en React para Vibia, fabricante español de iluminación, como proyecto a medida de Norelian.</li>
+            <li data-i18n="j6">Paso de diseños de Figma a código con apoyo de herramientas de IA.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div data-i18n="job2When" class="when">Antes</div>
+        <div>
+          <h3 data-i18n="job2Title">Desarrollador .NET</h3>
+          <p data-i18n="job2Where" class="where">Sistemas empresariales</p>
+          <ul>
+            <li data-i18n="j7">Aplicaciones en C# y VB.NET sobre Microsoft SQL Server.</li>
+            <li data-i18n="j8">Procedimientos almacenados, consultas y reportes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="block" id="stack">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="stackTitle" class="title">Con qué trabajo</h2>
+      </div>
+      <div class="tools">
+        <div><h3 data-i18n="t1">Interfaces</h3><p data-i18n="t1d">Angular, TypeScript, Svelte, React, HTML y CSS. La maquetación y los estilos son mi punto más fuerte.</p></div>
+        <div><h3>Backend</h3><p data-i18n="t2d">C# / .NET, Entity Framework, VB.NET, Node.js y APIs REST.</p></div>
+        <div><h3 data-i18n="t3">Datos</h3><p data-i18n="t3d">SQL Server con procedimientos almacenados, PostgreSQL, Supabase y MongoDB.</p></div>
+        <div><h3 data-i18n="t4">Entrega</h3><p data-i18n="t4d">Git, GitHub, Azure DevOps, Docker, Render, Netlify, Auth0 y pruebas unitarias.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="block" id="servicios">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="servTitle" class="title">Qué puedo hacer por tu negocio</h2>
+      </div>
+      <div class="services">
+        <ul class="offer">
+          <li data-i18n="s1"><b>Tienda online</b><span>Catálogo, carrito, métodos de pago locales y pedidos por WhatsApp.</span></li>
+          <li data-i18n="s2"><b>Landing page</b><span>Una página clara y rápida para presentar tus servicios y recibir contactos.</span></li>
+          <li data-i18n="s3"><b>Sistemas a medida</b><span>Inventario, caja, reportes o paneles para el día a día del negocio.</span></li>
+          <li data-i18n="s4"><b>Diseño a código</b><span>Paso tu diseño de Figma a una web responsive, fiel al detalle.</span></li>
+        </ul>
+        <ol class="steps">
+          <li><div data-i18n="st1"><b>Conversamos</b><span>Me cuentas qué vendes y cómo trabajas hoy.</span></div></li>
+          <li><div data-i18n="st2"><b>Propuesta</b><span>Te envío alcance, tiempos y precio por escrito.</span></div></li>
+          <li><div data-i18n="st3"><b>Avances</b><span>Ves el proyecto funcionando desde las primeras semanas.</span></div></li>
+          <li><div data-i18n="st4"><b>Entrega</b><span>Lo publico, te enseño a usarlo y quedo disponible para ajustes.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="block contact" id="contacto">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="contactTitle" class="title">¿Tienes un proyecto en mente?</h2>
+        <p data-i18n="contactIntro">Cuéntame qué necesitas y te respondo con una propuesta.</p>
+      </div>
+      <div class="contact-links">
+        <a class="main" href="mailto:holiber17@gmail.com">holiber17@gmail.com</a>
+        <!-- Agrega aquí LinkedIn, Workana y Fiverr cuando tengas los enlaces -->
+        <a href="https://github.com/holiber17" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Oliver Dos Anjos</span>
+    <a data-i18n="backTop" href="#inicio">Volver arriba</a>
+  </div>
+</footer>
+<script>
+(function(){
+  var EN={
+    skip:"Skip to content",brandSub:"full-stack developer",
+    navProjects:"Projects",navExp:"Experience",navServices:"Services",navContact:"Contact",
+    status:"Available for freelance projects",
+    h1:"I build online stores, systems and websites your business can use from day one.",
+    lead:"I'm a full-stack developer based in Caracas with seven years of experience. I work on a SaaS platform for hotels and, on my own, I build software for small businesses: catalogs, orders, inventory and pricing in multiple currencies.",
+    btnProjects:"See projects",btnContact:"Contact me",
+    rSub:"Caracas, remote work",
+    r1:"Online store + admin",r2:"Multi-currency prices",r3:"WhatsApp orders",r4:"Inventory and POS",r5:"Responsive landing",r6:"APIs and databases",
+    rTotal:"Your business selling online",rThanks:"Thank you for your visit",
+    projTitle:"Projects for real clients",
+    projIntro:"Each project includes a piece of its code so you can see how I work. Client keys and private data never go into the repository.",
+    p1Title:"Online makeup store",p1Client:"Paula's Store, Caracas",
+    p1Desc:"An online store for a business that used to sell only through Instagram and WhatsApp. Customers fill their cart, pay with the method they prefer, and the order arrives on WhatsApp with its code and the total in US dollars and bolívares.",
+    p1f1:"Automatic Central Bank exchange rate with a backup source",
+    p1f2:"Admin panel secured with Auth0 and an admin role",
+    p1f3:"Editable payment methods: Pago Móvil, Zelle, Binance Pay, bank transfer and cash",
+    p1f4:"Payment receipts and product photos stored in Supabase Storage",
+    p2Title:"Point of sale and inventory system",p2Client:"Liquor store",
+    p2Desc:"A tablet app that works as a cash register: it takes orders, charges in three currencies and updates stock on every sale. It warns the owner before a product runs out.",
+    p2f1:"Stock by bottle and by case",p2f2:"Add products by scanning the barcode with the camera",p2f3:"Low-stock and out-of-stock alerts",p2f4:"Movement history and sales reports",
+    p3Title:"Landing page for a tech services company",
+    p3Desc:"A website for a company that only had flyers on Instagram. I turned their services into a fast page that looks good on phones, deployed on Netlify from GitHub.",
+    p3Link:"See the page",
+    wip:"In progress",p4Title:"AI WhatsApp bot",p4Client:"Personal project",
+    p4Desc:"An assistant that answers common questions, shows the catalog and takes orders on WhatsApp, so a business can serve customers at any hour.",
+    expTitle:"Experience",
+    expIntro:"I work inside a large product with a team, pull requests and tests, and I bring that same discipline to my clients' projects.",
+    job1When:"2022 to present",job1Title:"Full-stack developer",
+    j1:"Development on GuestHub, a SaaS platform for hotels: tasks, guests, reservations, settings and translations.",
+    j2:"Part of the team that migrated the web app from Angular 12 to Angular 21.",
+    j3:"Reservations module in Svelte and a mobile app for hotel staff in React.",
+    j4:"Module APIs, user management and Auth0 authentication, covered by unit tests I write myself.",
+    j5:"Interior design tool in React for Vibia, a Spanish lighting manufacturer, as a custom project at Norelian.",
+    j6:"Turning Figma designs into code with the help of AI tools.",
+    job2When:"Earlier",job2Title:".NET developer",job2Where:"Business systems",
+    j7:"Applications in C# and VB.NET on Microsoft SQL Server.",j8:"Stored procedures, queries and reports.",
+    stackTitle:"What I work with",
+    t1:"Front end",t1d:"Angular, TypeScript, Svelte, React, HTML and CSS. Layout and styling are my strongest skills.",
+    t2d:"C# / .NET, Entity Framework, VB.NET, Node.js and REST APIs.",
+    t3:"Data",t3d:"SQL Server with stored procedures, PostgreSQL, Supabase and MongoDB.",
+    t4:"Delivery",t4d:"Git, GitHub, Azure DevOps, Docker, Render, Netlify, Auth0 and unit testing.",
+    servTitle:"What I can do for your business",
+    s1:"<b>Online store</b><span>Catalog, cart, local payment methods and WhatsApp orders.</span>",
+    s2:"<b>Landing page</b><span>A clear, fast page to present your services and get leads.</span>",
+    s3:"<b>Custom systems</b><span>Inventory, point of sale, reports or dashboards for daily operations.</span>",
+    s4:"<b>Design to code</b><span>I turn your Figma design into a responsive website, true to every detail.</span>",
+    st1:"<b>We talk</b><span>You tell me what you sell and how you work today.</span>",
+    st2:"<b>Proposal</b><span>I send you scope, timeline and price in writing.</span>",
+    st3:"<b>Progress</b><span>You see the project working within the first weeks.</span>",
+    st4:"<b>Delivery</b><span>I publish it, show you how to use it and stay available for adjustments.</span>",
+    contactTitle:"Have a project in mind?",contactIntro:"Tell me what you need and I'll reply with a proposal.",
+    backTop:"Back to top"
+  };
+  var META={
+    es:{title:"Oliver Dos Anjos — Desarrollador web full-stack",desc:"Portafolio de Oliver Dos Anjos, desarrollador full-stack en Caracas, Venezuela. Tiendas online, sistemas para negocios, landing pages y APIs con Angular, .NET, Node y SQL.",receipt:"Resumen de lo que hago, en forma de ticket"},
+    en:{title:"Oliver Dos Anjos — Full-stack web developer",desc:"Portfolio of Oliver Dos Anjos, a full-stack developer in Caracas, Venezuela. Online stores, business systems, landing pages and APIs with Angular, .NET, Node and SQL.",receipt:"Summary of what I do, shown as a receipt"}
+  };
+  var nodes=document.querySelectorAll('[data-i18n]'), ES={};
+  nodes.forEach(function(n){ES[n.dataset.i18n]=n.innerHTML;});
+  function apply(lang){
+    var dict=lang==='en'?EN:ES;
+    nodes.forEach(function(n){var v=dict[n.dataset.i18n]; if(v!=null) n.innerHTML=v;});
+    document.documentElement.lang=lang;
+    document.title=META[lang].title;
+    var d=document.querySelector('meta[name="description"]'); if(d) d.content=META[lang].desc;
+    var r=document.querySelector('.receipt-holder'); if(r) r.setAttribute('aria-label',META[lang].receipt);
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.setLang===lang));});
+    try{localStorage.setItem('lang',lang);}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('lang');}catch(e){}
+  var param=new URLSearchParams(location.search).get('lang');
+  var start=param||saved||((navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en');
+  if(start==='en') apply('en');
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.setLang);});});
+})();
 </script>
-
 </body>
 </html>
