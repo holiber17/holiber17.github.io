@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oliver Dos Anjos — Desarrollador web full-stack</title>
+<meta name="description" content="Portafolio de Oliver Dos Anjos, desarrollador full-stack en Caracas, Venezuela. Tiendas online, sistemas para negocios, landing pages y APIs con Angular, .NET, Node y SQL.">
+<meta name="theme-color" content="#16202E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://holiber17.github.io/">
+<meta property="og:title" content="Oliver Dos Anjos — Desarrollador web full-stack">
+<meta property="og:description" content="Tiendas, sistemas y páginas web que tu negocio puede usar desde el primer día.">
+<meta property="og:image" content="https://holiber17.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#16202E; --noche-2:#1D2A3B; --noche-3:#26364B; --linea:#33465F; --editor:#121C29; --consola:#0E1621;
+  --papel:#F2EDE1; --papel-sombra:#D6CDB8; --tinta:#1B2330; --tinta-suave:#5A6475;
+  --sello:#D2384B; --ok:#5DBB8A; --warn:#E3A646;
+  --texto:#E8ECF2; --texto-suave:#9AA8BA;
+  --k:#F29BAE; --s:#A6DBA9; --c:#6F8199; --t:#F2C879; --n:#F2C879; --f:#8EC9FF; --id:#D6DEE9; --p:#9AA8BA;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --sans:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--noche)}
+body{margin:0;background:var(--noche);color:var(--texto);font-family:var(--sans);font-size:1.0625rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--t);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+
+/* ---------- Encabezado ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.25rem 0}
+.top nav{margin-left:auto}
+.idioma button{padding:.3rem .6rem;font-family:var(--mono);font-size:.78rem}
+.salto{position:absolute;left:-9999px;top:1rem;z-index:10;background:var(--papel);color:var(--tinta);padding:.6rem 1rem;border-radius:8px;font-weight:700}
+.salto:focus{left:1rem}
+.marca{font-weight:800;font-stretch:115%;text-decoration:none;font-size:1.1rem;line-height:1.2}
+.marca small{display:block;font-family:var(--mono);font-weight:400;font-size:.75rem;color:var(--texto-suave)}
+.top ul{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0;font-size:.95rem}
+.top ul a{text-decoration:none;color:var(--texto-suave)}
+.top ul a:hover{color:var(--texto)}
+@media (max-width:760px){.top ul{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2rem,5vw,4.5rem);align-items:end;padding:clamp(2rem,6vw,4.5rem) 0 clamp(3.5rem,8vw,6.5rem)}
+.disp{font-size:.9rem;color:var(--ok);display:inline-flex;gap:.55rem;align-items:center;font-weight:600}
+.disp::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ok);animation:latido 2.4s infinite}
+h1{font-size:clamp(2.3rem,5.4vw,4.3rem);line-height:1.02;font-weight:800;font-stretch:120%;letter-spacing:-.018em;margin:1rem 0 1.4rem;text-wrap:balance}
+.lead{color:var(--texto-suave);max-width:34em;font-size:1.12rem;margin:0}
+.acciones{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.25rem}
+
+/* Botones tipo tecla de caja registradora */
+.tecla{font-family:var(--sans);font-weight:700;font-stretch:110%;font-size:1rem;padding:.85rem 1.45rem;border-radius:10px;border:0;cursor:pointer;text-decoration:none;display:inline-block;
+  background:var(--papel);color:var(--tinta);
+  box-shadow:0 5px 0 var(--papel-sombra),0 7px 16px rgba(0,0,0,.35);
+  transition:transform .07s ease-out,box-shadow .07s ease-out}
+.tecla:active{transform:translateY(4px);box-shadow:0 1px 0 var(--papel-sombra),0 2px 6px rgba(0,0,0,.35)}
+.tecla.sec{background:var(--noche-3);color:var(--texto);box-shadow:0 5px 0 #0F1722,0 7px 16px rgba(0,0,0,.35)}
+.tecla.sec:active{box-shadow:0 1px 0 #0F1722,0 2px 6px rgba(0,0,0,.35)}
+.tecla.roja{background:var(--sello);color:#fff;box-shadow:0 4px 0 #8C1F30,0 6px 12px rgba(0,0,0,.35)}
+.tecla.roja:active{box-shadow:0 1px 0 #8C1F30,0 2px 6px rgba(0,0,0,.35)}
+.tecla.peq{font-size:.85rem;padding:.5rem .95rem;border-radius:8px}
+.tecla:disabled{opacity:.45;cursor:default;transform:none}
+
+/* ---------- Impresora y ticket ---------- */
+.impresora{width:min(100%,340px);margin-inline:auto;justify-self:center}
+.salida{position:relative;overflow:hidden;margin:0 22px}
+.papel{position:relative;margin-top:9px;background:var(--papel);color:var(--tinta);font-family:var(--mono);font-size:.8rem;line-height:1.55;padding:18px 20px 22px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.04);transition:transform .17s cubic-bezier(.2,.8,.3,1)}
+.papel::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px;
+  background:conic-gradient(from 135deg at top,var(--papel) 90deg,transparent 0) 0 0/16px 8px}
+.papel .ln{min-height:1.55em}
+.centro{text-align:center}
+.fuerte{font-weight:600;font-size:.95rem;letter-spacing:.04em}
+.fila{display:flex;justify-content:space-between;gap:1rem}
+.sep{border-top:1px dashed #9C9483;margin:.55rem 0;min-height:0!important}
+.item{display:flex;align-items:baseline;gap:.4rem}
+.item .pts{flex:1;border-bottom:1px dotted #9C9483;transform:translateY(-3px)}
+.chk{display:inline-block;font-style:normal;font-weight:600;color:var(--sello);opacity:0}
+.ln.impreso .chk{animation:tic .35s .05s cubic-bezier(.3,1.6,.5,1) both}
+.total{display:grid;gap:.15rem;padding:.2rem 0}
+.total span{font-size:.75rem;color:var(--tinta-suave)}
+.total strong{font-family:var(--sans);font-stretch:112%;font-size:1.25rem;line-height:1.15;font-weight:800}
+.barras{height:46px;margin:.7rem 0 .3rem;
+  background:repeating-linear-gradient(90deg,var(--tinta) 0 2px,transparent 2px 3px,var(--tinta) 3px 4px,transparent 4px 7px,var(--tinta) 7px 10px,transparent 10px 11px,var(--tinta) 11px 12px,transparent 12px 15px,var(--tinta) 15px 16px,transparent 16px 19px)}
+.mini{font-size:.7rem;color:var(--tinta-suave)}
+
+.cabezal{position:relative;height:64px;border-radius:8px 8px 16px 16px;background:linear-gradient(#2E3F57,#1E2B3D);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 14px 30px rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:space-between;padding:0 18px 14px}
+.cabezal::before{content:"";position:absolute;left:14px;right:14px;top:6px;height:7px;border-radius:4px;background:#0A111B;box-shadow:inset 0 2px 3px rgba(0,0,0,.9)}
+.led{width:8px;height:8px;border-radius:50%;background:#3A4A60}
+.imprimiendo .led{background:var(--ok);animation:parpadeo .28s steps(1) infinite}
+.imprimiendo .cabezal{animation:vibrar .09s linear infinite}
+.modelo{font-family:var(--mono);font-size:.7rem;color:var(--texto-suave)}
+.reimprimir{display:block;margin:1.4rem auto 0}
+
+/* ---------- Secciones ---------- */
+h2{font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.05;font-weight:800;font-stretch:118%;letter-spacing:-.012em;margin:0 0 .9rem;text-wrap:balance}
+.intro{color:var(--texto-suave);max-width:40em;margin:0}
+#proyectos{padding:clamp(3rem,7vw,5rem) 0 clamp(4rem,8vw,6rem);border-top:1px solid var(--linea)}
+
+.proyecto{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.5rem;margin-top:clamp(2.5rem,5vw,4rem);align-items:start}
+@media (max-width:900px){.hero,.proyecto{grid-template-columns:1fr}.impresora{order:-1}}
+
+/* Hoja de papel del proyecto */
+.hoja{position:relative;background:var(--papel);color:var(--tinta);padding:clamp(1.4rem,3vw,2rem);margin-bottom:8px;border-radius:3px 3px 0 0}
+.hoja::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:8px;
+  background:conic-gradient(from -45deg at bottom,var(--papel) 90deg,transparent 0) 0 0/16px 8px}
+.hoja.golpe{animation:golpe .22s .26s ease-out}
+.cliente{font-family:var(--mono);font-size:.8rem;color:var(--tinta-suave);margin:0}
+.hoja h3{font-size:clamp(1.45rem,2.5vw,1.9rem);line-height:1.1;font-weight:800;font-stretch:114%;margin:.35rem 0 .8rem;max-width:12em}
+.hoja p.desc{margin:0 0 1rem;font-size:1rem}
+.puntos{list-style:none;padding:0;margin:0 0 1.2rem;display:grid;gap:.4rem;font-size:.95rem}
+.puntos li{padding-left:1.3rem;position:relative}
+.puntos li::before{content:"✓";position:absolute;left:0;color:var(--sello);font-weight:700}
+.puntos li.enlazado{cursor:help;border-radius:4px;transition:background .2s}
+.puntos li.enlazado:hover,.puntos li.enlazado:focus-visible{background:rgba(27,35,48,.07)}
+.ver{display:block;font-family:var(--mono);font-size:.72rem;color:var(--tinta-suave);text-decoration:underline dotted;text-underline-offset:3px}
+.tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.tags li{font-family:var(--mono);font-size:.72rem;border:1px solid #B4AC9A;border-radius:4px;padding:.12rem .45rem;color:var(--tinta-suave)}
+
+/* Sello de tinta */
+.sello{position:absolute;top:1.1rem;right:1rem;font-weight:800;font-stretch:125%;font-size:1.05rem;letter-spacing:.06em;color:var(--sello);
+  border:3px solid var(--sello);border-radius:7px;padding:.15rem .6rem;transform:rotate(-11deg);opacity:0;mix-blend-mode:multiply;pointer-events:none;
+  -webkit-mask-image:radial-gradient(circle at 30% 40%,#000 55%,rgba(0,0,0,.75) 75%,#000 100%);mask-image:radial-gradient(circle at 30% 40%,#000 55%,rgba(0,0,0,.75) 75%,#000 100%)}
+.sello.cae{animation:sellar .42s cubic-bezier(.3,1.5,.5,1) both}
+
+/* ---------- Editor de código ---------- */
+.editor{background:var(--editor);border:1px solid var(--linea);border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.barra-editor{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem .9rem;border-bottom:1px solid var(--linea);font-family:var(--mono);font-size:.78rem;color:var(--texto-suave)}
+.archivo{display:flex;align-items:center;gap:.5rem;color:var(--texto)}
+.archivo .estado{width:8px;height:8px;border-radius:50%;background:#3A4A60;transition:background .3s}
+.editor.escribiendo .estado{background:var(--t)}
+.editor.corriendo .estado{background:var(--ok);animation:parpadeo .5s steps(1) infinite}
+.der{display:flex;align-items:center;gap:.7rem}
+.lang{border:1px solid var(--linea);border-radius:4px;padding:.05rem .4rem}
+.saltar{background:none;border:0;color:var(--texto-suave);text-decoration:underline;cursor:pointer;font-size:.75rem;font-family:var(--mono);padding:0}
+
+.code{position:relative;display:grid;grid-template-columns:auto 1fr;font-family:var(--mono);font-size:.8rem;line-height:1.7;padding:.9rem 0;overflow-x:auto;
+  min-height:calc(var(--n,10) * 1.7em + 1.8rem)}
+@media (max-width:520px){.code{font-size:.72rem}}
+.gutter{padding:0 .9rem 0 1rem;color:#4A5B72;text-align:right;user-select:none;position:relative;z-index:1}
+.gutter div{min-height:1.7em}
+.lines{padding-right:1.2rem;position:relative;z-index:1}
+.l{min-height:1.7em;white-space:pre;transition:opacity .25s,background .25s}
+.k{color:var(--k)}.s{color:var(--s)}.c{color:var(--c);font-style:italic}.t{color:var(--t)}.n{color:var(--n)}.f{color:var(--f)}.id{color:var(--id)}.p{color:var(--p)}
+.caret{display:inline-block;width:.55em;height:1.2em;vertical-align:-.22em;background:var(--t);margin-left:1px}
+.code.enfoque .l:not(.resalta){opacity:.25}
+.l.resalta{background:rgba(242,200,121,.07)}
+.l.salta{opacity:.32}
+.ann{color:var(--t);opacity:.85;font-style:italic;margin-left:1.6em;display:inline-block}
+.ann:empty{display:none}
+.ann.flash{animation:flash .35s ease-out}
+.barra-activa{position:absolute;left:0;right:0;top:0;height:1.7em;z-index:0;pointer-events:none;opacity:0;
+  background:rgba(142,201,255,.09);box-shadow:inset 3px 0 0 var(--f);
+  transform:translateY(var(--y,0));transition:transform .32s cubic-bezier(.3,.8,.3,1),background .25s,box-shadow .25s,opacity .25s}
+.barra-activa.visible{opacity:1}
+.barra-activa.err{background:rgba(210,56,75,.18);box-shadow:inset 3px 0 0 var(--sello)}
+.barra-activa.ok{background:rgba(93,187,138,.15);box-shadow:inset 3px 0 0 var(--ok)}
+.barra-activa.warn{background:rgba(227,166,70,.15);box-shadow:inset 3px 0 0 var(--warn)}
+
+/* Panel de depuración / pruebas */
+.depurador{border-top:1px solid var(--linea);padding:.9rem;display:grid;gap:.8rem;font-size:.85rem}
+.fila-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem .8rem}
+.etq{color:var(--texto-suave);font-size:.82rem}
+.segmento{display:inline-flex;border:1px solid var(--linea);border-radius:8px;overflow:hidden}
+.segmento button{background:none;border:0;padding:.38rem .7rem;font-size:.8rem;cursor:pointer;color:var(--texto-suave)}
+.segmento button+button{border-left:1px solid var(--linea)}
+.segmento button[aria-pressed="true"]{background:var(--noche-3);color:var(--texto)}
+.segmento button:disabled{cursor:default}
+.ejecutar{margin-left:auto}
+.vars{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;font-family:var(--mono);font-size:.78rem}
+.vars div{display:flex;border:1px solid var(--linea);border-radius:6px;overflow:hidden}
+.vars dt{padding:.2rem .5rem;color:var(--texto-suave);background:var(--noche-2)}
+.vars dd{margin:0;padding:.2rem .6rem;color:var(--t);min-width:4ch}
+.vars dd.flash{animation:flash .45s ease-out}
+.consola{background:var(--consola);border-radius:8px;padding:.6rem .75rem;font-family:var(--mono);font-size:.76rem;line-height:1.6;min-height:7.4em;max-height:9em;overflow:auto}
+.cl{white-space:pre-wrap}
+.cl.dim{color:var(--c)}.cl.ok{color:var(--ok)}.cl.warn{color:var(--warn)}.cl.err{color:var(--sello)}
+
+input[type=range]{accent-color:var(--t);flex:1;min-width:140px}
+output{font-family:var(--mono);color:var(--t);min-width:2ch}
+.detalle{font-family:var(--mono);font-size:.76rem;color:var(--texto-suave);margin:0}
+.estante-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--consola);border-radius:8px;padding:.75rem}
+.estante{display:flex;flex-wrap:wrap;gap:4px;align-items:flex-end}
+.bot{width:9px;height:24px;border-radius:3px 3px 2px 2px;background:#2A3A50;position:relative;transition:background .25s,transform .25s}
+.bot::before{content:"";position:absolute;left:3px;top:-5px;width:3px;height:6px;border-radius:1px;background:inherit}
+.bot.lleno{transform:translateY(0)}
+.est-ok .bot.lleno{background:var(--ok)}
+.est-bajo .bot.lleno{background:var(--warn)}
+.sello-mini{flex-shrink:0;font-weight:800;font-stretch:122%;font-size:.8rem;letter-spacing:.05em;border:2px solid currentColor;border-radius:5px;padding:.1rem .45rem;transform:rotate(-8deg)}
+.sello-mini.ok{color:var(--ok)}.sello-mini.bajo{color:var(--warn)}.sello-mini.agotado{color:var(--sello)}
+.sello-mini.cae{animation:sellarMini .35s cubic-bezier(.3,1.5,.5,1) both}
+
+/* ---------- Secciones generales ---------- */
+.seccion{padding:clamp(3rem,7vw,5rem) 0 clamp(4rem,8vw,6rem);border-top:1px solid var(--linea)}
+
+/* ---------- Experiencia ---------- */
+.exp-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,4.5rem);margin-top:clamp(2rem,5vw,3.5rem);align-items:start}
+.lt{position:relative;padding-left:2.5rem}
+.lt-riel{position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--linea);border-radius:2px;overflow:hidden}
+.lt-avance{position:absolute;inset:0;background:var(--t);transform-origin:top;transform:scaleY(var(--p,0))}
+.hitos{list-style:none;margin:0;padding:0;display:grid;gap:3rem}
+.hito{position:relative}
+.hito-punto{position:absolute;left:calc(-2.5rem + 3px);top:.25rem;width:14px;height:14px;border-radius:50%;background:var(--noche);border:2px solid var(--linea);transition:background .3s,border-color .3s,transform .3s}
+.hito.activo .hito-punto{background:var(--t);border-color:var(--t);transform:scale(1.2)}
+.periodo{font-family:var(--mono);font-size:.8rem;color:var(--texto-suave);margin:0}
+.hito h3{font-size:clamp(1.35rem,2.3vw,1.7rem);font-weight:800;font-stretch:114%;margin:.3rem 0 .1rem;line-height:1.15}
+.empresa{margin:0 0 .9rem;color:var(--t);font-weight:600}
+.hito ul{margin:0;padding-left:1.1rem;color:var(--texto-suave);display:grid;gap:.5rem;max-width:40em}
+.hito li::marker{color:#4A5B72}
+
+.stack{position:sticky;top:1.5rem;background:var(--papel);color:var(--tinta);padding:1.5rem 1.5rem 1.7rem;margin-bottom:8px;border-radius:3px 3px 0 0}
+.stack::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:8px;
+  background:conic-gradient(from -45deg at bottom,var(--papel) 90deg,transparent 0) 0 0/16px 8px}
+.stack h3{margin:0 0 1rem;font-size:1.35rem;font-weight:800;font-stretch:114%}
+.st-grupo{font-size:.95rem}
+.st-grupo+.st-grupo{border-top:1px dashed #9C9483;margin-top:.8rem;padding-top:.8rem}
+.st-tit{font-family:var(--mono);font-size:.78rem;color:var(--tinta-suave);margin:0 0 .15rem}
+.st-grupo p{margin:0}
+.st-nota{margin:1.1rem 0 0;font-weight:700;color:var(--sello);font-size:.95rem}
+
+/* ---------- Servicios ---------- */
+.carta{list-style:none;margin:clamp(2rem,5vw,3rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.25rem 4rem}
+.carta-fila{display:flex;align-items:baseline;gap:.6rem}
+.carta-fila strong{font-size:1.35rem;font-weight:800;font-stretch:114%;white-space:nowrap}
+.carta .pts{flex:1;min-width:1rem;border-bottom:1px dotted #4A5B72;transform:translateY(-5px)}
+.carta-ej{font-family:var(--mono);font-size:.78rem;color:var(--t);text-decoration:none;white-space:nowrap}
+.carta-ej:hover{text-decoration:underline}
+.carta p{margin:.45rem 0 0;color:var(--texto-suave);max-width:34em}
+
+.rastreo{margin-top:clamp(3rem,6vw,4.5rem);background:var(--noche-2);border:1px solid var(--linea);border-radius:14px;padding:clamp(1.25rem,3vw,2rem)}
+.rastreo-cab{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.rastreo-cab h3{margin:0;font-size:1.35rem;font-weight:800;font-stretch:114%}
+.rastreo-cab span{font-family:var(--mono);font-size:.8rem;color:var(--texto-suave)}
+.pasos-wrap{position:relative}
+.pasos-riel{position:absolute;background:var(--linea);border-radius:2px;overflow:hidden}
+.pasos-avance{position:absolute;inset:0;background:var(--ok)}
+.pasos-riel[data-dir="h"] .pasos-avance{transform-origin:left;transform:scaleX(var(--p,0))}
+.pasos-riel[data-dir="v"] .pasos-avance{transform-origin:top;transform:scaleY(var(--p,0))}
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;text-align:center}
+.paso-marca{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin:0 auto .85rem;background:var(--editor);border:2px solid var(--linea);position:relative;z-index:1;font-family:var(--mono);font-size:.85rem;color:var(--texto-suave);transition:background .3s,border-color .3s,color .3s}
+.paso-marca .chk2{display:none}
+.paso.hecho .paso-marca{background:var(--ok);border-color:var(--ok);color:var(--noche);font-weight:700}
+.paso.hecho .paso-marca .num{display:none}
+.paso.hecho .paso-marca .chk2{display:block;animation:tic .35s cubic-bezier(.3,1.6,.5,1) both}
+.paso strong{display:block;font-size:1.1rem;font-stretch:110%}
+.paso p{margin:.3rem auto 0;color:var(--texto-suave);font-size:.93rem;max-width:16em}
+@media (max-width:700px){
+  .carta{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr;text-align:left;gap:1.6rem}
+  .paso{display:grid;grid-template-columns:34px 1fr;column-gap:1rem}
+  .paso-marca{margin:0;grid-row:span 2}
+  .paso p{margin:.2rem 0 0;max-width:none}
+}
+
+/* ---------- Contacto ---------- */
+.contacto-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.vias{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.chat{background:var(--editor);border:1px solid var(--linea);border-radius:18px;overflow:hidden;max-width:440px;width:100%;justify-self:center;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.chat-cab{display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--noche-2);border-bottom:1px solid var(--linea)}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--papel);color:var(--tinta);display:grid;place-items:center;font-weight:800;font-stretch:118%;font-size:.85rem}
+.chat-cab strong{display:block;font-size:.95rem;line-height:1.2}
+.chat-cab small{color:var(--ok);font-size:.78rem}
+.mensajes{padding:1rem;display:flex;flex-direction:column;gap:.5rem;height:360px;overflow-y:auto}
+.msg{max-width:86%;padding:.55rem .8rem .4rem;border-radius:12px;font-size:.95rem;line-height:1.45;animation:entra .25s ease-out both}
+.msg.in{align-self:flex-start;background:var(--noche-3);border-top-left-radius:4px}
+.msg.out{align-self:flex-end;background:#24513F;border-top-right-radius:4px}
+.hora{display:block;text-align:right;font-family:var(--mono);font-size:.66rem;color:var(--texto-suave);margin-top:.15rem}
+.msg.out .hora::after{content:" ✓✓";color:var(--f)}
+.msg .correo{margin:.6rem 0 .3rem}
+.escribe{align-self:flex-start;background:var(--noche-3);border-radius:12px;border-top-left-radius:4px;padding:.75rem .85rem;display:flex;gap:4px}
+.escribe span{width:7px;height:7px;border-radius:50%;background:var(--texto-suave);animation:punto 1s infinite}
+.escribe span:nth-child(2){animation-delay:.15s}
+.escribe span:nth-child(3){animation-delay:.3s}
+.opciones{display:flex;flex-wrap:wrap;gap:.5rem;padding:0 1rem 1rem;justify-content:flex-end;min-height:3.2rem}
+.opciones button{background:none;border:1px solid var(--ok);color:var(--ok);border-radius:999px;padding:.4rem .85rem;font-size:.85rem;cursor:pointer;transition:background .15s;animation:entra .25s ease-out both}
+.opciones button:hover{background:rgba(93,187,138,.12)}
+@media (max-width:900px){.exp-grid,.contacto-grid{grid-template-columns:1fr}.stack{position:relative;top:0}}
+
+.pie{border-top:1px solid var(--linea);padding:2rem 0 3rem;color:var(--texto-suave);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+/* ---------- Animaciones ---------- */
+@keyframes latido{0%{box-shadow:0 0 0 0 rgba(93,187,138,.55)}70%{box-shadow:0 0 0 10px rgba(93,187,138,0)}100%{box-shadow:0 0 0 0 rgba(93,187,138,0)}}
+@keyframes parpadeo{50%{opacity:.25}}
+@keyframes vibrar{50%{transform:translateX(.7px)}}
+@keyframes tic{from{opacity:0;transform:scale(2.4) rotate(-25deg)}to{opacity:1;transform:none}}
+@keyframes sellar{0%{opacity:0;transform:rotate(-11deg) scale(2.6)}60%{opacity:.95;transform:rotate(-11deg) scale(.93)}100%{opacity:.9;transform:rotate(-11deg) scale(1)}}
+@keyframes sellarMini{0%{opacity:0;transform:rotate(-8deg) scale(2)}100%{opacity:1;transform:rotate(-8deg) scale(1)}}
+@keyframes golpe{40%{transform:translateY(3px)}}
+@keyframes punto{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+@keyframes entra{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes flash{0%{background:rgba(242,200,121,.35)}100%{background:transparent}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<a class="salto" href="#inicio" data-en="Skip to content">Saltar al contenido</a>
+
+<header class="wrap top">
+  <a class="marca" href="#inicio">Oliver Dos Anjos<small data-en="full-stack developer">desarrollador full-stack</small></a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#proyectos" data-en="Projects">Proyectos</a></li>
+    <li><a href="#experiencia" data-en="Experience">Experiencia</a></li>
+    <li><a href="#servicios" data-en="Services">Servicios</a></li>
+    <li><a href="#contacto" data-en="Contact">Contacto</a></li>
+  </ul></nav>
+  <div class="idioma segmento" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="wrap hero">
+    <div>
+      <span class="disp" data-en="Available for freelance projects">Disponible para proyectos freelance</span>
+      <h1 data-en="I build online stores, systems and websites your business can use from day one.">Hago tiendas, sistemas y páginas web que tu negocio usa desde el primer día.</h1>
+      <p class="lead" data-en="I'm a full-stack developer in Caracas with seven years of experience. I work on a hotel SaaS platform and, on my own, I build software for retailers: catalogs, orders, inventory and prices in dollars and bolívares.">Soy desarrollador full-stack en Caracas, con siete años de experiencia. Trabajo en una plataforma SaaS hotelera y, por mi cuenta, construyo software para comercios: catálogos, pedidos, inventario y precios en dólares y bolívares.</p>
+      <div class="acciones">
+        <a class="tecla" href="#proyectos" data-en="See projects">Ver proyectos</a>
+        <a class="tecla sec" href="#contacto" data-en="Write to me">Escríbeme</a>
+      </div>
+    </div>
+
+    <div class="impresora" id="impresora">
+      <div class="salida" id="salida">
+        <div class="papel" id="papel">
+          <div class="ln centro fuerte">OLIVER DOS ANJOS</div>
+          <div class="ln centro" data-en="FULL-STACK DEVELOPER">DESARROLLADOR FULL-STACK</div>
+          <div class="ln centro" data-en="CARACAS / REMOTE WORK">CARACAS / TRABAJO REMOTO</div>
+          <div class="ln sep"></div>
+          <div class="ln fila"><span data-en="DATE">FECHA</span><span id="fecha">—</span></div>
+          <div class="ln fila"><span data-en="EXPERIENCE">EXPERIENCIA</span><span data-en="7 YEARS">7 AÑOS</span></div>
+          <div class="ln sep"></div>
+          <div class="ln item"><span data-en="Online store + admin">Tienda online + panel</span><span class="pts"></span><i class="chk">✓</i></div>
+          <div class="ln item"><span data-en="USD and Bs prices (BCV)">Precios USD y Bs (BCV)</span><span class="pts"></span><i class="chk">✓</i></div>
+          <div class="ln item"><span data-en="WhatsApp orders">Pedidos por WhatsApp</span><span class="pts"></span><i class="chk">✓</i></div>
+          <div class="ln item"><span data-en="Inventory and POS">Inventario y caja</span><span class="pts"></span><i class="chk">✓</i></div>
+          <div class="ln item"><span data-en="Responsive landing page">Landing responsive</span><span class="pts"></span><i class="chk">✓</i></div>
+          <div class="ln item"><span data-en="APIs and databases">APIs y bases de datos</span><span class="pts"></span><i class="chk">✓</i></div>
+          <div class="ln sep"></div>
+          <div class="ln total"><span>TOTAL</span><strong data-en="Your business selling online">Tu negocio vendiendo en línea</strong></div>
+          <div class="ln barras" aria-hidden="true"></div>
+          <div class="ln centro" data-en="THANK YOU FOR YOUR VISIT">GRACIAS POR SU VISITA</div>
+          <div class="ln centro mini">holiber17.github.io</div>
+        </div>
+      </div>
+      <div class="cabezal" aria-hidden="true"><span class="led"></span><span class="modelo">ODA-07</span></div>
+      <button class="tecla sec peq reimprimir" id="reimprimir" type="button" data-en="Print again">Imprimir de nuevo</button>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <h2 data-en="Projects for real clients">Proyectos para clientes reales</h2>
+      <p class="intro" data-en="Each project includes a code snippet so you can see how I work. Try it: you can run it and change its data. Client keys and private data never go into the repository.">Cada proyecto incluye un fragmento del código para que veas cómo trabajo. Pruébalo: puedes ejecutarlo y cambiar sus datos. Las claves y datos privados de los clientes nunca salen en el repositorio.</p>
+
+      <!-- Proyecto 1: Paula's Store -->
+      <article class="proyecto">
+        <div class="hoja">
+          <span class="sello" aria-hidden="true" data-en="DELIVERED">ENTREGADO</span>
+          <p class="cliente">Paula's Store, Caracas</p>
+          <h3 data-en="Online makeup store">Tienda virtual de maquillaje</h3>
+          <p class="desc" data-en="An online store for a business that only sold through Instagram and WhatsApp. Customers build their cart, pay with their preferred method, and the order arrives on WhatsApp with its code and the total in dollars and bolívares.">Tienda online para un negocio que vendía solo por Instagram y WhatsApp. El cliente arma su carrito, paga con el método que prefiera y el pedido llega a WhatsApp con el código y el total en dólares y bolívares.</p>
+          <ul class="puntos">
+            <li class="enlazado" tabindex="0" data-editor="paula" data-lines="4-16"><span data-en="Automatic BCV exchange rate with a fallback source">Tasa del BCV automática con fuente de respaldo</span><span class="ver" data-en="show in the code">señalar en el código</span></li>
+            <li data-en="Admin panel protected with Auth0 and an admin role">Panel de administración protegido con Auth0 y rol de administrador</li>
+            <li data-en="Editable payment methods: Pago Móvil, Zelle, Binance Pay, bank transfer and cash">Métodos de pago editables: Pago Móvil, Zelle, Binance Pay, transferencia y efectivo</li>
+            <li data-en="Payment receipts and product photos uploaded to Supabase Storage">Carga de comprobantes y fotos de productos en Supabase Storage</li>
+          </ul>
+          <ul class="tags"><li>C# / .NET</li><li>Entity Framework</li><li>PostgreSQL (Supabase)</li><li>Auth0</li><li>Render</li><li>Brevo</li></ul>
+        </div>
+
+        <div class="editor" id="ed-paula">
+          <div class="barra-editor">
+            <span class="archivo"><span class="estado"></span>TasaCambioService.cs</span>
+            <span class="der"><button class="saltar" type="button" hidden data-en="Skip animation">Saltar animación</button><span class="lang">C#</span></span>
+          </div>
+          <div class="code"><div class="gutter" aria-hidden="true"></div><div class="lines"></div><div class="barra-activa"></div></div>
+          <div class="depurador">
+            <div class="fila-ctl">
+              <span class="etq" data-en="Simulate">Simular</span>
+              <div class="segmento" role="group" aria-label="Escenario">
+                <button type="button" data-esc="ok" aria-pressed="false" data-en="All respond">Todo responde</button>
+                <button type="button" data-esc="bcv" aria-pressed="true" data-en="BCV fails">Falla el BCV</button>
+                <button type="button" data-esc="todas" aria-pressed="false" data-en="All fail">Fallan todas</button>
+              </div>
+              <button type="button" class="tecla roja peq ejecutar" disabled data-en="▶ Run">▶ Ejecutar</button>
+            </div>
+            <dl class="vars">
+              <div><dt>fuente</dt><dd data-var="fuente">—</dd></div>
+              <div><dt>tasa</dt><dd data-var="tasa">—</dd></div>
+            </dl>
+            <div class="consola" aria-live="polite"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: Licorería -->
+      <article class="proyecto">
+        <div class="hoja">
+          <span class="sello" aria-hidden="true" data-en="DELIVERED">ENTREGADO</span>
+          <p class="cliente" data-en="Liquor store">Licorería</p>
+          <h3 data-en="Point of sale and inventory system">Sistema de caja e inventario</h3>
+          <p class="desc" data-en="A tablet app that works as a cash register: it takes orders, charges in three currencies and deducts stock on each sale. It warns you before a product runs out.">App para tablet que funciona como caja registradora: toma pedidos, cobra en tres monedas y descuenta el stock al vender. Avisa antes de que se acabe un producto.</p>
+          <ul class="puntos">
+            <li data-en="Stock by bottle and by case">Stock por botella y por caja</li>
+            <li data-en="Add products by scanning the barcode with the camera">Alta de productos escaneando el código de barras con la cámara</li>
+            <li class="enlazado" tabindex="0" data-editor="licor" data-lines="3-4"><span data-en="Low-stock and out-of-stock alerts">Alertas de stock bajo y agotado</span><span class="ver" data-en="show in the code">señalar en el código</span></li>
+            <li data-en="Movement history and sales reports">Historial de movimientos y reportes de ventas</li>
+          </ul>
+          <ul class="tags"><li>JavaScript</li><li>HTML / CSS</li><li>Supabase</li></ul>
+        </div>
+
+        <div class="editor" id="ed-licor">
+          <div class="barra-editor">
+            <span class="archivo"><span class="estado"></span>inventario.js</span>
+            <span class="der"><button class="saltar" type="button" hidden data-en="Skip animation">Saltar animación</button><span class="lang">JavaScript</span></span>
+          </div>
+          <div class="code"><div class="gutter" aria-hidden="true"></div><div class="lines"></div><div class="barra-activa"></div></div>
+          <div class="depurador">
+            <div class="fila-ctl">
+              <label class="etq" for="unidades" data-en="Bottles on the shelf">Botellas en el estante</label>
+              <input type="range" id="unidades" min="0" max="24" value="7" disabled>
+              <output id="unidades-out" for="unidades">7</output>
+            </div>
+            <div class="fila-ctl">
+              <span class="etq" data-en="Shelf capacity">Capacidad del estante</span>
+              <div class="segmento" role="group" aria-label="Capacidad">
+                <button type="button" data-cap="12" aria-pressed="false" disabled>12</button>
+                <button type="button" data-cap="24" aria-pressed="true" disabled>24</button>
+              </div>
+            </div>
+            <div class="estante-wrap">
+              <div class="estante" aria-hidden="true"></div>
+              <span class="sello-mini" aria-live="polite"></span>
+            </div>
+            <p class="detalle"></p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= Experiencia ================= -->
+  <section id="experiencia" class="seccion">
+    <div class="wrap">
+      <h2 data-en="Experience">Experiencia</h2>
+      <p class="intro" data-en="I work inside a large product with a team, pull requests and tests, and I bring that same discipline to my clients' projects.">Trabajo dentro de un producto grande con equipo, pull requests y pruebas, y eso mismo lo llevo a los proyectos de mis clientes.</p>
+
+      <div class="exp-grid">
+        <div class="lt" id="lt">
+          <div class="lt-riel" aria-hidden="true"><div class="lt-avance"></div></div>
+          <ol class="hitos">
+            <li class="hito">
+              <span class="hito-punto" aria-hidden="true"></span>
+              <p class="periodo" data-en="2022 to present">2022 hasta hoy</p>
+              <h3 data-en="Full-stack developer">Desarrollador full-stack</h3>
+              <p class="empresa">Norelian</p>
+              <ul>
+                <li data-en="I develop GuestHub, a SaaS platform for hotels: tasks, guests, reservations, settings and translations.">Desarrollo en GuestHub, una plataforma SaaS para hoteles: tareas, huéspedes, reservaciones, configuración y traducciones.</li>
+                <li data-en="Part of the team that migrated the web app from Angular 12 to Angular 21.">Parte del equipo que migró la aplicación web de Angular 12 a Angular 21.</li>
+                <li data-en="Reservations module in Svelte and a mobile app for hotel staff in React.">Módulo de reservaciones en Svelte y app móvil para el personal del hotel en React.</li>
+                <li data-en="Module APIs, user management and Auth0 authentication, with unit tests I write myself.">APIs de módulos, gestión de usuarios y autenticación con Auth0, con pruebas unitarias que escribo yo.</li>
+                <li data-en="Interior design tool in React for Vibia, a Spanish lighting manufacturer, built as a custom Norelian project.">Herramienta de diseño de interiores en React para Vibia, fabricante español de iluminación, como proyecto a medida de Norelian.</li>
+                <li data-en="Turning Figma designs into code with the help of AI tools.">Paso de diseños de Figma a código con apoyo de herramientas de IA.</li>
+              </ul>
+            </li>
+            <li class="hito">
+              <span class="hito-punto" aria-hidden="true"></span>
+              <p class="periodo" data-en="Before">Antes</p>
+              <h3 data-en=".NET developer">Desarrollador .NET</h3>
+              <p class="empresa" data-en="Enterprise systems">Sistemas empresariales</p>
+              <ul>
+                <li data-en="C# and VB.NET applications on Microsoft SQL Server.">Aplicaciones en C# y VB.NET sobre Microsoft SQL Server.</li>
+                <li data-en="Stored procedures, queries and reports.">Procedimientos almacenados, consultas y reportes.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="stack" aria-labelledby="stack-titulo">
+          <h3 id="stack-titulo" data-en="What I work with">Con qué trabajo</h3>
+          <div class="st-grupo"><p class="st-tit">Interfaces</p><p data-en="Angular, TypeScript, Svelte, React, HTML and CSS.">Angular, TypeScript, Svelte, React, HTML y CSS.</p></div>
+          <div class="st-grupo"><p class="st-tit">Backend</p><p data-en="C# / .NET, Entity Framework, VB.NET, Node.js and REST APIs.">C# / .NET, Entity Framework, VB.NET, Node.js y APIs REST.</p></div>
+          <div class="st-grupo"><p class="st-tit" data-en="Data">Datos</p><p data-en="SQL Server with stored procedures, PostgreSQL, Supabase and MongoDB.">SQL Server con procedimientos almacenados, PostgreSQL, Supabase y MongoDB.</p></div>
+          <div class="st-grupo"><p class="st-tit" data-en="Delivery">Entrega</p><p data-en="Git, GitHub, Azure DevOps, Docker, Render, Netlify, Auth0 and unit tests.">Git, GitHub, Azure DevOps, Docker, Render, Netlify, Auth0 y pruebas unitarias.</p></div>
+          <p class="st-nota" data-en="Layout and styling are my strongest skills.">La maquetación y los estilos son mi punto más fuerte.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Servicios ================= -->
+  <section id="servicios" class="seccion">
+    <div class="wrap">
+      <h2 data-en="What I can do for your business">Qué puedo hacer por tu negocio</h2>
+      <ul class="carta">
+        <li>
+          <div class="carta-fila"><strong data-en="Online store">Tienda online</strong><span class="pts"></span><a class="carta-ej" href="#proyectos" data-en="e.g. Paula's Store">ej. Paula's Store</a></div>
+          <p data-en="Catalog, cart, local payment methods and WhatsApp orders.">Catálogo, carrito, métodos de pago locales y pedidos por WhatsApp.</p>
+        </li>
+        <li>
+          <div class="carta-fila"><strong>Landing page</strong><span class="pts"></span><a class="carta-ej" href="https://acsecureccs.netlify.app" target="_blank" rel="noopener" data-en="e.g. ACSECURECCS">ej. ACSECURECCS</a></div>
+          <p data-en="A clear, fast page to present your services and receive inquiries.">Una página clara y rápida para presentar tus servicios y recibir contactos.</p>
+        </li>
+        <li>
+          <div class="carta-fila"><strong data-en="Custom systems">Sistemas a medida</strong><span class="pts"></span><a class="carta-ej" href="#proyectos" data-en="e.g. Liquor store">ej. Licorería</a></div>
+          <p data-en="Inventory, POS, reports or dashboards for day-to-day operations.">Inventario, caja, reportes o paneles para el día a día del negocio.</p>
+        </li>
+        <li>
+          <div class="carta-fila"><strong data-en="Design to code">Diseño a código</strong><span class="pts"></span><a class="carta-ej" href="#experiencia" data-en="e.g. GuestHub">ej. GuestHub</a></div>
+          <p data-en="I turn your Figma design into a responsive website, true to every detail.">Paso tu diseño de Figma a una web responsive, fiel al detalle.</p>
+        </li>
+      </ul>
+
+      <div class="rastreo">
+        <div class="rastreo-cab"><h3 data-en="How we work">Así trabajamos</h3><span data-en="Your project, step by step">Tu proyecto, paso a paso</span></div>
+        <div class="pasos-wrap" id="pasos-wrap">
+          <div class="pasos-riel" aria-hidden="true"><div class="pasos-avance"></div></div>
+          <ol class="pasos">
+            <li class="paso"><span class="paso-marca" aria-hidden="true"><span class="num">1</span><span class="chk2">✓</span></span><strong data-en="We talk">Conversamos</strong><p data-en="You tell me what you sell and how you work today.">Me cuentas qué vendes y cómo trabajas hoy.</p></li>
+            <li class="paso"><span class="paso-marca" aria-hidden="true"><span class="num">2</span><span class="chk2">✓</span></span><strong data-en="Proposal">Propuesta</strong><p data-en="I send you the scope, timeline and price in writing.">Te envío alcance, tiempos y precio por escrito.</p></li>
+            <li class="paso"><span class="paso-marca" aria-hidden="true"><span class="num">3</span><span class="chk2">✓</span></span><strong data-en="Progress">Avances</strong><p data-en="You see the project working from the first weeks.">Ves el proyecto funcionando desde las primeras semanas.</p></li>
+            <li class="paso"><span class="paso-marca" aria-hidden="true"><span class="num">4</span><span class="chk2">✓</span></span><strong data-en="Delivery">Entrega</strong><p data-en="I publish it, teach you how to use it and stay available for adjustments.">Lo publico, te enseño a usarlo y quedo disponible para ajustes.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Contacto ================= -->
+  <section id="contacto" class="seccion">
+    <div class="wrap contacto-grid">
+      <div>
+        <h2 data-en="Have a project in mind?">¿Tienes un proyecto en mente?</h2>
+        <p class="intro" data-en="Tell me what you need and I'll reply with a proposal. Pick an option in the chat or write to me directly.">Cuéntame qué necesitas y te respondo con una propuesta. Puedes elegir una opción en el chat o escribirme directamente.</p>
+        <div class="vias">
+          <a class="tecla" href="mailto:holiber17@gmail.com">holiber17@gmail.com</a>
+          <a class="tecla sec" href="https://github.com/holiber17" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <div class="chat" id="chat">
+        <div class="chat-cab">
+          <span class="avatar" aria-hidden="true">OD</span>
+          <span><strong>Oliver Dos Anjos</strong><small data-en="online">en línea</small></span>
+        </div>
+        <div class="mensajes" id="mensajes" aria-live="polite"></div>
+        <div class="opciones" id="opciones"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap pie">
+  <span>© 2026 Oliver Dos Anjos</span>
+  <a href="#inicio" data-en="Back to top">Volver arriba</a>
+</footer>
+
+<script type="text/plain" id="src-paula">// Si la fuente principal falla, prueba la siguiente;
+// si todas fallan, usa la última tasa guardada.
+public async Task<decimal> ObtenerTasaUsdAsync(CancellationToken ct)
+{
+    foreach (var fuente in _fuentes)
+    {
+        try
+        {
+            var tasa = await fuente.LeerTasaAsync(ct);
+            if (tasa > 0) return tasa;
+        }
+        catch (HttpRequestException ex)
+        {
+            _log.LogWarning(ex, "Sin respuesta de {Fuente}", fuente.Nombre);
+        }
+    }
+    return await _repo.UltimaTasaGuardadaAsync(ct);
+}</script>
+
+<script type="text/plain" id="src-licor">// Estado de un producto según las reglas del dueño:
+// agotado, queda 1 unidad o menos del 20 %.
+export function nivelDeStock({ unidades, capacidad }) {
+  if (unidades === 0) return 'agotado';
+  if (unidades <= 1 || unidades < capacidad * 0.2) return 'bajo';
+  return 'ok';
+}</script>
+
+<script>
+(() => {
+  let lang = 'es';
+  try { lang = localStorage.getItem('lang') || 'es'; } catch (e) {}
+  const en = () => lang === 'en';
+  const tx = (es, eng) => (en() ? eng : es);
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sleep = ms => new Promise(r => setTimeout(r, reduce ? 0 : ms));
+
+  /* ================= Ticket que se imprime ================= */
+  const imp = document.getElementById('impresora');
+  const salida = document.getElementById('salida');
+  const papel = document.getElementById('papel');
+  const lineasTicket = [...papel.querySelectorAll('.ln')];
+  let imprimiendo = false, ticketListo = false;
+
+  const ahora = new Date();
+  document.getElementById('fecha').textContent =
+    ahora.toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' }) + ' ' +
+    ahora.toLocaleTimeString('es-VE', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+  function altoPapel() { return papel.offsetHeight + 9; }
+
+  async function imprimir() {
+    if (imprimiendo) return;
+    imprimiendo = true; ticketListo = false;
+    const H = altoPapel();
+    salida.style.height = H + 'px';
+    lineasTicket.forEach(l => l.classList.remove('impreso'));
+    papel.style.transition = 'none';
+    papel.style.transform = `translateY(${H}px)`;
+    papel.offsetHeight; // aplica el estado inicial
+    papel.style.transition = '';
+    if (reduce) {
+      papel.style.transform = 'translateY(0)';
+      lineasTicket.forEach(l => l.classList.add('impreso'));
+      imprimiendo = false; ticketListo = true; return;
+    }
+    imp.classList.add('imprimiendo');
+    await sleep(250);
+    for (const l of lineasTicket) {
+      const visible = 9 + l.offsetTop + l.offsetHeight + 6;
+      papel.style.transform = `translateY(${Math.max(0, H - visible)}px)`;
+      await sleep(l.classList.contains('sep') ? 70 : 120 + Math.random() * 70);
+      l.classList.add('impreso');
+    }
+    papel.style.transform = 'translateY(0)';
+    await sleep(200);
+    imp.classList.remove('imprimiendo');
+    imprimiendo = false; ticketListo = true;
+  }
+  document.getElementById('reimprimir').addEventListener('click', imprimir);
+  window.addEventListener('resize', () => {
+    if (ticketListo) salida.style.height = altoPapel() + 'px';
+  });
+
+  /* ================= Resaltado de sintaxis ================= */
+  const KW = new Set(['public','async','await','return','foreach','var','in','try','catch','if','export','function','const','let','decimal','new']);
+  function tokenizar(linea) {
+    const re = /(\/\/.*$)|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")|(\b\d+(?:\.\d+)?\b)|([A-Za-z_]\w*)|(\s+)|([^\w\s])/g;
+    const out = []; let m;
+    while ((m = re.exec(linea))) {
+      let c = 'p';
+      if (m[1]) c = 'c';
+      else if (m[2]) c = 's';
+      else if (m[3]) c = 'n';
+      else if (m[4]) {
+        const w = m[4];
+        if (KW.has(w)) c = 'k';
+        else if (linea[re.lastIndex] === '(') c = 'f';
+        else if (/^[A-Z]/.test(w)) c = 't';
+        else c = 'id';
+      } else if (m[5]) c = 'w';
+      out.push({ c, t: m[0] });
+    }
+    return out;
+  }
+
+  /* ================= Editor animado ================= */
+  function crearEditor(id, srcId) {
+    const root = document.getElementById(id);
+    const code = root.querySelector('.code');
+    const src = document.getElementById(srcId).textContent;
+    const lines = src.split('\n');
+    code.style.setProperty('--n', lines.length);
+    return {
+      root, code, lines, lineEls: [],
+      gutter: code.querySelector('.gutter'),
+      linesEl: code.querySelector('.lines'),
+      barra: code.querySelector('.barra-activa'),
+      saltar: root.querySelector('.saltar'),
+      consola: root.querySelector('.consola'),
+      listo: false
+    };
+  }
+
+  async function escribir(ed) {
+    ed.root.classList.add('escribiendo');
+    const caret = document.createElement('span');
+    caret.className = 'caret';
+    let saltar = reduce;
+    ed.saltar.hidden = reduce;
+    ed.saltar.onclick = () => { saltar = true; };
+
+    for (let i = 0; i < ed.lines.length; i++) {
+      const num = document.createElement('div');
+      num.textContent = i + 1;
+      ed.gutter.appendChild(num);
+      const le = document.createElement('div');
+      le.className = 'l';
+      ed.linesEl.appendChild(le);
+      ed.lineEls.push(le);
+      le.appendChild(caret);
+
+      for (const tk of tokenizar(ed.lines[i])) {
+        const sp = document.createElement('span');
+        if (tk.c !== 'w') sp.className = tk.c;
+        le.insertBefore(sp, caret);
+        if (saltar || tk.c === 'w') { sp.textContent = tk.t; continue; }
+        const paso = tk.c === 'c' ? 5 : 2;
+        for (let j = paso; ; j += paso) {
+          if (saltar) { sp.textContent = tk.t; break; }
+          sp.textContent = tk.t.slice(0, j);
+          if (j >= tk.t.length) break;
+          await sleep(tk.c === 'c' ? 10 : 14 + Math.random() * 18);
+        }
+      }
+      if (!saltar) await sleep(70);
+    }
+    caret.remove();
+    ed.saltar.hidden = true;
+    ed.root.classList.remove('escribiendo');
+    ed.listo = true;
+  }
+
+  function moverBarra(ed, i, estado = '') {
+    const le = ed.lineEls[i];
+    if (!le) return;
+    ed.barra.style.height = le.offsetHeight + 'px';
+    ed.barra.style.setProperty('--y', le.offsetTop + 'px');
+    ed.barra.className = 'barra-activa visible ' + estado;
+  }
+
+  async function log(ed, tipo, texto) {
+    const d = document.createElement('div');
+    d.className = 'cl ' + tipo;
+    ed.consola.appendChild(d);
+    if (reduce) { d.textContent = texto; }
+    else {
+      for (let j = 2; j < texto.length; j += 2) {
+        d.textContent = texto.slice(0, j);
+        ed.consola.scrollTop = ed.consola.scrollHeight;
+        await sleep(9);
+      }
+      d.textContent = texto;
+    }
+    ed.consola.scrollTop = ed.consola.scrollHeight;
+  }
+
+  function flash(el) {
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+  }
+
+  /* Señalar líneas desde las viñetas del proyecto */
+  const editores = {};
+  document.querySelectorAll('.enlazado').forEach(li => {
+    const [a, b] = li.dataset.lines.split('-').map(Number);
+    const on = () => {
+      const ed = editores[li.dataset.editor];
+      if (!ed || !ed.listo) return;
+      ed.code.classList.add('enfoque');
+      ed.lineEls.forEach((l, i) => l.classList.toggle('resalta', i >= a && i <= b));
+    };
+    const off = () => {
+      const ed = editores[li.dataset.editor];
+      if (!ed) return;
+      ed.code.classList.remove('enfoque');
+      ed.lineEls.forEach(l => l.classList.remove('resalta'));
+    };
+    li.addEventListener('mouseenter', on);
+    li.addEventListener('focus', on);
+    li.addEventListener('mouseleave', off);
+    li.addEventListener('blur', off);
+  });
+
+  /* ================= Proyecto 1: depurador de la tasa ================= */
+  const paula = editores.paula = crearEditor('ed-paula', 'src-paula');
+  const TASA = '42.15', GUARDADA = '41.98'; // valores de ejemplo
+  const ESCENARIOS = {
+    ok:    [{ n: 'BCV', ok: true }],
+    bcv:   [{ n: 'BCV', ok: false }, { n: 'Respaldo', ok: true }],
+    todas: [{ n: 'BCV', ok: false }, { n: 'Respaldo', ok: false }]
+  };
+  let escenario = 'bcv', corriendo = false;
+  const btnEjecutar = paula.root.querySelector('.ejecutar');
+  const btnEsc = [...paula.root.querySelectorAll('[data-esc]')];
+  const setVar = (k, v) => {
+    const dd = paula.root.querySelector(`[data-var="${k}"]`);
+    if (dd.textContent !== v) { dd.textContent = v; flash(dd); }
+  };
+
+  btnEsc.forEach(b => b.addEventListener('click', () => {
+    if (corriendo) return;
+    escenario = b.dataset.esc;
+    btnEsc.forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+
+  async function ejecutar() {
+    if (corriendo || !paula.listo) return;
+    corriendo = true;
+    btnEjecutar.disabled = true;
+    btnEsc.forEach(b => b.disabled = true);
+    paula.root.classList.add('corriendo');
+    paula.consola.innerHTML = '';
+    setVar('fuente', '—'); setVar('tasa', '—');
+    const paso = async (i, estado, ms = 560) => { moverBarra(paula, i, estado); await sleep(ms); };
+
+    await log(paula, 'dim', tx('$ dotnet run  // valores de ejemplo', '$ dotnet run  // sample values'));
+    await paso(2);
+    let resuelto = false;
+    for (const f of ESCENARIOS[escenario]) {
+      const nom = f.n === 'Respaldo' ? tx('Respaldo', 'Backup') : f.n;
+      await paso(4);
+      setVar('fuente', `"${nom}"`);
+      await paso(8, '', 200);
+      await log(paula, 'dim', tx(`  consultando ${nom}…`, `  querying ${nom}…`));
+      await sleep(550);
+      if (f.ok) {
+        setVar('tasa', TASA);
+        await paso(9, 'ok', 400);
+        await log(paula, 'ok', tx(`✓ Tasa de ${nom}: Bs ${TASA} por USD`, `✓ ${nom} rate: Bs ${TASA} per USD`));
+        resuelto = true;
+        break;
+      }
+      await paso(11, 'err', 450);
+      await paso(13, 'warn', 250);
+      await log(paula, 'warn', tx(`warn: Sin respuesta de ${nom}`, `warn: No response from ${nom}`));
+      await sleep(250);
+    }
+    if (!resuelto) {
+      await paso(16, 'ok', 300);
+      setVar('tasa', GUARDADA);
+      await log(paula, 'ok', tx(`↺ Ninguna fuente respondió. Uso la última tasa guardada: Bs ${GUARDADA}`, `↺ No source responded. Using the last saved rate: Bs ${GUARDADA}`));
+    }
+    await sleep(500);
+    paula.root.classList.remove('corriendo');
+    btnEjecutar.disabled = false;
+    btnEsc.forEach(b => b.disabled = false);
+    corriendo = false;
+  }
+  btnEjecutar.addEventListener('click', ejecutar);
+
+  /* ================= Proyecto 2: evaluación en vivo del stock ================= */
+  const licor = editores.licor = crearEditor('ed-licor', 'src-licor');
+  const rango = document.getElementById('unidades');
+  const salidaU = document.getElementById('unidades-out');
+  const btnCap = [...licor.root.querySelectorAll('[data-cap]')];
+  const estante = licor.root.querySelector('.estante');
+  const selloMini = licor.root.querySelector('.sello-mini');
+  const detalle = licor.root.querySelector('.detalle');
+  let u = 7, cap = 24, estadoPrevio = null;
+  const anns = {};
+  const TEXTO = { ok: 'DISPONIBLE', bajo: 'STOCK BAJO', agotado: 'AGOTADO' };
+  const TEXTO_EN = { ok: 'IN STOCK', bajo: 'LOW STOCK', agotado: 'OUT OF STOCK' };
+
+  function dibujarEstante() {
+    estante.innerHTML = '';
+    for (let i = 0; i < cap; i++) {
+      const b = document.createElement('span');
+      b.className = 'bot';
+      estante.appendChild(b);
+    }
+  }
+
+  function setAnn(i, txt) {
+    if (!anns[i]) {
+      anns[i] = document.createElement('span');
+      anns[i].className = 'ann';
+      licor.lineEls[i].appendChild(anns[i]);
+    }
+    if (anns[i].textContent !== txt) { anns[i].textContent = txt; if (txt) flash(anns[i]); }
+  }
+
+  function evaluar() {
+    if (!licor.listo) return;
+    const lim = cap * 0.2;
+    const limTxt = Number.isInteger(lim) ? String(lim) : lim.toFixed(1);
+    let ret, estado;
+    if (u === 0) { ret = 3; estado = 'agotado'; }
+    else if (u <= 1 || u < lim) { ret = 4; estado = 'bajo'; }
+    else { ret = 5; estado = 'ok'; }
+
+    setAnn(2, `{ ${u}, ${cap} }`);
+    setAnn(3, u === 0 ? 'true' : 'false');
+    setAnn(4, ret >= 4 ? `${u <= 1} || ${u < lim}` : '');
+    setAnn(5, ret === 5 ? `'ok'` : '');
+    licor.lineEls.forEach((l, i) => l.classList.toggle('salta', i > ret && i <= 5));
+    moverBarra(licor, ret, estado === 'agotado' ? 'err' : estado === 'bajo' ? 'warn' : 'ok');
+
+    estante.className = 'estante est-' + estado;
+    [...estante.children].forEach((b, i) => {
+      b.classList.toggle('lleno', i < u);
+      b.style.transitionDelay = reduce ? '0ms' : (Math.abs(i - u) * 12) + 'ms';
+    });
+
+    detalle.textContent = estado === 'agotado'
+      ? tx('unidades === 0, así que el producto está agotado.', 'unidades === 0, so the product is out of stock.')
+      : tx(`${u} <= 1 es ${u <= 1}; ${u} < ${cap} × 0.2 (${limTxt}) es ${u < lim}. Resultado: '${estado}'.`,
+           `${u} <= 1 is ${u <= 1}; ${u} < ${cap} × 0.2 (${limTxt}) is ${u < lim}. Result: '${estado}'.`);
+
+    if (estado !== estadoPrevio) {
+      selloMini.textContent = (en() ? TEXTO_EN : TEXTO)[estado];
+      selloMini.className = 'sello-mini ' + estado;
+      void selloMini.offsetWidth;
+      selloMini.classList.add('cae');
+      estadoPrevio = estado;
+    }
+  }
+
+  rango.addEventListener('input', () => {
+    u = Number(rango.value);
+    salidaU.textContent = u;
+    evaluar();
+  });
+  btnCap.forEach(b => b.addEventListener('click', () => {
+    cap = Number(b.dataset.cap);
+    btnCap.forEach(x => x.setAttribute('aria-pressed', x === b));
+    rango.max = cap;
+    if (u > cap) { u = cap; rango.value = u; salidaU.textContent = u; }
+    dibujarEstante();
+    evaluar();
+  }));
+  dibujarEstante();
+
+  /* ================= Experiencia: línea que se dibuja con el scroll ================= */
+  const lt = document.getElementById('lt');
+  const hitos = [...lt.querySelectorAll('.hito')];
+  const pasosWrap = document.getElementById('pasos-wrap');
+  const riel = pasosWrap.querySelector('.pasos-riel');
+  const pasos = [...pasosWrap.querySelectorAll('.paso')];
+  const clamp = v => Math.min(1, Math.max(0, v));
+
+  function colocarRiel() {
+    const ms = pasos.map(p => p.querySelector('.paso-marca'));
+    const w = pasosWrap.getBoundingClientRect();
+    const a = ms[0].getBoundingClientRect(), b = ms[ms.length - 1].getBoundingClientRect();
+    const ax = a.left + a.width / 2 - w.left, ay = a.top + a.height / 2 - w.top;
+    const bx = b.left + b.width / 2 - w.left, by = b.top + b.height / 2 - w.top;
+    const horizontal = Math.abs(ay - by) < 4;
+    riel.dataset.dir = horizontal ? 'h' : 'v';
+    riel.style.cssText = horizontal
+      ? `left:${ax}px;top:${ay - 1}px;width:${bx - ax}px;height:2px`
+      : `left:${ax - 1}px;top:${ay}px;width:2px;height:${by - ay}px`;
+  }
+
+  function actualizarScroll() {
+    const vh = window.innerHeight;
+    // Línea de tiempo
+    const r = lt.getBoundingClientRect();
+    const p = reduce ? 1 : clamp((vh * 0.7 - r.top) / r.height);
+    lt.style.setProperty('--p', p);
+    hitos.forEach(h => h.classList.toggle('activo', p * lt.offsetHeight >= h.offsetTop + 8));
+    // Rastreo del pedido
+    const rw = pasosWrap.getBoundingClientRect();
+    const q = reduce ? 1 : clamp((vh * 0.85 - rw.top) / (vh * 0.4));
+    pasosWrap.style.setProperty('--p', q);
+    pasos.forEach((s, i) => s.classList.toggle('hecho', q > 0.02 && q >= i / (pasos.length - 1) - 0.001));
+  }
+
+  let pendiente = false;
+  const alScroll = () => {
+    if (pendiente) return;
+    pendiente = true;
+    requestAnimationFrame(() => { pendiente = false; actualizarScroll(); });
+  };
+  window.addEventListener('scroll', alScroll, { passive: true });
+  window.addEventListener('resize', () => { colocarRiel(); alScroll(); });
+  colocarRiel();
+  actualizarScroll();
+
+  /* ================= Contacto: chat estilo WhatsApp ================= */
+  const mensajes = document.getElementById('mensajes');
+  const opciones = document.getElementById('opciones');
+  let chatOcupado = false;
+  const hora = () => new Date().toLocaleTimeString('es-VE', { hour: '2-digit', minute: '2-digit', hour12: false });
+  const OPCIONES = [
+    { txtEn: 'An online store', respEn: 'Perfect. I build stores with a catalog, cart, local payment methods and orders that arrive on your WhatsApp, with prices in dollars and bolívares.',
+      txt: 'Una tienda online', resp: 'Perfecto. Hago tiendas con catálogo, carrito, pagos locales y pedidos que llegan a tu WhatsApp, con precios en dólares y bolívares.' },
+    { txtEn: 'A landing page', respEn: 'Sure. A fast page that looks good on phones, with your services and a clear way to contact you.',
+      txt: 'Una landing page', resp: 'Va. Una página rápida que se vea bien en el teléfono, con tus servicios y una forma clara de contactarte.' },
+    { txtEn: 'A system for my business', respEn: 'Great. Inventory, POS, reports or a dashboard built around how you work today.',
+      txt: 'Un sistema para mi negocio', resp: 'Bien. Inventario, caja, reportes o un panel hecho a la medida de cómo trabajas hoy.' },
+    { txtEn: 'Turn a Figma design into code', respEn: 'Excellent. I turn your design into a responsive website, true to every detail. Layout is what I do best.',
+      txt: 'Pasar un diseño de Figma a código', resp: 'Excelente. Paso tu diseño a una web responsive, fiel al detalle. La maquetación es lo que mejor hago.' }
+  ];
+
+  function burbuja(tipo, html) {
+    const d = document.createElement('div');
+    d.className = 'msg ' + tipo;
+    d.innerHTML = html + `<span class="hora">${hora()}</span>`;
+    mensajes.appendChild(d);
+    mensajes.scrollTop = mensajes.scrollHeight;
+  }
+
+  async function oliverEscribe(html, ms = 900) {
+    const e = document.createElement('div');
+    e.className = 'escribe';
+    e.setAttribute('aria-label', tx('Oliver está escribiendo', 'Oliver is typing'));
+    e.innerHTML = '<span></span><span></span><span></span>';
+    mensajes.appendChild(e);
+    mensajes.scrollTop = mensajes.scrollHeight;
+    await sleep(ms);
+    e.remove();
+    burbuja('in', html);
+  }
+
+  let estadoOpciones = null;
+  function mostrarOpciones() {
+    estadoOpciones = 'menu';
+    opciones.innerHTML = '';
+    OPCIONES.forEach((o, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = tx(o.txt, o.txtEn);
+      b.style.animationDelay = (i * 60) + 'ms';
+      b.addEventListener('click', () => elegir(o));
+      opciones.appendChild(b);
+    });
+  }
+
+  async function elegir(o) {
+    if (chatOcupado) return;
+    chatOcupado = true;
+    estadoOpciones = null;
+    opciones.innerHTML = '';
+    const texto = tx(o.txt, o.txtEn);
+    burbuja('out', texto);
+    await sleep(450);
+    await oliverEscribe(tx(o.resp, o.respEn), 1300);
+    const asunto = encodeURIComponent(tx('Proyecto: ', 'Project: ') + texto);
+    await oliverEscribe(
+      tx('Escríbeme con lo que tengas y te respondo con alcance, tiempos y precio.',
+         "Write to me with whatever you have and I'll reply with scope, timeline and price.") + '<br>' +
+      `<a class="tecla peq correo" href="mailto:holiber17@gmail.com?subject=${asunto}">${tx('Escribir a mi correo', 'Email me')}</a>`, 900);
+    mostrarOtra();
+    chatOcupado = false;
+  }
+
+  function mostrarOtra() {
+    estadoOpciones = 'otra';
+    opciones.innerHTML = '';
+    const otra = document.createElement('button');
+    otra.type = 'button';
+    otra.textContent = tx('Ver otras opciones', 'See other options');
+    otra.addEventListener('click', mostrarOpciones);
+    opciones.appendChild(otra);
+  }
+
+  async function iniciarChat() {
+    chatOcupado = true;
+    await sleep(300);
+    await oliverEscribe(tx('Hola, soy Oliver.', "Hi, I'm Oliver."), 700);
+    await oliverEscribe(tx('Cuéntame qué necesitas y te respondo con una propuesta.', "Tell me what you need and I'll reply with a proposal."), 1100);
+    await oliverEscribe(tx('¿Qué tienes en mente?', 'What do you have in mind?'), 700);
+    mostrarOpciones();
+    chatOcupado = false;
+  }
+
+  /* ================= Disparadores por scroll ================= */
+  const vistos = new WeakSet();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(async e => {
+      if (!e.isIntersecting || vistos.has(e.target)) return;
+      vistos.add(e.target);
+      const t = e.target;
+      if (t.classList.contains('hoja')) {
+        t.querySelector('.sello').classList.add('cae');
+        t.classList.add('golpe');
+      } else if (t.id === 'ed-paula') {
+        await escribir(paula);
+        btnEjecutar.disabled = false;
+        await sleep(300);
+        ejecutar();
+      } else if (t.id === 'ed-licor') {
+        await escribir(licor);
+        rango.disabled = false;
+        btnCap.forEach(b => b.disabled = false);
+        evaluar();
+      } else if (t.id === 'chat') {
+        iniciarChat();
+      }
+    });
+  }, { threshold: 0.35 });
+  document.querySelectorAll('.hoja, .editor, #chat').forEach(el => io.observe(el));
+
+  /* ================= Idioma ES / EN ================= */
+  const btnLang = [...document.querySelectorAll('[data-lang]')];
+  const TITULOS = {
+    es: 'Oliver Dos Anjos — Desarrollador web full-stack',
+    en: 'Oliver Dos Anjos — Full-stack web developer'
+  };
+  function aplicarIdioma(l) {
+    lang = l;
+    document.documentElement.lang = l;
+    document.title = TITULOS[l];
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (el.dataset.es === undefined) el.dataset.es = el.innerHTML;
+      el.innerHTML = l === 'en' ? el.dataset.en : el.dataset.es;
+    });
+    btnLang.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+    if (ticketListo) salida.style.height = altoPapel() + 'px';
+    colocarRiel();
+    actualizarScroll();
+    if (licor.listo) { estadoPrevio = null; evaluar(); }
+    if (!chatOcupado) {
+      if (estadoOpciones === 'menu') mostrarOpciones();
+      else if (estadoOpciones === 'otra') mostrarOtra();
+    }
+  }
+  btnLang.forEach(b => b.addEventListener('click', () => aplicarIdioma(b.dataset.lang)));
+  if (lang === 'en') aplicarIdioma('en');
+
+  /* Arranque */
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { colocarRiel(); actualizarScroll(); imprimir(); });
+})();
+</script>
+</body>
+</html>
