@@ -46,8 +46,11 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 
 .rej{display:grid;grid-template-columns:360px minmax(0,1fr);gap:18px;align-items:start}
 .lista{display:grid;gap:10px}
-.srv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;text-align:left;width:100%;background:var(--panel);border:1px solid var(--borde);border-left:5px solid var(--ac);border-radius:10px;padding:12px 14px;color:inherit;font:inherit;cursor:pointer}
-.srv[aria-selected=true]{border-color:var(--tinta);border-left-color:var(--ac);box-shadow:0 8px 22px #16202E1f}
+.srv{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;text-align:left;width:100%;background:var(--panel);border:1px solid var(--borde);border-left:5px solid var(--ac);border-radius:10px;padding:12px 14px;color:inherit;font:inherit;cursor:pointer;transition:transform .18s,box-shadow .18s,background-color .18s}
+.srv:hover{box-shadow:0 6px 16px #16202E14}
+.srv[aria-selected=true]{background:color-mix(in srgb,var(--ac) 12%,var(--panel));border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac),0 12px 28px color-mix(in srgb,var(--ac) 28%,transparent);transform:translateX(6px)}
+.srv[aria-selected=true]::after{content:"";position:absolute;right:-11px;top:50%;width:16px;height:16px;background:inherit;border:solid var(--ac);border-width:1px 1px 0 0;box-shadow:inset -1px 1px 0 var(--ac);transform:translateY(-50%) rotate(45deg);background:color-mix(in srgb,var(--ac) 12%,var(--panel))}
+.srv:not([aria-selected=true]) svg{opacity:.55}
 .srv b{font:800 1.05rem var(--sans)}
 .srv .k{grid-column:1;font-size:.82rem;color:var(--suave)}
 .pill{grid-row:1;grid-column:2;align-self:start;font:600 .7rem var(--mono);color:var(--ok);background:var(--okfondo);padding:2px 8px;border-radius:999px;white-space:nowrap}
@@ -56,7 +59,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .srv .met b{font:600 .82rem var(--mono);color:var(--tinta)}
 
 .det{background:var(--panel);border:1px solid var(--borde);border-radius:14px;overflow:hidden;min-width:0}
-.det .bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:12px 16px;border-bottom:1px solid var(--borde)}
+.det .bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:12px 16px;border-bottom:1px solid var(--borde);box-shadow:inset 0 4px 0 var(--ac)}
 .det .bar h2{margin:0;font:900 1.3rem var(--sans);font-stretch:112%}
 .tabs{display:inline-flex;margin-left:auto;background:var(--fondo);border-radius:999px;padding:3px}
 .tabs button{border:0;background:none;border-radius:999px;padding:6px 14px;font:700 .82rem var(--sans);color:var(--suave);cursor:pointer}
@@ -116,9 +119,9 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .idioma{border:1px solid var(--borde);background:var(--panel);color:var(--tinta);border-radius:999px;padding:4px 12px;font:600 .76rem var(--mono);cursor:pointer}
 .tl h3 .cargo{color:inherit;font-weight:inherit}
 @media (max-width:900px){.exp{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:900px){.rej{grid-template-columns:minmax(0,1fr)}.lista{grid-template-columns:repeat(2,minmax(0,1fr))}.info{grid-template-columns:1fr}}
-@media (max-width:560px){.lista{display:flex;overflow-x:auto;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}.srv{flex:none;width:250px}.grupo{display:none}.srv .pill{grid-row:auto;grid-column:1/-1;justify-self:start;order:-1}.srv b{grid-column:1/-1}.marco{aspect-ratio:4/3}.marco img{object-fit:contain}.cod pre,.log{font-size:.72rem}}
-@media (prefers-reduced-motion:reduce){.vivo::before,.log div{animation:none}}
+@media (max-width:900px){.srv[aria-selected=true]{transform:none}.srv[aria-selected=true]::after{display:none}.rej{grid-template-columns:minmax(0,1fr)}.lista{grid-template-columns:repeat(2,minmax(0,1fr))}.info{grid-template-columns:1fr}}
+@media (max-width:560px){.tabs{margin-left:0;width:100%;overflow-x:auto;scrollbar-width:none}.tabs button{flex:1;white-space:nowrap;padding:6px 10px}.lista{display:flex;overflow-x:auto;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}.srv{flex:none;width:250px}.grupo{display:none}.srv .pill{grid-row:auto;grid-column:1/-1;justify-self:start;order:-1}.srv b{grid-column:1/-1}.marco{aspect-ratio:4/3}.marco img{object-fit:contain}.cod pre,.log{font-size:.72rem}}
+@media (prefers-reduced-motion:reduce){.srv{transition:none}.vivo::before,.log div{animation:none}}
 </style>
 </head>
 <body>
