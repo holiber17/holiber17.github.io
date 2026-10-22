@@ -113,6 +113,8 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .lado dl{margin:0;display:grid;gap:10px}
 .lado dt{font:600 .74rem var(--mono);color:var(--suave)}
 .lado dd{margin:2px 0 0;font-size:.9rem}
+.idioma{border:1px solid var(--borde);background:var(--panel);color:var(--tinta);border-radius:999px;padding:4px 12px;font:600 .76rem var(--mono);cursor:pointer}
+.tl h3 .cargo{color:inherit;font-weight:inherit}
 @media (max-width:900px){.exp{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.rej{grid-template-columns:minmax(0,1fr)}.lista{grid-template-columns:repeat(2,minmax(0,1fr))}.info{grid-template-columns:1fr}}
 @media (max-width:560px){.lista{display:flex;overflow-x:auto;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}.srv{flex:none;width:250px}.grupo{display:none}.srv .pill{grid-row:auto;grid-column:1/-1;justify-self:start;order:-1}.srv b{grid-column:1/-1}.marco{aspect-ratio:4/3}.marco img{object-fit:contain}.cod pre,.log{font-size:.72rem}}
@@ -123,42 +125,42 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 <div class="in">
   <header class="top">
     <div class="logo">Oliver Dos Anjos</div>
-    <div class="meta"><span class="vivo" id="vivo">sistemas en producción</span><span>Caracas <b id="hora">--:--</b></span><span>full-stack · 7+ años</span></div>
+    <div class="meta"><span class="vivo" id="vivo">sistemas en producción</span><span>Caracas <b id="hora">--:--</b></span><span data-i="anios">full-stack · 7+ años</span><button class="idioma" id="idioma" type="button" aria-label="Cambiar idioma / Switch language">EN</button></div>
   </header>
   <section class="cab">
-    <h1>Software que está funcionando ahora mismo</h1>
-    <p>Lo que construyo en Norelian para hoteles y mis propios proyectos. Elige uno para ver sus pantallas, el código o mi parte, y cómo se ve un día normal de uso. La actividad es una simulación con datos de ejemplo.</p>
+    <h1 data-i="h1">Software que está funcionando ahora mismo</h1>
+    <p data-i="h1p">Lo que construyo en Norelian para hoteles y mis propios proyectos. Elige uno para ver sus pantallas, el código o mi parte, y cómo se ve un día normal de uso. La actividad es una simulación con datos de ejemplo.</p>
   </section>
   <div class="rej">
-    <div class="lista" id="lista" role="tablist" aria-label="Sistemas"></div>
+    <div class="lista" id="lista" role="tablist" data-ia="sistemas" aria-label="Sistemas"></div>
     <section class="det" id="det" aria-live="polite"></section>
   </div>
   <section class="exp" id="experiencia" aria-labelledby="exp-t">
     <div>
-      <h2 id="exp-t">Experiencia</h2>
-      <p class="intro">Más de 7 años haciendo aplicaciones web y móviles, la mayor parte en software para hoteles. También hago sistemas y páginas para negocios, y uso herramientas de IA en mi flujo de trabajo.</p>
+      <h2 id="exp-t" data-i="exp">Experiencia</h2>
+      <p class="intro" data-i="expi">Más de 7 años haciendo aplicaciones web y móviles, la mayor parte en software para hoteles. También hago sistemas y páginas para negocios, y uso herramientas de IA en mi flujo de trabajo.</p>
       <ol class="tl">
-        <li class="ahora"><time>may 2022 – hoy</time><h3>Desarrollador Full Stack <span>· Norelian</span></h3>
-          <p>GuestHub, plataforma SaaS para hoteles en producción desde 2017: un monorepo de más de 24 módulos en contenedores. Trabajo la app web en Angular (fui parte de la migración de Angular 12 a 21), la app móvil GuestHub Staff en React (Google Play y App Store), el sitio guesthub.io en Svelte y APIs REST en Node.js (Hapi) y .NET sobre MongoDB y Firebase.</p>
-          <p>Auth0, arquitectura por casos de uso y pruebas unitarias; despliegues con Azure DevOps, Docker y PM2; pantallas desde Figma con Claude Code. Para clientes externos de Norelian hice Busi Transporte y una herramienta de diseño de interiores para Vibia, ambas en React.</p></li>
-        <li class="ahora"><time>2026 – hoy, en paralelo</time><h3>Productos propios y freelance</h3>
-          <p>Kondo (condominios) y LicorApp (punto de venta) como productos propios en uso; la tienda de Paula's Store y la landing con cotizador de ACSECURECCS para clientes.</p></li>
-        <li><time>feb 2019 – abr 2022</time><h3>Desarrollador Frontend <span>· WCS – Sistemas Webconsult Colombia</span></h3>
-          <p>Aplicaciones en Angular y JavaScript para clientes corporativos en Colombia, como Sistemas Mission y Escala Capital.</p></li>
+        <li class="ahora"><time data-i="t1">may 2022 – hoy</time><h3><span class="cargo" data-i="c1">Desarrollador Full Stack</span> <span>· Norelian</span></h3>
+          <p data-i="n1a">GuestHub, plataforma SaaS para hoteles en producción desde 2017: un monorepo de más de 24 módulos en contenedores. Trabajo la app web en Angular (fui parte de la migración de Angular 12 a 21), la app móvil GuestHub Staff en React (Google Play y App Store), el sitio guesthub.io en Svelte y APIs REST en Node.js (Hapi) y .NET sobre MongoDB y Firebase.</p>
+          <p data-i="n1b">Auth0, arquitectura por casos de uso y pruebas unitarias; despliegues con Azure DevOps, Docker y PM2; pantallas desde Figma con Claude Code. Para clientes externos de Norelian hice Busi Transporte y una herramienta de diseño de interiores para Vibia, ambas en React.</p></li>
+        <li class="ahora"><time data-i="t2">2026 – hoy, en paralelo</time><h3 data-i="c2">Productos propios y freelance</h3>
+          <p data-i="n2">Kondo (condominios) y LicorApp (punto de venta) como productos propios en uso; la tienda de Paula's Store y la landing con cotizador de ACSECURECCS para clientes.</p></li>
+        <li><time data-i="t3">feb 2019 – abr 2022</time><h3><span class="cargo" data-i="c3">Desarrollador Frontend</span> <span>· WCS – Sistemas Webconsult Colombia</span></h3>
+          <p data-i="n3">Aplicaciones en Angular y JavaScript para clientes corporativos en Colombia, como Sistemas Mission y Escala Capital.</p></li>
       </ol>
     </div>
-    <aside class="lado" aria-label="Herramientas">
-      <h3>Con qué trabajo</h3>
+    <aside class="lado" data-ia="herr" aria-label="Herramientas">
+      <h3 data-i="cq">Con qué trabajo</h3>
       <dl>
-        <div><dt>Interfaces</dt><dd>Angular, React, Svelte, TypeScript, HTML / CSS, SASS, Bootstrap</dd></div>
-        <div><dt>Backend</dt><dd>Node.js (Hapi), C# / .NET, VB.NET, APIs REST, Auth0</dd></div>
-        <div><dt>Datos</dt><dd>MongoDB, PostgreSQL, SQL Server, Firebase, Supabase</dd></div>
-        <div><dt>Entrega</dt><dd>Azure DevOps, Docker, PM2, Render, Netlify, Git</dd></div>
-        <div><dt>Idiomas</dt><dd>Español nativo · inglés de lectura técnica</dd></div>
+        <div><dt data-i="k1">Interfaces</dt><dd>Angular, React, Svelte, TypeScript, HTML / CSS, SASS, Bootstrap</dd></div>
+        <div><dt>Backend</dt><dd data-i="v2">Node.js (Hapi), C# / .NET, VB.NET, APIs REST, Auth0</dd></div>
+        <div><dt data-i="k3">Datos</dt><dd>MongoDB, PostgreSQL, SQL Server, Firebase, Supabase</dd></div>
+        <div><dt data-i="k4">Entrega</dt><dd>Azure DevOps, Docker, PM2, Render, Netlify, Git</dd></div>
+        <div><dt data-i="k5">Idiomas</dt><dd data-i="v5">Español nativo · inglés de lectura técnica</dd></div>
       </dl>
     </aside>
   </section>
-  <footer class="pie"><span>¿Hacemos el tuyo? Escríbeme a <b>holiber17@gmail.com</b></span><a href="https://github.com/holiber17" target="_blank" rel="noopener">github.com/holiber17</a><a href="https://www.linkedin.com/in/oliverdosanjos-dev" target="_blank" rel="noopener">LinkedIn</a></footer>
+  <footer class="pie"><span><span data-i="fin">¿Hacemos el tuyo? Escríbeme a</span> <b>holiber17@gmail.com</b></span><a href="https://github.com/holiber17" target="_blank" rel="noopener">github.com/holiber17</a><a href="https://www.linkedin.com/in/oliverdosanjos-dev" target="_blank" rel="noopener">LinkedIn</a></footer>
 </div>
 
 <script>
@@ -273,34 +275,73 @@ const P = [
     return out + esc(src.slice(i));
   }
 
+let L = 'es';
+const navEs = () => (navigator.language || 'es').toLowerCase().startsWith('es');
+try { L = localStorage.getItem('idioma') || (navEs() ? 'es' : 'en'); } catch (e) { L = navEs() ? 'es' : 'en'; }
+const x = v => (v && v._i) ? v[L === 'en' ? 1 : 0] : v;
+const T = (es, en) => { const a = [es, en]; a._i = true; return a; };
+const UI = {
+  anios: T('full-stack · 7+ años', 'full-stack · 7+ years'),
+  h1: T('Software que está funcionando ahora mismo', 'Software that is running right now'),
+  h1p: T('Lo que construyo en Norelian para hoteles y mis propios proyectos. Elige uno para ver sus pantallas, el código o mi parte, y cómo se ve un día normal de uso. La actividad es una simulación con datos de ejemplo.', 'What I build at Norelian for hotels, plus my own projects. Pick one to see its screens, its code or my part, and what a normal day of use looks like. The activity is a simulation with sample data.'),
+  exp: T('Experiencia', 'Experience'),
+  expi: T('Más de 7 años haciendo aplicaciones web y móviles, la mayor parte en software para hoteles. También hago sistemas y páginas para negocios, y uso herramientas de IA en mi flujo de trabajo.', 'Over 7 years building web and mobile apps, mostly hotel software. I also build systems and websites for businesses, and use AI tools in my workflow.'),
+  t1: T('may 2022 – hoy', 'May 2022 – present'), c1: T('Desarrollador Full Stack', 'Full Stack Developer'),
+  n1a: T('GuestHub, plataforma SaaS para hoteles en producción desde 2017: un monorepo de más de 24 módulos en contenedores. Trabajo la app web en Angular (fui parte de la migración de Angular 12 a 21), la app móvil GuestHub Staff en React (Google Play y App Store), el sitio guesthub.io en Svelte y APIs REST en Node.js (Hapi) y .NET sobre MongoDB y Firebase.', 'GuestHub, a SaaS platform for hotels in production since 2017: a monorepo of over 24 containerized modules. I work on the Angular web app (I was part of the migration from Angular 12 to 21), the GuestHub Staff mobile app in React (Google Play and App Store), the guesthub.io site in Svelte, and REST APIs in Node.js (Hapi) and .NET on MongoDB and Firebase.'),
+  n1b: T('Auth0, arquitectura por casos de uso y pruebas unitarias; despliegues con Azure DevOps, Docker y PM2; pantallas desde Figma con Claude Code. Para clientes externos de Norelian hice Busi Transporte y una herramienta de diseño de interiores para Vibia, ambas en React.', 'Auth0, use-case architecture and unit tests; deployments with Azure DevOps, Docker and PM2; screens from Figma with Claude Code. For Norelian’s external clients I built Busi Transporte and an interior design tool for Vibia, both in React.'),
+  t2: T('2026 – hoy, en paralelo', '2026 – present, alongside'), c2: T('Productos propios y freelance', 'Own products and freelance'),
+  n2: T('Kondo (condominios) y LicorApp (punto de venta) como productos propios en uso; la tienda de Paula’s Store y la landing con cotizador de ACSECURECCS para clientes.', 'Kondo (condominiums) and LicorApp (point of sale) as my own products in use; the Paula’s Store shop and the ACSECURECCS landing page with a quote picker for clients.'),
+  t3: T('feb 2019 – abr 2022', 'Feb 2019 – Apr 2022'), c3: T('Desarrollador Frontend', 'Frontend Developer'),
+  n3: T('Aplicaciones en Angular y JavaScript para clientes corporativos en Colombia, como Sistemas Mission y Escala Capital.', 'Angular and JavaScript applications for corporate clients in Colombia, such as Sistemas Mission and Escala Capital.'),
+  cq: T('Con qué trabajo', 'What I work with'), k1: T('Interfaces', 'Frontend'), k3: T('Datos', 'Data'), k4: T('Entrega', 'Delivery'), k5: T('Idiomas', 'Languages'),
+  v2: T('Node.js (Hapi), C# / .NET, VB.NET, APIs REST, Auth0', 'Node.js (Hapi), C# / .NET, VB.NET, REST APIs, Auth0'),
+  v5: T('Español nativo · inglés de lectura técnica', 'Native Spanish · technical reading in English'),
+  fin: T('¿Hacemos el tuyo? Escríbeme a', 'Want one for your business? Write to me at'),
+  sistemas: T('Sistemas', 'Systems'), herr: T('Herramientas', 'Tools'),
+  vivo: T('{n} sistemas en producción', '{n} systems in production'), prod: T('En producción', 'In production'), ej: T('ejemplo', 'sample'),
+  gN: T('En Norelian', 'At Norelian'), gP: T('Propios y freelance', 'Own and freelance'),
+  pant: T('Pantallas', 'Screens'), rol: T('Mi parte', 'My part'), mod: T('Módulos', 'Modules'), cod: T('Código', 'Code'), log: T('Actividad', 'Activity'), vista: T('Vista', 'View'),
+  hago: T('Lo que hago en {n}', 'What I do on {n}'), codDe: T('Código de {n}', 'Code of {n}'), alt: T('Pantallas de {n} en escritorio y teléfono', 'Screens of {n} on desktop and phone'),
+  aviso: T('Actividad simulada con datos de ejemplo, para mostrar qué hace el sistema en un día normal.', 'Simulated activity with sample data, to show what the system does on a normal day.'),
+  verp: T('Ver la página ↗', 'View the page ↗'), parec: T('Quiero algo parecido', 'I want something similar'), copiado: T('Correo copiado ✓', 'Email copied ✓'),
+  donde: T('Dónde:', 'Where:'), dondeT: T('en Norelian, como desarrollador full-stack del equipo de GuestHub.', 'at Norelian, as a full-stack developer on the GuestHub team.'), qhace: T('Qué hace el código:', 'What the code does:'),
+  titulo: T('Oliver Dos Anjos — Desarrollador full-stack', 'Oliver Dos Anjos — Full-stack developer'),
+  desc: T('Portafolio de Oliver Dos Anjos, desarrollador full-stack en Caracas. GuestHub y GuestApp para hoteles en Norelian, y sistemas propios en producción: tiendas, condominios, punto de venta y landing pages.', 'Portfolio of Oliver Dos Anjos, full-stack developer in Caracas, Venezuela. GuestHub and GuestApp for hotels at Norelian, plus his own systems in production: stores, condominiums, point of sale and landing pages.'),
+};
+const u = k => x(UI[k]);
 const EMP = [
-  { id: 'guesthub', org: 'Norelian', n: 'GuestHub', ac: '#16A3A0', k: 'Panel para hoteles', img: 'guesthub', link: 'https://www.guesthub.io',
-    d: 'Plataforma SaaS para hoteles, en producción desde 2017: un monorepo de más de 24 módulos en contenedores. El personal gestiona huéspedes, reservaciones, tareas, solicitudes y alimentos y bebidas desde un panel web, integrado con sistemas como Opera Cloud, Cloudbeds y Mews.',
+  { id: 'guesthub', org: 'Norelian', n: 'GuestHub', ac: '#16A3A0', k: T('Panel para hoteles', 'Hotel dashboard'), img: 'guesthub', link: 'https://www.guesthub.io',
+    d: T('Plataforma SaaS para hoteles, en producción desde 2017: un monorepo de más de 24 módulos en contenedores. El personal gestiona huéspedes, reservaciones, tareas, solicitudes y alimentos y bebidas desde un panel web, integrado con sistemas como Opera Cloud, Cloudbeds y Mews.', 'SaaS platform for hotels, in production since 2017: a monorepo of over 24 containerized modules. Hotel staff manage guests, reservations, tasks, requests and food and beverage from a web dashboard, integrated with systems such as Opera Cloud, Cloudbeds and Mews.'),
     t: ['Angular', 'TypeScript', 'SASS', 'Node.js (Hapi)', '.NET', 'MongoDB', 'Firebase', 'Auth0', 'Docker'],
-    mods: ['Check in', 'GuestApp', 'Solicitudes', 'Tareas', 'Servicios comerciales', 'Alimentos y bebidas', 'Encuestas', 'Comunicaciones', 'Promociones', 'Paquetes', 'Perdidos y encontrados', 'Pickup'],
-    modsT: 'Desde la reserva a la reseña', modsP: 'Doce módulos para manejar cada etapa de la estadía de un huésped.',
-    rol: ['Desarrollo la aplicación web en Angular: tareas, huéspedes, reservaciones, configuración y traducciones.', 'Fui parte del equipo que la migró de Angular 12 a Angular 21.', 'Maqueto las pantallas desde Figma con SASS, Bootstrap y componentes propios.', 'Hago APIs REST en Node.js (Hapi) y .NET con arquitectura por casos de uso, y escribo sus pruebas unitarias. Hoy trabajo usuarios y autenticación con Auth0.', 'También trabajo el módulo de reservaciones en Svelte y la app móvil GuestHub Staff en React.'] },
-  { id: 'guestapp', org: 'Norelian', n: 'GuestApp', ac: '#F2994A', k: 'App web para huéspedes', img: 'guestapp', link: 'https://www.guesthub.io',
-    d: 'App web que cada hotel personaliza para sus huéspedes, sin descargar nada: hacen el pre-check-in, piden servicios y room service, crean y siguen sus solicitudes y reciben promociones antes y durante su estadía.',
+    mods: T(['Check in', 'Solicitudes', 'Tareas', 'Servicios comerciales', 'Alimentos y bebidas', 'Encuestas', 'Comunicaciones', 'Promociones', 'Paquetes', 'Perdidos y encontrados', 'Pickup', 'GuestApp'], ['Check-in', 'Requests', 'Tasks', 'Commercial services', 'Food & beverage', 'Surveys', 'Communications', 'Promotions', 'Packages', 'Lost & found', 'Pickup', 'GuestApp']),
+    modsT: T('Desde la reserva a la reseña', 'From booking to review'), modsP: T('Doce módulos para manejar cada etapa de la estadía de un huésped.', 'Twelve modules to handle every stage of a guest’s stay.'),
+    rol: T(['Desarrollo la aplicación web en Angular: tareas, huéspedes, reservaciones, configuración y traducciones.', 'Fui parte del equipo que la migró de Angular 12 a Angular 21.', 'Maqueto las pantallas desde Figma con SASS, Bootstrap y componentes propios.', 'Hago APIs REST en Node.js (Hapi) y .NET con arquitectura por casos de uso, y escribo sus pruebas unitarias. Hoy trabajo usuarios y autenticación con Auth0.', 'También trabajo el módulo de reservaciones en Svelte y la app móvil GuestHub Staff en React.'],
+      ['I build the Angular web app: tasks, guests, reservations, settings and translations.', 'I was part of the team that migrated it from Angular 12 to Angular 21.', 'I build the screens from Figma with SASS, Bootstrap and in-house components.', 'I write REST APIs in Node.js (Hapi) and .NET with a use-case architecture, along with their unit tests. Right now I work on users and authentication with Auth0.', 'I also work on the reservations module in Svelte and the GuestHub Staff mobile app in React.']) },
+  { id: 'guestapp', org: 'Norelian', n: 'GuestApp', ac: '#F2994A', k: T('App web para huéspedes', 'Web app for guests'), img: 'guestapp', link: 'https://www.guesthub.io',
+    d: T('App web que cada hotel personaliza para sus huéspedes, sin descargar nada: hacen el pre-check-in, piden servicios y room service, crean y siguen sus solicitudes y reciben promociones antes y durante su estadía.', 'Web app each hotel customizes for its guests, with nothing to download: they pre-check-in, order services and room service, create and track their requests, and get promotions before and during their stay.'),
     t: ['Angular', 'TypeScript', 'SASS', 'Node.js', 'MongoDB'],
-    mods: ['Pre-check-in', 'Room service', 'Solicitudes', 'Servicios del hotel', 'Promociones', 'Encuestas'], modsT: 'El hotel en el teléfono del huésped', modsP: 'Sin descargar una app: el huésped entra desde un enlace o un código QR.',
-    rol: ['Participé en GuestApp desde el inicio, de punta a punta: de la primera versión a la que hoy usan los hoteles.', 'Construí la app del huésped: pre-check-in, servicios del hotel, room service, solicitudes con su seguimiento y promociones.', 'Hice también la configuración que usa cada hotel para personalizarla: invitaciones a sus huéspedes, colores, botones y tipografía, con vista previa en vivo.', 'Funciona como app web, sin descargar nada: el huésped entra desde un enlace o un código QR.'] },
-  { id: 'guesthubio', org: 'Norelian', n: 'guesthub.io', ac: '#3BB394', k: 'Sitio web de GuestHub', img: 'guesthubio', link: 'https://www.guesthub.io',
-    d: 'Sitio comercial de la plataforma, en español e inglés, con una página por cada módulo, las integraciones con nueve sistemas hoteleros y testimonios de hoteles como Hotel Caribe by Faranda Grand y EB Hotel Miami.',
+    mods: T(['Pre-check-in', 'Room service', 'Solicitudes', 'Servicios del hotel', 'Promociones', 'Encuestas'], ['Pre-check-in', 'Room service', 'Requests', 'Hotel services', 'Promotions', 'Surveys']),
+    modsT: T('El hotel en el teléfono del huésped', 'The hotel on the guest’s phone'), modsP: T('Sin descargar una app: el huésped entra desde un enlace o un código QR.', 'No app to download: guests open it from a link or a QR code.'),
+    rol: T(['Participé en GuestApp desde el inicio, de punta a punta: de la primera versión a la que hoy usan los hoteles.', 'Construí la app del huésped: pre-check-in, servicios del hotel, room service, solicitudes con su seguimiento y promociones.', 'Hice también la configuración que usa cada hotel para personalizarla: invitaciones a sus huéspedes, colores, botones y tipografía, con vista previa en vivo.', 'Funciona como app web, sin descargar nada: el huésped entra desde un enlace o un código QR.'],
+      ['I worked on GuestApp from the start, end to end: from the first version to the one hotels use today.', 'I built the guest app: pre-check-in, hotel services, room service, requests with tracking, and promotions.', 'I also built the settings each hotel uses to customize it: guest invitations, colors, buttons and typography, with a live preview.', 'It runs as a web app with nothing to download: guests open it from a link or a QR code.']) },
+  { id: 'guesthubio', org: 'Norelian', n: 'guesthub.io', ac: '#3BB394', k: T('Sitio web de GuestHub', 'GuestHub website'), img: 'guesthubio', link: 'https://www.guesthub.io',
+    d: T('Sitio comercial de la plataforma, en español e inglés, con una página por cada módulo, las integraciones con nueve sistemas hoteleros y testimonios de hoteles como Hotel Caribe by Faranda Grand y EB Hotel Miami.', 'The platform’s marketing site, in Spanish and English, with a page for each module, integrations with nine hotel systems, and testimonials from hotels such as Hotel Caribe by Faranda Grand and EB Hotel Miami.'),
     t: ['Svelte', 'i18n (es / en)', 'SEO'],
-    mods: ['Inicio', '12 páginas de módulos', 'Integraciones', 'Testimonios', 'Español', 'Inglés'], modsT: 'guesthub.io', modsP: 'El sitio donde los hoteles conocen la plataforma.',
-    rol: ['Desarrollé el sitio en Svelte, en español e inglés.'] },
+    mods: T(['Inicio', '12 páginas de módulos', 'Integraciones', 'Testimonios', 'Español', 'Inglés'], ['Home', '12 module pages', 'Integrations', 'Testimonials', 'Spanish', 'English']),
+    modsT: T('guesthub.io', 'guesthub.io'), modsP: T('El sitio donde los hoteles conocen la plataforma.', 'The site where hotels discover the platform.'),
+    rol: T(['Desarrollé el sitio en Svelte, en español e inglés.'], ['I built the site in Svelte, in Spanish and English.']) },
 ];
-const OWN = P.map(p => ({ ...p, org: 'Propio / freelance' }));
+const EN = {"paula": {"k": "Online store", "s": "Online store · .NET + Postgres", "d": "Online store for a business that only sold through Instagram and WhatsApp. The customer builds a cart, pays with their preferred method and the order reaches WhatsApp with the code and the total in dollars and bolívares.", "por": "when an order is placed, the store sets those units aside so no one else can buy them. If the order expires unpaid, they go back to the catalog on their own."}, "kondo": {"k": "Condominium", "s": "Condominium system · Node + Svelte + Postgres", "d": "System to manage the condominium of one or more buildings, each with its own logo and country (Venezuela or Argentina). Splits each expense across the apartments, issues each owner’s receipt in dollars and bolívares at the day’s rate, calculates late fees on the overdue balance and gives each owner a portal, with roles for admin, accountant, board and security guard.", "por": "every month it splits each expense across the apartments, by ownership share or equally, and stores the amount in dollars and bolívares at the day’s rate."}, "licor": {"k": "POS and inventory", "s": "Point of sale and inventory · JS + Supabase", "d": "Tablet app that works as a cash register: takes orders, charges in three currencies and deducts stock on each sale. It warns before a product runs out.", "por": "checkout is all or nothing: it closes the tab, records it in the register and deducts stock in a single step. If the internet drops halfway nothing is left half-done, and a double tap never charges twice."}, "acs": {"k": "Landing + quote picker", "s": "Landing + quote picker · HTML + JS", "d": "Page for a security, networking, Starlink and tech support business. The client ticks the services they want and WhatsApp opens with the message already written.", "por": "the client ticks the services they want and the WhatsApp message writes itself, ready to send."}};
+const OWN = P.map(p => ({ ...p, org: 'own', k: T(p.k, EN[p.id].k), s: T(p.s, EN[p.id].s), d: T(p.d, EN[p.id].d), por: T(p.por, EN[p.id].por) }));
 const ALL = [...EMP, ...OWN];
 const MET = {
-  guesthub: { m: 'solicitudes hoy', base: 64, ev: () => ['Solicitud: toallas extra · hab. 1204', 'Tarea asignada a Ama de llaves', 'Reserva importada desde Opera Cloud', 'Pedido de room service · hab. 815', 'Encuesta de salida respondida'] },
-  guestapp: { m: 'huéspedes conectados', base: 128, ev: () => ['Pre-check-in completado · hab. 507', 'Huésped abrió la app desde el QR', 'Room service: 2 cafés · hab. 1102', 'Promoción vista: spa 20 %', 'Solicitud creada: almohada extra'] },
-  guesthubio: { m: 'visitas hoy', base: 310, ev: () => ['Visita: módulo Alimentos y bebidas', 'Cambio de idioma a inglés', 'Visita: integraciones', 'Clic en Solicitar demo', 'Visita: GuestApp'] },
-  paula: { m: 'pedidos hoy', base: 12, ev: () => [`Pedido TM-${hoy()}-${hex()} creado`, 'Comprobante de Pago Móvil recibido', 'Stock reservado: 2 unidades', 'Pedido vencido sin pago: stock liberado', 'Correo de confirmación enviado'] },
-  kondo: { m: 'recibos del mes', base: 36, ev: () => ['Recibo 3-B emitido · US$ 101,09', 'Pago reportado por 4-A', 'Tasa BCV registrada', 'Mora calculada sobre 2 recibos vencidos', 'Gasto "Ascensor" repartido por alícuota'] },
-  licor: { m: 'cobros hoy', base: 47, ev: () => ['Mesa 5 cobrada · $59.50', 'Pedido abierto: Barra · Luis', 'Stock descontado: Ron Cacique 500 años', 'Aviso: quedan 3 botellas', 'Cierre parcial de caja'] },
-  acs: { m: 'cotizaciones hoy', base: 5, ev: () => ['Cotización: cámaras y Starlink', 'Clic en WhatsApp desde el cotizador', 'Cotización: soporte técnico', 'Visita desde Instagram', 'Cotización: redes Wi-Fi'] },
+  guesthub: { m: T('solicitudes hoy', 'requests today'), base: 64, ev: () => [T('Solicitud: toallas extra · hab. 1204', 'Request: extra towels · room 1204'), T('Tarea asignada a Ama de llaves', 'Task assigned to Housekeeping'), T('Reserva importada desde Opera Cloud', 'Reservation imported from Opera Cloud'), T('Pedido de room service · hab. 815', 'Room service order · room 815'), T('Encuesta de salida respondida', 'Check-out survey answered')] },
+  guestapp: { m: T('huéspedes conectados', 'guests online'), base: 128, ev: () => [T('Pre-check-in completado · hab. 507', 'Pre-check-in completed · room 507'), T('Huésped abrió la app desde el QR', 'Guest opened the app from the QR code'), T('Room service: 2 cafés · hab. 1102', 'Room service: 2 coffees · room 1102'), T('Promoción vista: spa 20 %', 'Promotion viewed: spa 20%'), T('Solicitud creada: almohada extra', 'Request created: extra pillow')] },
+  guesthubio: { m: T('visitas hoy', 'visits today'), base: 310, ev: () => [T('Visita: módulo Alimentos y bebidas', 'Visit: Food & beverage module'), T('Cambio de idioma a inglés', 'Language switched to English'), T('Visita: integraciones', 'Visit: integrations'), T('Clic en Solicitar demo', 'Click on Request a demo'), T('Visita: GuestApp', 'Visit: GuestApp')] },
+  paula: { m: T('pedidos hoy', 'orders today'), base: 12, ev: () => { const c = 'TM-' + hoy() + '-' + hex(); return [T('Pedido ' + c + ' creado', 'Order ' + c + ' created'), T('Comprobante de Pago Móvil recibido', 'Pago Móvil receipt received'), T('Stock reservado: 2 unidades', 'Stock reserved: 2 units'), T('Pedido vencido sin pago: stock liberado', 'Order expired unpaid: stock released'), T('Correo de confirmación enviado', 'Confirmation email sent')]; } },
+  kondo: { m: T('recibos del mes', 'receipts this month'), base: 36, ev: () => [T('Recibo 3-B emitido · US$ 101,09', 'Receipt 3-B issued · US$ 101.09'), T('Pago reportado por 4-A', 'Payment reported by 4-A'), T('Tasa BCV registrada', 'BCV exchange rate recorded'), T('Mora calculada sobre 2 recibos vencidos', 'Late fee calculated on 2 overdue receipts'), T('Gasto "Ascensor" repartido por alícuota', '"Elevator" expense split by ownership share')] },
+  licor: { m: T('cobros hoy', 'checkouts today'), base: 47, ev: () => [T('Mesa 5 cobrada · $59.50', 'Table 5 checked out · $59.50'), T('Pedido abierto: Barra · Luis', 'Tab opened: Bar · Luis'), T('Stock descontado: Ron Cacique 500 años', 'Stock deducted: Ron Cacique 500 años'), T('Aviso: quedan 3 botellas', 'Alert: 3 bottles left'), T('Cierre parcial de caja', 'Partial register close')] },
+  acs: { m: T('cotizaciones hoy', 'quotes today'), base: 5, ev: () => [T('Cotización: cámaras y Starlink', 'Quote: cameras and Starlink'), T('Clic en WhatsApp desde el cotizador', 'WhatsApp click from the quote picker'), T('Cotización: soporte técnico', 'Quote: tech support'), T('Visita desde Instagram', 'Visit from Instagram'), T('Cotización: redes Wi-Fi', 'Quote: Wi-Fi networks')] },
 };
 const hoy = () => { const d = new Date(); return String(d.getFullYear()).slice(2) + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0'); };
 const hex = () => Math.floor(Math.random() * 4096).toString(16).toUpperCase().padStart(3, '0');
@@ -311,39 +352,38 @@ const chispa = (pts, ac) => { const max = Math.max(...pts), w = 300, h = 38;
   const [lx, ly] = xy[xy.length - 1];
   return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="${d} L${w} ${h} L0 ${h}Z" fill="${ac}" opacity=".14"/><path d="${d}" fill="none" stroke="${ac}" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${lx}" cy="${ly}" r="3" fill="${ac}"/></svg>`; };
 let actual = 'paula', vista = 'img', timer = null;
-document.getElementById('vivo').textContent = ALL.length + ' sistemas en producción';
 const cuenta = {}; ALL.forEach(p => cuenta[p.id] = MET[p.id].base);
-const reloj = () => { document.getElementById('hora').textContent = new Date().toLocaleTimeString('es-VE', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Caracas' }); };
+const reloj = () => { document.getElementById('hora').textContent = new Date().toLocaleTimeString(L === 'en' ? 'en-US' : 'es-VE', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Caracas' }); };
 reloj(); setInterval(reloj, 30000);
 
 function lista() {
   let g = '';
-  document.getElementById('lista').innerHTML = ALL.map((p, i) => (p.org !== g ? `<div class="grupo" role="presentation">${(g = p.org) === 'Norelian' ? 'En Norelian' : 'Propios y freelance'}</div>` : '') + `<button class="srv" type="button" role="tab" id="tab-${p.id}" aria-selected="${p.id === actual}" aria-controls="det" tabindex="${p.id === actual ? 0 : -1}" style="--ac:${p.ac}" data-p="${p.id}">
-    <b>${p.n}</b><span class="pill">● En producción</span><span class="k">${p.k}</span>${chispa(serie(i * 2.1), p.ac)}
-    <span class="met"><span>${MET[p.id].m} (ejemplo)</span><b id="c-${p.id}">${cuenta[p.id]}</b></span></button>`).join('');
+  document.getElementById('lista').innerHTML = ALL.map((p, i) => (p.org !== g ? `<div class="grupo" role="presentation">${(g = p.org) === 'Norelian' ? u('gN') : u('gP')}</div>` : '') + `<button class="srv" type="button" role="tab" id="tab-${p.id}" aria-selected="${p.id === actual}" aria-controls="det" tabindex="${p.id === actual ? 0 : -1}" style="--ac:${p.ac}" data-p="${p.id}">
+    <b>${p.n}</b><span class="pill">● ${u('prod')}</span><span class="k">${x(p.k)}</span>${chispa(serie(i * 2.1), p.ac)}
+    <span class="met"><span>${x(MET[p.id].m)} (${u('ej')})</span><b id="c-${p.id}">${cuenta[p.id]}</b></span></button>`).join('');
 }
 function detalle() {
   const p = ALL.find(q => q.id === actual), emp = !!p.rol;
   if (emp && vista === 'cod') vista = 'rol';
   if (!emp && (vista === 'rol' || vista === 'mod')) vista = 'cod';
   const cuerpo = vista === 'rol'
-    ? `<div class="rolp" style="--ac:${p.ac}"><h3>Lo que hago en ${p.n}</h3><ul>${p.rol.map(x => `<li>${x}</li>`).join('')}</ul></div>`
-    : vista === 'mod' ? `<div class="mods" style="--ac:${p.ac}"><h3>${p.modsT}</h3><p>${p.modsP}</p><div class="chips">${p.mods.map(m => `<span>${m}</span>`).join('')}</div></div>`
+    ? `<div class="rolp" style="--ac:${p.ac}"><h3>${u('hago').replace('{n}', p.n)}</h3><ul>${x(p.rol).map(li => `<li>${li}</li>`).join('')}</ul></div>`
+    : vista === 'mod' ? `<div class="mods" style="--ac:${p.ac}"><h3>${x(p.modsT)}</h3><p>${x(p.modsP)}</p><div class="chips">${x(p.mods).map(m => `<span>${m}</span>`).join('')}</div></div>`
     : vista === 'cod'
-    ? `<div class="cod"><div class="arch">${p.f} · ${p.l}</div><pre tabindex="0" aria-label="Código de ${p.n}"><code>${resalta(p.src, p.lang)}</code></pre></div>`
-    : vista === 'log' ? `<div class="log" id="log" style="--ac:${p.ac}"><span class="aviso">Actividad simulada con datos de ejemplo, para mostrar qué hace el sistema en un día normal.</span></div>`
-    : `<img src="portadas/${p.img}.jpg" width="1600" height="900" alt="Pantallas de ${p.n} en escritorio y teléfono">`;
-  document.getElementById('det').innerHTML = `<div class="bar" style="--ac:${p.ac}"><h2>${p.n}</h2><span class="pill" style="position:static">● En producción</span>
-    <div class="tabs" role="group" aria-label="Vista">${[['img', 'Pantallas'], ...(emp ? [['rol', 'Mi parte'], ['mod', 'Módulos']] : [['cod', 'Código']]), ['log', 'Actividad']].map(([v, t]) => `<button type="button" aria-selected="${v === vista}" data-v="${v}">${t}</button>`).join('')}</div></div>
+    ? `<div class="cod"><div class="arch">${p.f} · ${p.l}</div><pre tabindex="0" aria-label="${u('codDe').replace('{n}', p.n)}"><code>${resalta(p.src, p.lang)}</code></pre></div>`
+    : vista === 'log' ? `<div class="log" id="log" style="--ac:${p.ac}"><span class="aviso">${u('aviso')}</span></div>`
+    : `<img src="portadas/${p.img}.jpg" width="1600" height="900" alt="${u('alt').replace('{n}', p.n)}">`;
+  document.getElementById('det').innerHTML = `<div class="bar" style="--ac:${p.ac}"><h2>${p.n}</h2><span class="pill" style="position:static">● ${u('prod')}</span>
+    <div class="tabs" role="group" aria-label="${u('vista')}">${['img', ...(emp ? ['rol', 'mod'] : ['cod']), 'log'].map(v => [v, u(v === 'img' ? 'pant' : v)]).map(([v, t]) => `<button type="button" aria-selected="${v === vista}" data-v="${v}">${t}</button>`).join('')}</div></div>
     <div class="marco" style="--ac:${p.ac}">${cuerpo}</div>
-    <div class="info"><div><p>${p.d}</p><div class="acc">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">Ver la página ↗</a>` : ''}<button class="cta" type="button" id="copiar">Quiero algo parecido</button></div></div>
-    <div>${emp ? `<p class="por"><b>Dónde:</b> en Norelian, como desarrollador full-stack del equipo de GuestHub.</p>` : `<p class="por"><b>Qué hace el código:</b> ${p.por}</p>`}<div class="tg">${p.t.map(t => `<span>${t}</span>`).join('')}</div></div></div>`;
+    <div class="info"><div><p>${x(p.d)}</p><div class="acc">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">${u('verp')}</a>` : ''}<button class="cta" type="button" id="copiar">${u('parec')}</button></div></div>
+    <div>${emp ? `<p class="por"><b>${u('donde')}</b> ${u('dondeT')}</p>` : `<p class="por"><b>${u('qhace')}</b> ${x(p.por)}</p>`}<div class="tg">${p.t.map(t => `<span>${t}</span>`).join('')}</div></div></div>`;
   clearInterval(timer);
   if (vista === 'log') {
     const log = document.getElementById('log'), evs = MET[p.id].ev();
     let n = 0, atras = 5;
-    const agrega = () => { const d = new Date(Date.now() - (atras > 0 ? atras-- * 47000 : 0)), t = d.toLocaleTimeString('es-VE', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'America/Caracas' });
-      const el = document.createElement('div'); el.innerHTML = `<time>${t}</time><span class="ev">●</span><span>${evs[n++ % evs.length]}</span>`;
+    const agrega = () => { const d = new Date(Date.now() - (atras > 0 ? atras-- * 47000 : 0)), t = d.toLocaleTimeString(L === 'en' ? 'en-US' : 'es-VE', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'America/Caracas' });
+      const el = document.createElement('div'); el.innerHTML = `<time>${t}</time><span class="ev">●</span><span>${x(evs[n++ % evs.length])}</span>`;
       log.querySelector('.aviso').after(el); cuenta[p.id]++; const c = document.getElementById('c-' + p.id); if (c) c.textContent = cuenta[p.id]; };
     for (let i = 0; i < 5; i++) agrega();
     timer = setInterval(agrega, 2600);
@@ -353,13 +393,23 @@ document.addEventListener('click', async e => {
   const b = e.target.closest('button'); if (!b) return;
   if (b.dataset.p) { actual = b.dataset.p; lista(); detalle(); document.getElementById('tab-' + actual).focus(); }
   else if (b.dataset.v) { vista = b.dataset.v; detalle(); }
-  else if (b.id === 'copiar') { try { await navigator.clipboard.writeText('holiber17@gmail.com'); b.textContent = 'Correo copiado ✓'; } catch { b.textContent = 'holiber17@gmail.com'; } }
+  else if (b.id === 'copiar') { try { await navigator.clipboard.writeText('holiber17@gmail.com'); b.textContent = u('copiado'); } catch { b.textContent = 'holiber17@gmail.com'; } }
 });
 document.getElementById('lista').addEventListener('keydown', e => {
   const i = ALL.findIndex(p => p.id === actual), d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
   if (d === undefined) return; e.preventDefault(); actual = ALL[(i + d + ALL.length) % ALL.length].id; lista(); detalle(); document.getElementById('tab-' + actual).focus();
 });
-lista(); detalle();
+function textos() {
+  document.documentElement.lang = L; document.title = u('titulo');
+  document.querySelectorAll('[data-i]').forEach(e => { e.textContent = u(e.dataset.i); });
+  document.querySelectorAll('[data-ia]').forEach(e => e.setAttribute('aria-label', u(e.dataset.ia)));
+  document.getElementById('vivo').textContent = u('vivo').replace('{n}', ALL.length);
+  document.getElementById('idioma').textContent = L === 'en' ? 'ES' : 'EN';
+  const m = document.querySelector('meta[name=description]'); if (m) m.content = u('desc');
+  reloj(); lista(); detalle();
+}
+document.getElementById('idioma').addEventListener('click', () => { L = L === 'en' ? 'es' : 'en'; try { localStorage.setItem('idioma', L); } catch (e) {} textos(); });
+textos();
 </script>
 </body>
 </html>
