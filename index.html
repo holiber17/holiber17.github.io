@@ -74,17 +74,35 @@ h2.sec::after{content:"";flex:1;border-top:2px solid var(--noche);opacity:.15}
 .add:hover{background:var(--tinta);color:#fff}
 .add[aria-pressed=true]{background:var(--tinta);color:#fff}
 /* Entregados */
-.ent{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.pj{background:var(--tarj);border:1px solid var(--linea);border-radius:12px;padding:0;overflow:hidden}
-.pj>button{width:100%;text-align:left;background:none;border:0;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center}
-.pj b{font:800 1.05rem var(--sans)}
-.pj small{grid-column:1;color:var(--suave);font-size:.83rem}
-.sel{grid-row:1/3;grid-column:2;font:700 .66rem var(--mono);color:var(--sello);border:2px solid var(--sello);padding:2px 7px;transform:rotate(-4deg)}
-.pj .det{padding:0 16px 14px;font-size:.9rem;color:#34445a;border-top:1px dashed var(--linea);padding-top:12px}
-.pj .det .tg{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}
-.pj .det .tg span{font:.7rem var(--mono);border:1px solid var(--linea);padding:2px 7px;border-radius:3px}
-.pj .det .qa{border:2px solid var(--tinta);background:transparent;border-radius:999px;padding:7px 14px;font:700 .8rem var(--sans)}
-.pj .det .qa:hover{background:var(--tinta);color:#fff}
+.ent{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.caso{scroll-margin-top:16px}
+.caso .cab{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.caso h3{margin:0;font:900 1.6rem/1 var(--sans);font-stretch:112%}
+.caso .sub{margin:4px 0 0;color:var(--suave);font-size:.88rem}
+.vistas{display:inline-flex;background:var(--tarj);border:1px solid var(--linea);border-radius:999px;padding:3px}
+.vistas button{border:0;background:none;border-radius:999px;padding:6px 14px;font:700 .82rem var(--sans);color:var(--suave)}
+.vistas button[aria-selected=true]{background:var(--noche);color:#fff}
+.marco{position:relative;border-radius:14px;overflow:hidden;background:var(--noche);aspect-ratio:16/9;box-shadow:0 18px 40px #16202E26}
+.marco img{display:block;width:100%;height:100%;object-fit:cover}
+.sel{position:absolute;left:16px;bottom:16px;z-index:2;font:700 .78rem var(--mono);letter-spacing:.06em;color:var(--sello);background:#fffffff0;border:3px solid var(--sello);border-radius:4px;padding:4px 10px;transform:rotate(-6deg);box-shadow:0 4px 14px #0003;pointer-events:none}
+.cod{position:absolute;inset:0;display:flex;flex-direction:column;color:#d7e1ec}
+.cod .arch{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid #ffffff1a;font:500 .78rem var(--mono);color:#9fb0c4}
+.cod .arch b{color:#fff;font-weight:600}
+.cod .arch i{font-style:normal;margin-left:auto;border:1px solid #ffffff2e;border-radius:4px;padding:1px 7px;font-size:.7rem}
+.cod pre{margin:0;flex:1;overflow:auto;padding:14px 16px;font:400 .8rem/1.6 var(--mono);tab-size:2;-webkit-overflow-scrolling:touch}
+.cod pre:focus-visible{outline-offset:-3px}
+.cod .k{color:var(--azul)}.cod .s{color:var(--ambar)}.cod .c{color:#7f92a8;font-style:italic}.cod .n{color:var(--rosa)}
+.cod .por{margin:0;padding:12px 16px 14px;border-top:1px solid #ffffff1a;font-size:.88rem;color:#c3cfdd;background:#0f1722}
+.cod .por b{color:var(--verde);font-weight:700}
+.caso .txt{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:8px 24px;margin-top:14px;align-items:start}
+.caso .txt p{margin:0;color:#34445a;font-size:.95rem;max-width:62ch}
+.tg{display:flex;flex-wrap:wrap;gap:5px}
+.tg span{font:.7rem var(--mono);border:1px solid var(--linea);background:var(--tarj);padding:2px 7px;border-radius:3px}
+.acc{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:12px}
+.acc a{font-weight:600;font-size:.88rem}
+.qa{border:2px solid var(--tinta);background:transparent;border-radius:999px;padding:7px 14px;font:700 .8rem var(--sans)}
+.qa:hover{background:var(--tinta);color:#fff}
+@media (max-width:640px){.caso .txt{grid-template-columns:1fr}.sel{font-size:.62rem;left:10px;bottom:10px;padding:3px 7px;border-width:2px}.cod .arch span{display:none}.cod pre{font-size:.74rem}.marco{aspect-ratio:auto}.marco img{height:auto}.cod{position:static;min-height:420px}.cod pre{max-height:360px}.caso h3{font-size:1.35rem}}
 /* Vendedor */
 .vend{background:var(--noche);color:#fff;border-radius:14px;padding:22px 22px 20px;display:grid;gap:10px}
 .vend h3{margin:0;font:900 1.3rem var(--sans);font-stretch:118%;text-transform:uppercase}
@@ -124,7 +142,7 @@ h2.sec::after{content:"";flex:1;border-top:2px solid var(--noche);opacity:.15}
   .barmov{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--noche);color:#fff;padding:10px max(16px,env(safe-area-inset-right,0px)) max(10px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));align-items:center;justify-content:space-between;gap:12px}
   .barmov button{background:var(--sello);border:0;color:#fff;border-radius:999px;padding:10px 18px;font:800 .85rem var(--sans);text-transform:uppercase}
 }
-@media (max-width:640px){.prods,.ent{grid-template-columns:1fr}.barra .sp{display:none}.cbtn{margin-left:auto}}
+@media (max-width:640px){.prods{grid-template-columns:1fr}.barra .sp{display:none}.cbtn{margin-left:auto}}
 @media (prefers-reduced-motion:reduce){.prod,.carro{transition:none}.prod:hover{transform:none}}
 
 .idioma{border:1px solid var(--linea);background:var(--tarj);border-radius:999px;padding:8px 14px;font:700 .8rem var(--mono)}
@@ -211,7 +229,8 @@ h2.sec::after{content:"";flex:1;border-top:2px solid var(--noche);opacity:.15}
     enp: ['en mi pedido', 'in my order'], ver: ['Ver pedido', 'View order'],
     add: ['Agregar', 'Add'], on: ['✓ En mi pedido', '✓ In my order'], inc: ['Qué incluye', 'What’s included'], ej: ['Ejemplo real:', 'Real example:'], pr: ['Cotización por escrito', 'Quote in writing'],
     vacio: ['Tu pedido está vacío.<br>Agrega lo que necesitas del catálogo.', 'Your order is empty.<br>Add what you need from the catalog.'],
-    quitar: ['Quitar', 'Remove'], ent: ['ENTREGADO', 'DELIVERED'], ver_p: ['Ver la página', 'View the page'], parec: ['Quiero algo parecido', 'I want something similar'],
+    quitar: ['Quitar', 'Remove'], ent: ['ENTREGADO', 'DELIVERED'], pant: ['Pantallas', 'Screens'], cod: ['Código', 'Code'], por: ['Qué hace:', 'What it does:'],
+    alt: ['Pantallas de {n} en escritorio y teléfono', 'Screens of {n} on desktop and phone'], frag: ['fragmento', 'excerpt'], vistas: ['Ver pantallas o código de {n}', 'View screens or code of {n}'], ver_p: ['Ver la página', 'View the page'], parec: ['Quiero algo parecido', 'I want something similar'],
     copiado: ['Copiado ✓', 'Copied ✓'], sel: ['Selecciona y copia', 'Select and copy'], cpc: ['Copiar correo: ', 'Copy email: '],
     hola: ['Hola Oliver, quiero cotizar: ', 'Hi Oliver, I’d like a quote for: '], conj: [' y ', ' and '], cmpm: [' Complementos: ', ' Extras: '],
     titulo: ['Oliver Dos Anjos — Desarrollador web full-stack', 'Oliver Dos Anjos — Full-stack web developer']
@@ -232,18 +251,149 @@ h2.sec::after{content:"";flex:1;border-top:2px solid var(--noche);opacity:.15}
       ilu: '<svg viewBox="0 0 200 120" aria-hidden="true"><rect x="22" y="18" width="62" height="84" rx="6" fill="#fff"/><circle cx="53" cy="46" r="14" fill="#F29BAE"/><rect x="34" y="70" width="38" height="6" rx="3" fill="#16202E"/><rect x="34" y="82" width="26" height="6" rx="3" fill="#B8C4D4"/><path d="M96 60 H112" stroke="#16202E" stroke-width="5" stroke-linecap="round"/><path d="M106 52 L114 60 L106 68" fill="none" stroke="#16202E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="124" y="18" width="62" height="84" rx="6" fill="#16202E"/><path d="M144 50 L134 60 L144 70 M166 50 L176 60 L166 70" fill="none" stroke="#5DBB8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>' },
   ];
   const ENT = [
-    { id: 'paula', n: "Paula's Store", s: ['Tienda virtual · .NET + Postgres', 'Online store · .NET + Postgres'], d: ['Tienda online para un negocio que vendía solo por Instagram y WhatsApp. El cliente arma su carrito, paga con el método que prefiera y el pedido llega a WhatsApp con el código y el total en dólares y bolívares.', 'Online store for a business that only sold through Instagram and WhatsApp. The customer builds a cart, pays with their preferred method and the order reaches WhatsApp with the code and the total in dollars and bolívares.'], t: ['C# / .NET', 'Entity Framework', 'PostgreSQL', 'Auth0', 'Render'], p: 'tienda', link: 'https://paulasstore.onrender.com/' },
-    { id: 'licor', n: 'Licorería', s: ['Caja e inventario · JS + Supabase', 'Point of sale and inventory · JS + Supabase'], d: ['App para tablet que funciona como caja registradora: toma pedidos, cobra en tres monedas y descuenta el stock al vender. Avisa antes de que se acabe un producto.', 'Tablet app that works as a cash register: takes orders, charges in three currencies and deducts stock on each sale. It warns before a product runs out.'], t: ['JavaScript', 'HTML / CSS', 'Supabase'], p: 'sistema' },
-    { id: 'kondo', n: 'Kondo', s: ['Sistema de condominio · Node + Svelte + Postgres', 'Condominium system · Node + Svelte + Postgres'], d: ['Sistema para administrar el condominio de uno o varios edificios, cada uno con su logo y su país (Venezuela o Argentina). Reparte cada gasto entre los apartamentos, emite el recibo de cada propietario en dólares y bolívares a la tasa del día, calcula la mora sobre el saldo vencido y da a cada propietario su portal, con roles para administrador, contador, junta y vigilante.', 'System to manage the condominium of one or more buildings, each with its own logo and country (Venezuela or Argentina). Splits each expense across the apartments, issues each owner’s receipt in dollars and bolívares at the day’s rate, calculates late fees on the overdue balance and gives each owner a portal, with roles for admin, accountant, board and security guard.'], t: ['Node.js', 'Express', 'Svelte', 'PostgreSQL', 'Docker', 'Render'], p: 'sistema' },
-    { id: 'acs', n: 'ACSECURECCS', s: ['Landing + cotizador · HTML + JS', 'Landing + quote picker · HTML + JS'], d: ['Página para un negocio de seguridad, redes, Starlink y soporte técnico. El cliente marca los servicios que le interesan y se abre WhatsApp con el mensaje ya escrito.', 'Page for a security, networking, Starlink and tech support business. The client ticks the services they want and WhatsApp opens with the message already written.'], t: ['HTML', 'CSS', 'GitHub Pages'], p: 'landing', link: 'https://acsecureccs.netlify.app' },
+    { id: 'paula', n: "Paula's Store", img: 'paulas-store', s: ['Tienda virtual · .NET + Postgres', 'Online store · .NET + Postgres'], d: ['Tienda online para un negocio que vendía solo por Instagram y WhatsApp. El cliente arma su carrito, paga con el método que prefiera y el pedido llega a WhatsApp con el código y el total en dólares y bolívares.', 'Online store for a business that only sold through Instagram and WhatsApp. The customer builds a cart, pays with their preferred method and the order reaches WhatsApp with the code and the total in dollars and bolívares.'], t: ['C# / .NET', 'Entity Framework', 'PostgreSQL', 'Auth0', 'Render'], p: 'tienda', link: 'https://paulasstore.onrender.com/',
+      cod: { f: 'Variante.cs · Pedido.cs', l: 'C#', lang: 'cs', por: ['al crear el pedido, la tienda aparta las unidades para que nadie más las compre. Si el pedido vence sin pago, vuelven solas al catálogo.', 'when an order is placed, the store sets those units aside so no one else can buy them. If the order expires unpaid, they go back to the catalog on their own.'],
+        src: `// Apartar las unidades al crear el pedido
+public void Reservar(int cantidad)
+{
+    ValidarCantidad(cantidad);
+    if (!Activa)
+        throw new DomainException($"{NombreVariante} no está disponible.");
+    if (cantidad > StockDisponible)
+        throw new DomainException(StockDisponible == 0
+            ? $"{NombreVariante} está agotado."
+            : $"Solo quedan {StockDisponible} unidades de {NombreVariante}.");
+
+    StockReservado += cantidad;
+}
+
+// Si el pedido vence sin pago, el stock se libera
+public bool Expirar(DateTimeOffset ahora)
+{
+    if (Estado != EstadoPedido.PendientePago || ahora < ExpiraEn)
+        return false;
+    if (_pagos.Any(p => p.Estado != EstadoPago.Rechazado))
+        return false;
+
+    LiberarReservas();
+    Estado = EstadoPedido.Expirado;
+    ActualizadoEn = ahora;
+    return true;
+}` } },
+    { id: 'kondo', n: 'Kondo', img: 'kondo', s: ['Sistema de condominio · Node + Svelte + Postgres', 'Condominium system · Node + Svelte + Postgres'], d: ['Sistema para administrar el condominio de uno o varios edificios, cada uno con su logo y su país (Venezuela o Argentina). Reparte cada gasto entre los apartamentos, emite el recibo de cada propietario en dólares y bolívares a la tasa del día, calcula la mora sobre el saldo vencido y da a cada propietario su portal, con roles para administrador, contador, junta y vigilante.', 'System to manage the condominium of one or more buildings, each with its own logo and country (Venezuela or Argentina). Splits each expense across the apartments, issues each owner’s receipt in dollars and bolívares at the day’s rate, calculates late fees on the overdue balance and gives each owner a portal, with roles for admin, accountant, board and security guard.'], t: ['Node.js', 'Express', 'Svelte', 'PostgreSQL', 'Docker', 'Render'], p: 'sistema',
+      cod: { f: 'schema.sql · generar recibos', l: 'SQL', lang: 'sql', por: ['cada mes reparte cada gasto entre los apartamentos, por alícuota o en partes iguales, y guarda el monto en dólares y en bolívares a la tasa del día.', 'every month it splits each expense across the apartments, by ownership share or equally, and stores the amount in dollars and bolívares at the day’s rate.'],
+        src: `-- Una línea por gasto en el recibo de cada apartamento:
+-- por alícuota o en partes iguales. Un gasto en Bs conserva
+-- su monto en Bs; su valor en US$ sale de la tasa de emisión.
+INSERT INTO recibo_detalle
+  (recibo_id, tipo, gasto_id, descripcion, monto_usd, monto_bs)
+SELECT r.recibo_id, 'GASTO', g.gasto_id, g.descripcion,
+  round((CASE WHEN g.moneda <> 'USD' THEN g.monto / v_tasa
+              ELSE g.monto_usd END)
+      * (CASE g.tipo_reparto
+           WHEN 'ALICUOTA' THEN a.alicuota_pct / 100.0
+           ELSE 1.0 / v_num_apt END), 2),
+  round((CASE WHEN g.moneda <> 'USD' THEN g.monto
+              ELSE g.monto_usd * v_tasa END)
+      * (CASE g.tipo_reparto
+           WHEN 'ALICUOTA' THEN a.alicuota_pct / 100.0
+           ELSE 1.0 / v_num_apt END), 2)
+FROM recibo r
+JOIN apartamento a ON a.apartamento_id = r.apartamento_id
+JOIN gasto g ON g.edificio_id = a.edificio_id
+            AND g.periodo = r.periodo
+WHERE a.edificio_id = p_edificio
+  AND r.periodo = v_periodo AND r.estado <> 'Anulado';` } },
+    { id: 'licor', n: 'Licorería', img: 'licoreria', s: ['Caja e inventario · JS + Supabase', 'Point of sale and inventory · JS + Supabase'], d: ['App para tablet que funciona como caja registradora: toma pedidos, cobra en tres monedas y descuenta el stock al vender. Avisa antes de que se acabe un producto.', 'Tablet app that works as a cash register: takes orders, charges in three currencies and deducts stock on each sale. It warns before a product runs out.'], t: ['JavaScript', 'HTML / CSS', 'Supabase', 'PostgreSQL', 'Playwright'], p: 'sistema',
+      cod: { f: 'cobro.sql · cobrar_pedido', l: 'PL/pgSQL', lang: 'sql', por: ['cobrar es todo o nada: cierra la cuenta, la registra en caja y descuenta el inventario en un solo paso. Si se cae el internet a mitad no queda nada a medias, y un doble toque no cobra dos veces.', 'checkout is all or nothing: it closes the tab, records it in the register and deducts stock in a single step. If the internet drops halfway nothing is left half-done, and a double tap never charges twice.'],
+        src: `-- Bloquea el pedido: un segundo cobro simultáneo espera y falla.
+select * into v_ped from public.pedidos
+where id = p_pedido for update;
+if v_ped.estado <> 'abierto' then
+  raise exception 'Este pedido ya fue cobrado o cancelado';
+end if;
+
+-- El total se calcula aquí, no en el teléfono.
+select coalesce(sum(consumido * precio_usd), 0) into v_total
+from public.pedido_items
+where pedido_id = p_pedido and consumido > 0;
+
+update public.pedidos
+set estado = 'cobrado', nota = v_nota, tasa_bcv = p_tasa
+where id = p_pedido;
+
+insert into public.caja (sucursal_id, pedido_id, total_usd,
+                         tasa_bcv, metodo_pago, fecha)
+values (v_ped.sucursal_id, p_pedido, v_total,
+        p_tasa, coalesce(p_metodo, 'Efectivo'), now());
+
+-- …y en la misma transacción descuenta el stock de cada producto` } },
+    { id: 'acs', n: 'ACSECURECCS', img: 'acsecureccs', s: ['Landing + cotizador · HTML + JS', 'Landing + quote picker · HTML + JS'], d: ['Página para un negocio de seguridad, redes, Starlink y soporte técnico. El cliente marca los servicios que le interesan y se abre WhatsApp con el mensaje ya escrito.', 'Page for a security, networking, Starlink and tech support business. The client ticks the services they want and WhatsApp opens with the message already written.'], t: ['HTML', 'CSS', 'JavaScript', 'Netlify'], p: 'landing', link: 'https://acsecureccs.netlify.app',
+      cod: { f: 'index.html · cotizador', l: 'JavaScript', lang: 'js', por: ['el cliente marca los servicios que le interesan y el mensaje de WhatsApp se escribe solo, listo para enviar.', 'the client ticks the services they want and the WhatsApp message writes itself, ready to send.'],
+        src: `// El mensaje se arma con lo que el cliente marcó
+function texto() {
+  var s = [].filter.call(marcas, function (i) { return i.checked })
+            .map(function (i) { return i.value });
+  var lista = s.length > 1
+    ? s.slice(0, -1).join(', ') + ' y ' + s[s.length - 1]
+    : s[0] || '';
+  return lista
+    ? 'Hola, quiero una cotización de ' + lista + '.'
+    : 'Hola, quiero una cotización.';
+}
+
+// Cada cambio actualiza la vista previa y el enlace de WhatsApp
+function act() {
+  var t = texto();
+  msg.textContent = t;
+  btn.href = 'https://wa.me/' + NUMERO + '?text=' + encodeURIComponent(t);
+}
+[].forEach.call(marcas, function (i) {
+  i.addEventListener('change', act);
+});` } },
   ];
+  /* Resaltado simple de código: comentarios, cadenas, números y palabras clave */
+  const KW = {
+    cs: 'public private void bool int if return throw new var true false',
+    js: 'function var return if else true false',
+    sql: 'select insert into values from where join on and or case when then else end update set if raise exception for not null round coalesce sum'
+  };
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  function resalta(src, lang) {
+    const kw = new Set(KW[lang].split(' '));
+    const re = /(\/\/.*|--.*)|(\$?"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')|(\b\d+(?:\.\d+)?\b)|([A-Za-z_]\w*)/g;
+    let out = '', i = 0;
+    for (const m of src.matchAll(re)) {
+      out += esc(src.slice(i, m.index)); i = m.index + m[0].length;
+      const t = esc(m[0]);
+      if (m[1]) out += `<span class="c">${t}</span>`;
+      else if (m[2]) out += `<span class="s">${t}</span>`;
+      else if (m[3]) out += `<span class="n">${t}</span>`;
+      else out += kw.has(lang === 'sql' ? m[4].toLowerCase() : m[4]) ? `<span class="k">${t}</span>` : t;
+    }
+    return out + esc(src.slice(i));
+  }
+  const vista = {};
   const COMP = [['Pagos locales', 'Local payments'], ['Pedidos por WhatsApp', 'WhatsApp orders'], ['Precios en US$ y Bs', 'Prices in US$ and Bs'], ['Inventario', 'Inventory'], ['Reportes', 'Reports'], ['Panel de administración', 'Admin panel'], ['Correos automáticos', 'Automatic emails']];
   const x = a => a[L === 'en' ? 1 : 0];
-  const carro = new Set(), comp = new Set(), abiertos = new Set();
+  const carro = new Set(), comp = new Set();
 
   function pinta() {
     $('prods').innerHTML = PROD.map(p => `<article class="prod" style="--c:${p.c}"><div class="ilu">${p.ilu}</div><div class="cuerpo"><h3>${x(p.n)}</h3><p class="d">${x(p.d)}</p><details><summary>${u('inc')}</summary><ul>${p.inc.map(i => `<li>${x(i)}</li>`).join('')}</ul></details>${p.ej ? `<div class="ej">${u('ej')} <button type="button" data-ej="${p.ej[0]}">${p.ej[1]}</button></div>` : ''}<div class="pie"><span class="pr">${u('pr')}</span><button class="add" type="button" aria-pressed="${carro.has(p.id)}" data-add="${p.id}">${carro.has(p.id) ? u('on') : u('add')}</button></div></div></article>`).join('');
-    $('ent').innerHTML = ENT.map(e => { const o = abiertos.has(e.id); return `<div class="pj"><button type="button" aria-expanded="${o}" data-ent="${e.id}"><b>${e.n}</b><small>${x(e.s)}</small><span class="sel">${u('ent')}</span></button><div class="det" ${o ? '' : 'hidden'}><p style="margin:0">${x(e.d)}</p><div class="tg">${e.t.map(t => `<span>${t}</span>`).join('')}</div>${e.link ? `<p style="margin:0 0 10px"><a href="${e.link}" target="_blank" rel="noopener">${u('ver_p')}</a></p>` : ''}<button class="qa" type="button" data-qa="${e.p}">${u('parec')}</button></div></div>`; }).join('');
+    $('ent').innerHTML = ENT.map(e => {
+      const c = vista[e.id] === 'cod', pid = 'v-' + e.id;
+      return `<article class="caso" id="caso-${e.id}">
+        <div class="cab"><div><h3>${e.n}</h3><p class="sub">${x(e.s)}</p></div>
+          <div class="vistas" role="tablist" aria-label="${u('vistas').replace('{n}', e.n)}">
+            <button type="button" role="tab" aria-selected="${!c}" aria-controls="${pid}" data-vista="${e.id}:img">${u('pant')}</button>
+            <button type="button" role="tab" aria-selected="${c}" aria-controls="${pid}" data-vista="${e.id}:cod">${u('cod')}</button></div></div>
+        <div class="marco" id="${pid}" role="tabpanel">${c
+          ? `<div class="cod"><div class="arch"><b>${e.cod.f}</b><span>· ${u('frag')}</span><i>${e.cod.l}</i></div><pre tabindex="0"><code>${resalta(e.cod.src, e.cod.lang)}</code></pre><p class="por"><b>${u('por')}</b> ${x(e.cod.por)}</p></div>`
+          : `<img src="portadas/${e.img}.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="${u('alt').replace('{n}', e.n)}"><span class="sel">${u('ent')}</span>`}</div>
+        <div class="txt"><p>${x(e.d)}</p><div><div class="tg">${e.t.map(t => `<span>${t}</span>`).join('')}</div>
+          <div class="acc">${e.link ? `<a href="${e.link}" target="_blank" rel="noopener">${u('ver_p')}</a>` : ''}<button class="qa" type="button" data-qa="${e.p}">${u('parec')}</button></div></div></div>
+      </article>`;
+    }).join('');
     $('chips').innerHTML = COMP.map((c, i) => `<button type="button" class="chip" aria-pressed="${comp.has(i)}" data-c="${i}">${x(c)}</button>`).join('');
     $('cpMail').textContent = u('cpc') + MAIL;
     render();
@@ -282,8 +432,8 @@ h2.sec::after{content:"";flex:1;border-top:2px solid var(--noche);opacity:.15}
     else if (d.del) { carro.delete(d.del); render(); }
     else if (d.c) { const i = +d.c; comp.has(i) ? comp.delete(i) : comp.add(i); render(); }
     else if (d.qa) { carro.add(d.qa); render(); abre(); }
-    else if (d.ent) { abiertos.has(d.ent) ? abiertos.delete(d.ent) : abiertos.add(d.ent); const o = abiertos.has(d.ent); t.setAttribute('aria-expanded', String(o)); t.nextElementSibling.hidden = !o; }
-    else if (d.ej) { abiertos.add(d.ej); pinta(); $('entregados').scrollIntoView({ behavior: 'smooth' }); }
+    else if (d.vista) { const [id, v] = d.vista.split(':'); vista[id] = v; pinta(); document.querySelector(`[data-vista="${id}:${v}"]`).focus(); }
+    else if (d.ej) { const el = $('caso-' + d.ej); if (el) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' }); }
   });
   $('pedir').addEventListener('click', () => { $('salida').hidden = false; $('salida').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
   const copia = async (txt, b, orig) => { try { await navigator.clipboard.writeText(txt); b.textContent = u('copiado'); } catch (e) { b.textContent = u('sel'); } setTimeout(() => b.textContent = orig(), 1800); };
