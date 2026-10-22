@@ -40,27 +40,30 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .vivo::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:late 2s infinite}
 @keyframes late{70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
 
-.cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-block:26px 18px}
-.cab h1{margin:0;font:900 clamp(2rem,5vw,3.4rem)/.95 var(--sans);font-stretch:118%;letter-spacing:-.02em;text-wrap:balance}
-.cab p{margin:0;color:var(--suave);max-width:40em}
+.cab{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:end;gap:10px 40px;padding-block:20px 16px}
+.cab h1{margin:0;font:900 clamp(2rem,4.2vw,3rem)/.95 var(--sans);font-stretch:118%;letter-spacing:-.02em;text-wrap:balance}
+.cab p{margin:0;color:var(--suave);max-width:40em;font-size:.95rem}
 
 .rej{display:grid;grid-template-columns:360px minmax(0,1fr);gap:18px;align-items:start}
-.lista{display:grid;gap:10px}
-.srv{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;text-align:left;width:100%;background:var(--panel);border:1px solid var(--borde);border-left:5px solid var(--ac);border-radius:10px;padding:12px 14px;color:inherit;font:inherit;cursor:pointer;transition:transform .18s,box-shadow .18s,background-color .18s}
+.lista{display:grid;gap:6px}
+.srv{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 96px;grid-template-rows:auto auto;gap:2px 12px;align-items:center;text-align:left;width:100%;background:var(--panel);border:1px solid var(--borde);border-left:5px solid var(--ac);border-radius:10px;padding:8px 14px;color:inherit;font:inherit;cursor:pointer;transition:transform .18s,box-shadow .18s,background-color .18s}
 .srv:hover{box-shadow:0 6px 16px #16202E14}
 .srv[aria-selected=true]{background:color-mix(in srgb,var(--ac) 12%,var(--panel));border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac),0 12px 28px color-mix(in srgb,var(--ac) 28%,transparent);transform:translateX(6px)}
 .srv[aria-selected=true]::after{content:"";position:absolute;right:-11px;top:50%;width:16px;height:16px;background:inherit;border:solid var(--ac);border-width:1px 1px 0 0;box-shadow:inset -1px 1px 0 var(--ac);transform:translateY(-50%) rotate(45deg);background:color-mix(in srgb,var(--ac) 12%,var(--panel))}
 .srv:not([aria-selected=true]) svg{opacity:.55}
-.srv b{font:800 1.05rem var(--sans)}
-.srv .k{grid-column:1;font-size:.82rem;color:var(--suave)}
-.pill{grid-row:1;grid-column:2;align-self:start;font:600 .7rem var(--mono);color:var(--ok);background:var(--okfondo);padding:2px 8px;border-radius:999px;white-space:nowrap}
-.srv svg{grid-column:1/-1;width:100%;height:38px;margin-top:6px}
-.srv .met{grid-column:1/-1;display:flex;justify-content:space-between;font:.76rem var(--mono);color:var(--suave)}
-.srv .met b{font:600 .82rem var(--mono);color:var(--tinta)}
+.srv .nom{grid-row:1;grid-column:1;display:flex;align-items:center;gap:8px;min-width:0}
+.srv .nom b{font:800 1rem/1.2 var(--sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vivo-p{flex:none;width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px var(--okfondo)}
+.srv .k{grid-row:2;grid-column:1;font-size:.8rem;color:var(--suave);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{display:inline-flex;align-items:center;gap:6px;line-height:1.4;font:600 .7rem/1.4 var(--mono);color:var(--ok);background:var(--okfondo);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.srv svg{grid-row:1;grid-column:2;width:100%;height:26px}
+.srv .met{grid-row:2;grid-column:2;text-align:right;font:.7rem var(--mono);color:var(--suave);white-space:nowrap}
+.srv .met b{font:600 .8rem var(--mono);color:var(--tinta)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 .det{background:var(--panel);border:1px solid var(--borde);border-radius:14px;overflow:hidden;min-width:0}
 .det .bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:12px 16px;border-bottom:1px solid var(--borde);box-shadow:inset 0 4px 0 var(--ac)}
-.det .bar h2{margin:0;font:900 1.3rem var(--sans);font-stretch:112%}
+.det .bar h2{margin:0;font:900 1.3rem/1.2 var(--sans);font-stretch:112%}
 .tabs{display:inline-flex;margin-left:auto;background:var(--fondo);border-radius:999px;padding:3px}
 .tabs button{border:0;background:none;border-radius:999px;padding:6px 14px;font:700 .82rem var(--sans);color:var(--suave);cursor:pointer}
 .tabs button[aria-selected=true]{background:var(--tinta);color:var(--panel)}
@@ -87,7 +90,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .cta:hover{background:var(--tinta);color:var(--panel)}
 .pie{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:.88rem;color:var(--suave)}
 .pie b{color:var(--tinta);user-select:all}
-.grupo{font:600 .78rem var(--mono);color:var(--suave);margin:6px 2px 0}
+.grupo{font:600 .74rem var(--mono);color:var(--suave);margin:8px 2px -2px}
 .grupo:first-child{margin-top:0}
 .srv .org{grid-column:1/-1;font:500 .7rem var(--mono);color:var(--suave)}
 .rolp{position:absolute;inset:0;overflow:auto;padding:22px 24px;color:var(--codtxt)}
@@ -119,8 +122,8 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .idioma{border:1px solid var(--borde);background:var(--panel);color:var(--tinta);border-radius:999px;padding:4px 12px;font:600 .76rem var(--mono);cursor:pointer}
 .tl h3 .cargo{color:inherit;font-weight:inherit}
 @media (max-width:900px){.exp{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:900px){.srv[aria-selected=true]{transform:none}.srv[aria-selected=true]::after{display:none}.rej{grid-template-columns:minmax(0,1fr)}.lista{grid-template-columns:repeat(2,minmax(0,1fr))}.info{grid-template-columns:1fr}}
-@media (max-width:560px){.tabs{margin-left:0;width:100%;overflow-x:auto;scrollbar-width:none}.tabs button{flex:1;white-space:nowrap;padding:6px 10px}.lista{display:flex;overflow-x:auto;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}.srv{flex:none;width:250px}.grupo{display:none}.srv .pill{grid-row:auto;grid-column:1/-1;justify-self:start;order:-1}.srv b{grid-column:1/-1}.marco{aspect-ratio:4/3}.marco img{object-fit:contain}.cod pre,.log{font-size:.72rem}}
+@media (max-width:900px){.cab{grid-template-columns:1fr}.srv[aria-selected=true]{transform:none}.srv[aria-selected=true]::after{display:none}.rej{grid-template-columns:minmax(0,1fr)}.lista{grid-template-columns:repeat(2,minmax(0,1fr))}.info{grid-template-columns:1fr}}
+@media (max-width:560px){.tabs{margin-left:0;width:100%;overflow-x:auto;scrollbar-width:none}.tabs button{flex:1;white-space:nowrap;padding:6px 10px}.lista{display:flex;overflow-x:auto;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}.srv{flex:none;width:270px;grid-template-columns:minmax(0,1fr) 64px}.srv .met span{display:none}.grupo{display:none}.marco{aspect-ratio:4/3}.marco img{object-fit:contain}.cod pre,.log{font-size:.72rem}}
 @media (prefers-reduced-motion:reduce){.srv{transition:none}.vivo::before,.log div{animation:none}}
 </style>
 </head>
@@ -338,13 +341,13 @@ const EN = {"paula": {"k": "Online store", "s": "Online store · .NET + Postgres
 const OWN = P.map(p => ({ ...p, org: 'own', k: T(p.k, EN[p.id].k), s: T(p.s, EN[p.id].s), d: T(p.d, EN[p.id].d), por: T(p.por, EN[p.id].por) }));
 const ALL = [...EMP, ...OWN];
 const MET = {
-  saas: { m: T('solicitudes hoy', 'requests today'), base: 64, ev: () => [T('Solicitud: toallas extra · hab. 1204', 'Request: extra towels · room 1204'), T('Tarea asignada a Ama de llaves', 'Task assigned to Housekeeping'), T('Reserva importada del sistema del hotel', 'Reservation imported from the hotel system'), T('Pedido de room service · hab. 815', 'Room service order · room 815'), T('Encuesta de salida respondida', 'Check-out survey answered')] },
-  huesped: { m: T('huéspedes conectados', 'guests online'), base: 128, ev: () => [T('Pre-check-in completado · hab. 507', 'Pre-check-in completed · room 507'), T('Huésped abrió la app desde el QR', 'Guest opened the app from the QR code'), T('Room service: 2 cafés · hab. 1102', 'Room service: 2 coffees · room 1102'), T('Promoción vista: spa 20 %', 'Promotion viewed: spa 20%'), T('Solicitud creada: almohada extra', 'Request created: extra pillow')] },
-  sitio: { m: T('visitas hoy', 'visits today'), base: 310, ev: () => [T('Visita: módulo Alimentos y bebidas', 'Visit: Food & beverage module'), T('Cambio de idioma a inglés', 'Language switched to English'), T('Visita: integraciones', 'Visit: integrations'), T('Clic en Solicitar demo', 'Click on Request a demo'), T('Visita: app para huéspedes', 'Visit: guest app')] },
-  paula: { m: T('pedidos hoy', 'orders today'), base: 12, ev: () => { const c = 'TM-' + hoy() + '-' + hex(); return [T('Pedido ' + c + ' creado', 'Order ' + c + ' created'), T('Comprobante de Pago Móvil recibido', 'Pago Móvil receipt received'), T('Stock reservado: 2 unidades', 'Stock reserved: 2 units'), T('Pedido vencido sin pago: stock liberado', 'Order expired unpaid: stock released'), T('Correo de confirmación enviado', 'Confirmation email sent')]; } },
-  kondo: { m: T('recibos del mes', 'receipts this month'), base: 36, ev: () => [T('Recibo 3-B emitido · US$ 101,09', 'Receipt 3-B issued · US$ 101.09'), T('Pago reportado por 4-A', 'Payment reported by 4-A'), T('Tasa BCV registrada', 'BCV exchange rate recorded'), T('Mora calculada sobre 2 recibos vencidos', 'Late fee calculated on 2 overdue receipts'), T('Gasto "Ascensor" repartido por alícuota', '"Elevator" expense split by ownership share')] },
-  licor: { m: T('cobros hoy', 'checkouts today'), base: 47, ev: () => [T('Mesa 5 cobrada · $59.50', 'Table 5 checked out · $59.50'), T('Pedido abierto: Barra · Luis', 'Tab opened: Bar · Luis'), T('Stock descontado: Ron Cacique 500 años', 'Stock deducted: Ron Cacique 500 años'), T('Aviso: quedan 3 botellas', 'Alert: 3 bottles left'), T('Cierre parcial de caja', 'Partial register close')] },
-  acs: { m: T('cotizaciones hoy', 'quotes today'), base: 5, ev: () => [T('Cotización: cámaras y Starlink', 'Quote: cameras and Starlink'), T('Clic en WhatsApp desde el cotizador', 'WhatsApp click from the quote picker'), T('Cotización: soporte técnico', 'Quote: tech support'), T('Visita desde Instagram', 'Visit from Instagram'), T('Cotización: redes Wi-Fi', 'Quote: Wi-Fi networks')] },
+  saas: { u: T('solicitudes', 'requests'), m: T('solicitudes hoy', 'requests today'), base: 64, ev: () => [T('Solicitud: toallas extra · hab. 1204', 'Request: extra towels · room 1204'), T('Tarea asignada a Ama de llaves', 'Task assigned to Housekeeping'), T('Reserva importada del sistema del hotel', 'Reservation imported from the hotel system'), T('Pedido de room service · hab. 815', 'Room service order · room 815'), T('Encuesta de salida respondida', 'Check-out survey answered')] },
+  huesped: { u: T('en línea', 'online'), m: T('huéspedes conectados', 'guests online'), base: 128, ev: () => [T('Pre-check-in completado · hab. 507', 'Pre-check-in completed · room 507'), T('Huésped abrió la app desde el QR', 'Guest opened the app from the QR code'), T('Room service: 2 cafés · hab. 1102', 'Room service: 2 coffees · room 1102'), T('Promoción vista: spa 20 %', 'Promotion viewed: spa 20%'), T('Solicitud creada: almohada extra', 'Request created: extra pillow')] },
+  sitio: { u: T('visitas', 'visits'), m: T('visitas hoy', 'visits today'), base: 310, ev: () => [T('Visita: módulo Alimentos y bebidas', 'Visit: Food & beverage module'), T('Cambio de idioma a inglés', 'Language switched to English'), T('Visita: integraciones', 'Visit: integrations'), T('Clic en Solicitar demo', 'Click on Request a demo'), T('Visita: app para huéspedes', 'Visit: guest app')] },
+  paula: { u: T('pedidos', 'orders'), m: T('pedidos hoy', 'orders today'), base: 12, ev: () => { const c = 'TM-' + hoy() + '-' + hex(); return [T('Pedido ' + c + ' creado', 'Order ' + c + ' created'), T('Comprobante de Pago Móvil recibido', 'Pago Móvil receipt received'), T('Stock reservado: 2 unidades', 'Stock reserved: 2 units'), T('Pedido vencido sin pago: stock liberado', 'Order expired unpaid: stock released'), T('Correo de confirmación enviado', 'Confirmation email sent')]; } },
+  kondo: { u: T('recibos', 'receipts'), m: T('recibos del mes', 'receipts this month'), base: 36, ev: () => [T('Recibo 3-B emitido · US$ 101,09', 'Receipt 3-B issued · US$ 101.09'), T('Pago reportado por 4-A', 'Payment reported by 4-A'), T('Tasa BCV registrada', 'BCV exchange rate recorded'), T('Mora calculada sobre 2 recibos vencidos', 'Late fee calculated on 2 overdue receipts'), T('Gasto "Ascensor" repartido por alícuota', '"Elevator" expense split by ownership share')] },
+  licor: { u: T('cobros', 'sales'), m: T('cobros hoy', 'checkouts today'), base: 47, ev: () => [T('Mesa 5 cobrada · $59.50', 'Table 5 checked out · $59.50'), T('Pedido abierto: Barra · Luis', 'Tab opened: Bar · Luis'), T('Stock descontado: Ron Cacique 500 años', 'Stock deducted: Ron Cacique 500 años'), T('Aviso: quedan 3 botellas', 'Alert: 3 bottles left'), T('Cierre parcial de caja', 'Partial register close')] },
+  acs: { u: T('cotiz.', 'quotes'), m: T('cotizaciones hoy', 'quotes today'), base: 5, ev: () => [T('Cotización: cámaras y Starlink', 'Quote: cameras and Starlink'), T('Clic en WhatsApp desde el cotizador', 'WhatsApp click from the quote picker'), T('Cotización: soporte técnico', 'Quote: tech support'), T('Visita desde Instagram', 'Visit from Instagram'), T('Cotización: redes Wi-Fi', 'Quote: Wi-Fi networks')] },
 };
 const hoy = () => { const d = new Date(); return String(d.getFullYear()).slice(2) + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0'); };
 const hex = () => Math.floor(Math.random() * 4096).toString(16).toUpperCase().padStart(3, '0');
@@ -362,8 +365,8 @@ reloj(); setInterval(reloj, 30000);
 function lista() {
   let g = '';
   document.getElementById('lista').innerHTML = ALL.map((p, i) => (p.org !== g ? `<div class="grupo" role="presentation">${(g = p.org) === 'Norelian' ? u('gN') : u('gP')}</div>` : '') + `<button class="srv" type="button" role="tab" id="tab-${p.id}" aria-selected="${p.id === actual}" aria-controls="det" tabindex="${p.id === actual ? 0 : -1}" style="--ac:${p.ac}" data-p="${p.id}">
-    <b>${x(p.n)}</b><span class="pill">● ${u('prod')}</span><span class="k">${x(p.k)}</span>${chispa(serie(i * 2.1), p.ac)}
-    <span class="met"><span>${x(MET[p.id].m)} (${u('ej')})</span><b id="c-${p.id}">${cuenta[p.id]}</b></span></button>`).join('');
+    <span class="nom"><span class="vivo-p" title="${u('prod')}"></span><b>${x(p.n)}</b><span class="sr">· ${u('prod')}</span></span><span class="k">${x(p.k)}</span>${chispa(serie(i * 2.1), p.ac)}
+    <span class="met" title="${x(MET[p.id].m)} (${u('ej')})"><b id="c-${p.id}">${cuenta[p.id]}</b> <span>${x(MET[p.id].u)}</span></span></button>`).join('');
 }
 function detalle() {
   const p = ALL.find(q => q.id === actual), emp = !!p.rol;
@@ -376,7 +379,7 @@ function detalle() {
     ? `<div class="cod"><div class="arch">${p.f} · ${p.l}</div><pre tabindex="0" aria-label="${u('codDe').replace('{n}', p.n)}"><code>${resalta(p.src, p.lang)}</code></pre></div>`
     : vista === 'log' ? `<div class="log" id="log" style="--ac:${p.ac}"><span class="aviso">${u('aviso')}</span></div>`
     : `<img src="portadas/${p.img}.jpg" width="1600" height="900" alt="${u('alt').replace('{n}', p.n)}">`;
-  document.getElementById('det').innerHTML = `<div class="bar" style="--ac:${p.ac}"><h2>${x(p.n)}</h2><span class="pill" style="position:static">● ${u('prod')}</span>
+  document.getElementById('det').innerHTML = `<div class="bar" style="--ac:${p.ac}"><h2>${x(p.n)}</h2><span class="pill"><span class="vivo-p" style="box-shadow:none"></span>${u('prod')}</span>
     <div class="tabs" role="group" aria-label="${u('vista')}">${['img', ...(emp ? ['rol', 'mod'] : ['cod']), 'log'].map(v => [v, u(v === 'img' ? 'pant' : v)]).map(([v, t]) => `<button type="button" aria-selected="${v === vista}" data-v="${v}">${t}</button>`).join('')}</div></div>
     <div class="marco" style="--ac:${p.ac}">${cuerpo}</div>
     <div class="info"><div><p>${x(p.d)}</p><div class="acc">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">${u('verp')}</a>` : ''}<button class="cta" type="button" id="copiar">${u('parec')}</button></div></div>
