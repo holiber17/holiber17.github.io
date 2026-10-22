@@ -70,7 +70,8 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 var(--san
 .marco{aspect-ratio:16/9;max-width:100%;background:var(--codigo);position:relative}
 .marco img{display:block;width:100%;height:100%;object-fit:cover}
 .cod{position:absolute;inset:0;display:flex;flex-direction:column;color:var(--codtxt)}
-.cod .arch{padding:10px 16px;font:600 .78rem var(--mono);color:#fff;border-bottom:1px solid #ffffff17}
+.cod .arch{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 16px;font:600 .78rem var(--mono);color:#fff;border-bottom:1px solid #ffffff17}
+.cod .reesc{margin-left:auto;font:500 .7rem var(--mono);color:#F2C879;border:1px solid #F2C87955;border-radius:4px;padding:1px 7px}
 .cod pre{margin:0;flex:1;overflow:auto;padding:14px 16px;font:.82rem/1.6 var(--mono);tab-size:2}
 .cod .k{color:var(--k)}.cod .s{color:var(--s)}.cod .c{color:var(--c);font-style:italic}.cod .n{color:var(--n)}
 .log{position:absolute;inset:0;overflow:auto;padding:14px 16px;font:.82rem/1.75 var(--mono);color:var(--codtxt)}
@@ -262,7 +263,8 @@ const P = [
 ];
   const KW = {
     cs: 'public private void bool int if return throw new var true false',
-    js: 'function var return if else true false',
+    ts: 'export class constructor private async await const let return throw new if import from true false',
+    js: 'function var const let return if else true false import from',
     sql: 'select insert into values from where join on and or case when then else end update set if raise exception for not null round coalesce sum'
   };
   const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -310,27 +312,28 @@ const UI = {
   hago: T('Lo que hago en {n}', 'What I do on {n}'), codDe: T('Código de {n}', 'Code of {n}'), alt: T('Pantallas de {n} en escritorio y teléfono', 'Screens of {n} on desktop and phone'),
   aviso: T('Actividad simulada con datos de ejemplo, para mostrar qué hace el sistema en un día normal.', 'Simulated activity with sample data, to show what the system does on a normal day.'),
   verp: T('Ver la página ↗', 'View the page ↗'), parec: T('Quiero algo parecido', 'I want something similar'), copiado: T('Correo copiado ✓', 'Email copied ✓'),
+  reesc: T('Ejemplo reescrito del patrón, no es código de la empresa', 'Rewritten example of the pattern, not company code'),
   donde: T('Dónde:', 'Where:'), dondeT: T('en Norelian, como desarrollador full-stack del equipo de producto.', 'at Norelian, as a full-stack developer on the product team.'), qhace: T('Qué hace el código:', 'What the code does:'),
   titulo: T('Oliver Dos Anjos — Desarrollador full-stack', 'Oliver Dos Anjos — Full-stack developer'),
   desc: T('Portafolio de Oliver Dos Anjos, desarrollador full-stack en Caracas. Software para hoteles en Norelian y sistemas propios en producción: tiendas, condominios, punto de venta y landing pages.', 'Portfolio of Oliver Dos Anjos, full-stack developer in Caracas, Venezuela. Hotel software at Norelian, plus his own systems in production: stores, condominiums, point of sale and landing pages.'),
 };
 const u = k => x(UI[k]);
 const EMP = [
-  { id: 'saas', org: 'Norelian', n: T('SaaS para hoteles', 'Hotel SaaS'), ac: '#16A3A0', k: T('Panel del personal', 'Staff dashboard'), img: 'saas-hotelero', link: null,
+  { id: 'saas', org: 'Norelian', n: T('SaaS para hoteles', 'Hotel SaaS'), ac: '#16A3A0', k: T('Panel del personal', 'Staff dashboard'), img: 'saas-hotelero', f: "asignar-tarea.ts", l: "TypeScript \u00b7 Hapi", lang: "ts", cpor: T("las reglas de negocio viven en casos de uso que no dependen de HTTP ni de la base de datos, así se prueban solas. La ruta solo valida, revisa el token de Auth0 y delega.", "business rules live in use cases that don’t depend on HTTP or the database, so they can be tested on their own. The route only validates, checks the Auth0 token and delegates."), src: "// Caso de uso: asignar una tarea a un departamento.\n// No sabe nada de HTTP ni de la base de datos: se prueba solo.\nexport class AsignarTarea {\n  constructor(private tareas: RepositorioTareas, private reloj: Reloj) {}\n\n  async ejecutar(cmd: AsignarTareaCmd): Promise<Tarea> {\n    const tarea = await this.tareas.buscar(cmd.tareaId);\n    if (!tarea) throw new NoEncontrado('La tarea no existe');\n    if (tarea.estado === 'FINALIZADA')\n      throw new ReglaDeNegocio('No se puede reasignar una tarea finalizada');\n\n    tarea.asignarA(cmd.departamentoId, this.reloj.ahora());\n    return this.tareas.guardar(tarea);\n  }\n}\n\n// La ruta Hapi solo valida, exige el token de Auth0 y delega\nserver.route({\n  method: 'PATCH',\n  path: '/tareas/{id}/asignacion',\n  options: { auth: 'auth0', validate: { payload: esquemaAsignacion } },\n  handler: (req) => asignarTarea.ejecutar({\n    tareaId: req.params.id,\n    departamentoId: req.payload.departamentoId,\n  }),\n});", link: null,
     d: T('Plataforma en la nube que usan hoteles de varios países para atender a sus huéspedes. El personal gestiona huéspedes, reservaciones, tareas, solicitudes y alimentos y bebidas desde un panel web, conectado con los sistemas de gestión hotelera que cada hotel ya usa.', 'Cloud platform used by hotels in several countries to look after their guests. Staff manage guests, reservations, tasks, requests and food and beverage from a web dashboard, connected to the property management systems each hotel already uses.'),
     t: ['Angular', 'TypeScript', 'SASS', 'Node.js', '.NET', 'Auth0', 'Docker'],
     mods: T(['Check-in', 'Solicitudes', 'Tareas', 'Reservaciones', 'Alimentos y bebidas', 'Encuestas', 'Comunicaciones', 'Promociones', 'Paquetes', 'Objetos perdidos', 'Transporte'], ['Check-in', 'Requests', 'Tasks', 'Reservations', 'Food & beverage', 'Surveys', 'Communications', 'Promotions', 'Packages', 'Lost & found', 'Transport']),
     modsT: T('Toda la estadía en un solo sistema', 'The whole stay in one system'), modsP: T('Módulos para cada etapa de la estadía de un huésped, del check-in a la encuesta de salida.', 'Modules for every stage of a guest’s stay, from check-in to the check-out survey.'),
     rol: T(['Desarrollo la aplicación web en Angular: tareas, huéspedes, reservaciones, configuración y traducciones.', 'Fui parte del equipo que la migró de Angular 12 a Angular 21.', 'Maqueto las pantallas desde Figma con SASS, Bootstrap y componentes propios.', 'Hago APIs REST en Node.js y .NET con arquitectura por casos de uso, y escribo sus pruebas unitarias. Hoy trabajo usuarios y autenticación con Auth0.', 'También trabajo un módulo en Svelte y la app móvil del personal en React.'],
       ['I build the Angular web app: tasks, guests, reservations, settings and translations.', 'I was part of the team that migrated it from Angular 12 to Angular 21.', 'I build the screens from Figma with SASS, Bootstrap and in-house components.', 'I write REST APIs in Node.js and .NET with a use-case architecture, along with their unit tests. Right now I work on users and authentication with Auth0.', 'I also work on a module in Svelte and the staff mobile app in React.']) },
-  { id: 'huesped', org: 'Norelian', n: T('App para huéspedes', 'Guest web app'), ac: '#F2994A', k: T('Sin descargar nada', 'Nothing to download'), img: 'app-huespedes', link: null,
+  { id: 'huesped', org: 'Norelian', n: T('App para huéspedes', 'Guest web app'), ac: '#F2994A', k: T('Sin descargar nada', 'Nothing to download'), img: 'app-huespedes', f: "apariencia.component.ts", l: "Angular", lang: "ts", cpor: T("cada hotel elige colores, botones y tipografía en un formulario, y la vista previa del huésped cambia en vivo mientras edita.", "each hotel picks colors, buttons and typography in a form, and the guest preview updates live while they edit."), src: "// Personalización de la app del huésped, con vista previa en vivo\n@Component({\n  selector: 'app-apariencia',\n  templateUrl: './apariencia.component.html',\n})\nexport class AparienciaComponent {\n  private fb = inject(FormBuilder);\n  private config = inject(ConfiguracionService);\n\n  form = this.fb.nonNullable.group({\n    fondo: ['#FFFFFF'],\n    botones: ['#2E9E6A'],\n    fuente: ['Josefin Sans'],\n  });\n\n  // La vista previa escucha el formulario: cada cambio se ve al instante\n  tema = toSignal(this.form.valueChanges, {\n    initialValue: this.form.getRawValue(),\n  });\n\n  guardar() {\n    this.config.actualizarApariencia(this.form.getRawValue()).subscribe();\n  }\n}", link: null,
     d: T('App web que cada hotel personaliza para sus huéspedes: desde un enlace o un código QR hacen el pre-check-in, piden servicios y room service, crean y siguen sus solicitudes y reciben promociones antes y durante su estadía.', 'Web app each hotel customizes for its guests: from a link or a QR code they pre-check-in, order services and room service, create and track their requests, and get promotions before and during their stay.'),
     t: ['Angular', 'TypeScript', 'SASS', 'Node.js'],
     mods: T(['Pre-check-in', 'Room service', 'Solicitudes', 'Servicios del hotel', 'Promociones', 'Encuestas', 'Personalización por hotel'], ['Pre-check-in', 'Room service', 'Requests', 'Hotel services', 'Promotions', 'Surveys', 'Per-hotel branding']),
     modsT: T('El hotel en el teléfono del huésped', 'The hotel on the guest’s phone'), modsP: T('Sin instalar nada: el huésped entra desde un enlace o un código QR.', 'Nothing to install: guests open it from a link or a QR code.'),
     rol: T(['Participé desde el inicio, de punta a punta: de la primera versión a la que hoy usan los hoteles.', 'Construí la app del huésped: pre-check-in, servicios del hotel, room service, solicitudes con su seguimiento y promociones.', 'Hice también la configuración que usa cada hotel para personalizarla: invitaciones a sus huéspedes, colores, botones y tipografía, con vista previa en vivo.'],
       ['I worked on it from the start, end to end: from the first version to the one hotels use today.', 'I built the guest app: pre-check-in, hotel services, room service, requests with tracking, and promotions.', 'I also built the settings each hotel uses to customize it: guest invitations, colors, buttons and typography, with a live preview.']) },
-  { id: 'sitio', org: 'Norelian', n: T('Sitio del producto', 'Product website'), ac: '#6C8CFF', k: T('Bilingüe, en Svelte', 'Bilingual, in Svelte'), img: 'sitio-producto', link: null,
+  { id: 'sitio', org: 'Norelian', n: T('Sitio del producto', 'Product website'), ac: '#6C8CFF', k: T('Bilingüe, en Svelte', 'Bilingual, in Svelte'), img: 'sitio-producto', f: "+page.svelte", l: "Svelte", lang: "js", cpor: T("cada página sale de un solo componente y dos diccionarios, español e inglés, con las etiquetas que los buscadores necesitan para mostrar cada idioma.", "each page comes from a single component and two dictionaries, Spanish and English, with the tags search engines need to show each language."), src: "<script>\n  // Una sola página, dos idiomas: el texto sale del diccionario\n  import { page } from '$app/stores';\n  import es from '$lib/i18n/es.json';\n  import en from '$lib/i18n/en.json';\n\n  const textos = { es, en };\n  $: lang = $page.params.lang === 'en' ? 'en' : 'es';\n  $: t = textos[lang];\n  $: ruta = $page.url.pathname.slice(3);\n<\/script>\n\n<svelte:head>\n  <title>{t.seo.titulo}</title>\n  <meta name=\"description\" content={t.seo.descripcion} />\n  <link rel=\"alternate\" hreflang=\"es\" href=\"/es{ruta}\" />\n  <link rel=\"alternate\" hreflang=\"en\" href=\"/en{ruta}\" />\n</svelte:head>\n\n<h1>{t.hero.titulo}</h1>\n<a class=\"btn\" href=\"/{lang}/demo\">{t.hero.cta}</a>", link: null,
     d: T('Sitio comercial de la plataforma, en español e inglés, con una página por cada módulo, las integraciones disponibles y testimonios de hoteles clientes.', 'The platform’s marketing site, in Spanish and English, with a page for each module, the available integrations and testimonials from client hotels.'),
     t: ['Svelte', 'i18n (es / en)', 'SEO'],
     mods: T(['Inicio', 'Una página por módulo', 'Integraciones', 'Testimonios', 'Español', 'Inglés'], ['Home', 'One page per module', 'Integrations', 'Testimonials', 'Spanish', 'English']),
@@ -370,20 +373,19 @@ function lista() {
 }
 function detalle() {
   const p = ALL.find(q => q.id === actual), emp = !!p.rol;
-  if (emp && vista === 'cod') vista = 'rol';
   if (!emp && (vista === 'rol' || vista === 'mod')) vista = 'cod';
   const cuerpo = vista === 'rol'
     ? `<div class="rolp" style="--ac:${p.ac}"><h3>${u('hago').replace('{n}', p.n)}</h3><ul>${x(p.rol).map(li => `<li>${li}</li>`).join('')}</ul></div>`
     : vista === 'mod' ? `<div class="mods" style="--ac:${p.ac}"><h3>${x(p.modsT)}</h3><p>${x(p.modsP)}</p><div class="chips">${x(p.mods).map(m => `<span>${m}</span>`).join('')}</div></div>`
     : vista === 'cod'
-    ? `<div class="cod"><div class="arch">${p.f} · ${p.l}</div><pre tabindex="0" aria-label="${u('codDe').replace('{n}', p.n)}"><code>${resalta(p.src, p.lang)}</code></pre></div>`
+    ? `<div class="cod"><div class="arch">${p.f} · ${p.l}${emp ? `<span class="reesc">${u('reesc')}</span>` : ''}</div><pre tabindex="0" aria-label="${u('codDe').replace('{n}', x(p.n))}"><code>${resalta(p.src, p.lang)}</code></pre></div>`
     : vista === 'log' ? `<div class="log" id="log" style="--ac:${p.ac}"><span class="aviso">${u('aviso')}</span></div>`
     : `<img src="portadas/${p.img}.jpg" width="1600" height="900" alt="${u('alt').replace('{n}', p.n)}">`;
   document.getElementById('det').innerHTML = `<div class="bar" style="--ac:${p.ac}"><h2>${x(p.n)}</h2><span class="pill"><span class="vivo-p" style="box-shadow:none"></span>${u('prod')}</span>
-    <div class="tabs" role="group" aria-label="${u('vista')}">${['img', ...(emp ? ['rol', 'mod'] : ['cod']), 'log'].map(v => [v, u(v === 'img' ? 'pant' : v)]).map(([v, t]) => `<button type="button" aria-selected="${v === vista}" data-v="${v}">${t}</button>`).join('')}</div></div>
+    <div class="tabs" role="group" aria-label="${u('vista')}">${['img', ...(emp ? ['rol', 'cod', 'mod'] : ['cod']), 'log'].map(v => [v, u(v === 'img' ? 'pant' : v)]).map(([v, t]) => `<button type="button" aria-selected="${v === vista}" data-v="${v}">${t}</button>`).join('')}</div></div>
     <div class="marco" style="--ac:${p.ac}">${cuerpo}</div>
     <div class="info"><div><p>${x(p.d)}</p><div class="acc">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">${u('verp')}</a>` : ''}<button class="cta" type="button" id="copiar">${u('parec')}</button></div></div>
-    <div>${emp ? `<p class="por"><b>${u('donde')}</b> ${u('dondeT')}</p>` : `<p class="por"><b>${u('qhace')}</b> ${x(p.por)}</p>`}<div class="tg">${p.t.map(t => `<span>${t}</span>`).join('')}</div></div></div>`;
+    <div>${emp ? `<p class="por"><b>${u('donde')}</b> ${u('dondeT')}</p><p class="por" style="margin-top:8px"><b>${u('qhace')}</b> ${x(p.cpor)}</p>` : `<p class="por"><b>${u('qhace')}</b> ${x(p.por)}</p>`}<div class="tg">${p.t.map(t => `<span>${t}</span>`).join('')}</div></div></div>`;
   clearInterval(timer);
   if (vista === 'log') {
     const log = document.getElementById('log'), evs = MET[p.id].ev();
